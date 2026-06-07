@@ -138,8 +138,8 @@ export default function GameExplorer() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`text-xs uppercase tracking-widest font-bold px-6 py-3.5 rounded-full transition-all border ${activeCategory === cat
-                  ? "bg-[#E5E0D5] text-[#3F2B2A] border-[#E5E0D5] shadow-md"
-                  : "bg-transparent text-[#E5E0D5]/70 border-white/10 hover:border-[#E5E0D5]"
+                ? "bg-[#E5E0D5] text-[#3F2B2A] border-[#E5E0D5] shadow-md"
+                : "bg-transparent text-[#E5E0D5]/70 border-white/10 hover:border-[#E5E0D5]"
                 }`}
             >
               {cat} {cat !== "All" && "Games"}
@@ -148,59 +148,47 @@ export default function GameExplorer() {
         </div>
 
         {/* Games Grid */}
-        <LayoutGroup>
-          <motion.div
-            layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 "
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredGames.map((game) => (
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                  key={game.id}
-                  className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between hover:border-[#8F9B60] hover:-translate-y-1"
-                >
-                  <div>
-                    {/* Badge */}
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-[#8F9B60]/10 text-[#8F9B60] border border-[#8F9B60]/20">
-                        {game.category}
-                      </span>
-                      <span className="text-[10px] uppercase tracking-wider font-semibold text-[#928A81]">
-                        ID: GOB-{1000 + game.id}
-                      </span>
-                    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {filteredGames.map((game) => (
+            <div
+              key={game.id}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between hover:border-[#8F9B60] hover:-translate-y-1"
+            >
+              <div>
+                {/* Badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full bg-[#8F9B60]/10 text-[#8F9B60] border border-[#8F9B60]/20">
+                    {game.category}
+                  </span>
+                  <span className="text-[10px] uppercase tracking-wider font-semibold text-[#928A81]">
+                    ID: GOB-{1000 + game.id}
+                  </span>
+                </div>
 
-                    {/* Title & Desc */}
-                    <h3 className="font-serif text-2xl font-bold text-[#E5E0D5] mb-2 group-hover:text-[#8F9B60] transition-colors">
-                      {game.title}
-                    </h3>
-                    <p className="text-sm text-[#E5E0D5]/80 leading-relaxed mb-6 font-light">
-                      {game.desc}
-                    </p>
-                  </div>
+                {/* Title & Desc */}
+                <h3 className="font-serif text-2xl font-bold text-[#E5E0D5] mb-2 group-hover:text-[#8F9B60] transition-colors">
+                  {game.title}
+                </h3>
+                <p className="text-sm text-[#E5E0D5]/80 leading-relaxed mb-6 font-light">
+                  {game.desc}
+                </p>
+              </div>
 
-                  {/* Metadata Bar */}
-                  <div className="flex items-center justify-between border-t border-white/10 pt-4 text-xs font-semibold text-[#928A81]">
-                    <span className="flex items-center gap-1">
-                      <Users size={14} /> {game.players}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock size={14} /> {game.time}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Flame size={14} /> Complexity: {game.complexity}
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-        </LayoutGroup>
+              {/* Metadata Bar */}
+              <div className="flex items-center justify-between border-t border-white/10 pt-4 text-xs font-semibold text-[#928A81]">
+                <span className="flex items-center gap-1">
+                  <Users size={14} /> {game.players}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Clock size={14} /> {game.time}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Flame size={14} /> Complexity: {game.complexity}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
