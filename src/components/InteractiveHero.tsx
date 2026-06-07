@@ -63,17 +63,17 @@ export default function InteractiveHero({ onOpenBooking }: InteractiveHeroProps)
           style={{ backgroundImage: `url('/assets/hero_bg.png')` }}
         />
         {/* Dark/Warm overlay gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#3F2B2A] via-[#3F2B2A]/40 to-[#3F2B2A]/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#3F2B2A]/70 via-transparent to-[#3F2B2A]/30" />
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-[#3F2B2A] via-[#3F2B2A]/40 to-[#3F2B2A]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3F2B2A]/70 via-transparent to-[#3F2B2A]/30" /> */}
       </motion.div>
 
       {/* Floating game pieces */}
-      <div className="absolute top-20 left-8 text-5xl opacity-20 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "0s" }}>♟</div>
-      <div className="absolute top-32 right-12 text-4xl opacity-15 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "1s" }}>🎯</div>
-      <div className="absolute bottom-32 left-16 text-4xl opacity-20 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "2s" }}>🃏</div>
-      <div className="absolute bottom-24 right-8 text-5xl opacity-15 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "0.5s" }}>🎲</div>
-      <div className="absolute top-1/2 left-4 text-3xl opacity-10 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "1.5s" }}>♛</div>
-      <div className="absolute top-1/3 right-6 text-3xl opacity-10 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "2.5s" }}>🧩</div>
+      <div className="absolute top-20 left-8 text-5xl opacity-200 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "0s" }}>♟</div>
+      <div className="absolute top-32 right-12 text-4xl opacity-150 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "1s" }}>🎯</div>
+      <div className="absolute bottom-32 left-16 text-4xl opacity-200 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "2s" }}>🃏</div>
+      <div className="absolute bottom-24 right-8 text-5xl opacity-150 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "0.5s" }}>🎲</div>
+      <div className="absolute top-1/2 left-4 text-3xl opacity-100 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "1.5s" }}>♛</div>
+      <div className="absolute top-1/3 right-6 text-3xl opacity-100 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "2.5s" }}>🧩</div>
 
       {/* Floating Dice Element 1 (Top Left) */}
       {/* <motion.div
