@@ -55,11 +55,11 @@ export default function LocationMap() {
                     Club Timings
                   </h4>
                   <div className="text-sm text-[#3F2B2A]/90 font-light space-y-1">
-                    <p className="flex justify-between w-64">
+                    <p className="flex w-64">
                       <span>Mon - Thu:</span>
-                      <span className="font-semibold text-right text-[#3F2B2A]">11:00 AM - 11:00 PM</span>
+                      <span className="font-semibold  text-[#3F2B2A]">11:00 AM - 11:00 PM</span>
                     </p>
-                    <p className="flex justify-between w-64">
+                    <p className="flex  w-64">
                       <span>Fri - Sun:</span>
                       <span className="font-semibold text-right text-[#3F2B2A]">11:00 AM - 01:00 AM</span>
                     </p>
