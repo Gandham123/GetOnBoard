@@ -43,11 +43,10 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
         >
           {/* Main Capsule Navbar */}
           <div
-            className={`w-full rounded-2xl h-[60px] flex items-center justify-between px-6 relative transition-all duration-300 border ${
-              isScrolled
-                ? "bg-[#0B0A16]/90 border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
-                : "bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg"
-            }`}
+            className={`w-full rounded-2xl h-[60px] flex items-center justify-between px-6 relative transition-all duration-300 border ${isScrolled
+              ? "bg-[#0B0A16]/90 border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+              : "bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg"
+              }`}
           >
             {/* Left Section: Menu Toggle (Mobile) + Left Links (Desktop) */}
             <div className="flex items-center gap-4 lg:gap-6 flex-1 justify-start">
@@ -151,7 +150,7 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 left-0 bottom-0 z-[95] w-full max-w-[300px] bg-[#0A0714] border-r border-white/[0.08] shadow-2xl flex flex-col justify-between p-8 pt-28 lg:hidden"
+              className="fixed top-0 left-0 bottom-0 z-[95] w-full max-w-[300px] bg-[#5ab6f0] border-r border-white/[0.08] shadow-2xl flex flex-col justify-between p-8 pt-28 lg:hidden"
             >
               {/* Menu Links with Icons */}
               <div className="flex flex-col gap-6">
@@ -167,8 +166,8 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="group flex items-center gap-4 text-xl font-medium text-[#E5E0D5] hover:text-[#14B8A6] transition-colors"
                     >
-                      <div className="bg-[#14B8A6]/10 border border-[#14B8A6]/20 p-2.5 rounded-xl text-[#14B8A6] group-hover:bg-[#14B8A6]/20 transition-all">
-                        <Icon size={20} />
+                      <div className=" border border-[#f56645] p-2.5 rounded-xl text-[#14B8A6] group-hover:bg-[#14B8A6]/20 transition-all">
+                        <Icon size={20} color="#f56645" />
                       </div>
                       <span className="font-serif tracking-wide text-2xl">{link.label}</span>
                     </motion.a>
@@ -188,12 +187,12 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
                     setIsMobileMenuOpen(false);
                     onOpenBooking();
                   }}
-                  className="w-full bg-teal-500 hover:bg-teal-400 text-white text-xs uppercase tracking-widest font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all shadow-md shadow-teal-500/10"
+                  className="w-full bg-[#f56645] hover:bg-teal-400 text-white text-xs uppercase tracking-widest font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all shadow-md shadow-teal-500/10"
                 >
                   Book A Table <Calendar size={14} />
                 </button>
                 <div className="text-center text-xs text-[#928A81] font-light leading-relaxed">
-                  <p className="font-bold text-teal-400 uppercase tracking-wider mb-1">Get On Board Cafe</p>
+                  <p className="font-bold text-[#fff] uppercase tracking-wider mb-1">Get On Board Cafe</p>
                   <p>Jubilee Hills, Hyderabad | Open Daily</p>
                 </div>
               </motion.div>
