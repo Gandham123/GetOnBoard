@@ -11,7 +11,7 @@ interface CorporateSectionProps {
 const eventAccents = [
   {
     color: "#FF6B4A", // Coral
-    badge: "bg-[#FF6B4A]/10 text-[#FFB088] border-[#FF6B4A]/20",
+    badge: "bg-[#FF6B4A]/10 text-[#FFB088] border-[#FFF]/20",
     glow: "shadow-[0_0_30px_rgba(255,107,74,0.2)]",
     text: "group-hover:text-[#FFB088]",
     hoverBorder: "hover:border-[#FF6B4A]/40",
@@ -19,13 +19,13 @@ const eventAccents = [
     iconColor: "text-[#FF6B4A]",
   },
   {
-    color: "#4dafee", // Sky Blue
+    color: "#fff",
     badge: "bg-[#4dafee]/10 text-[#8fd0ff] border-[#4dafee]/20",
     glow: "shadow-[0_0_30px_rgba(77,175,238,0.2)]",
-    text: "group-hover:text-[#8fd0ff]",
+    text: "group-hover:text-[#FFB088]",
     hoverBorder: "hover:border-[#4dafee]/40",
     iconBg: "group-hover:bg-[#4dafee]/20",
-    iconColor: "text-[#4dafee]",
+    iconColor: "text-white/8",
   },
   {
     color: "#FFB088", // Warm Peach
@@ -37,13 +37,13 @@ const eventAccents = [
     iconColor: "text-[#FFB088]",
   },
   {
-    color: "#ffffff", // White
-    badge: "bg-white/10 text-white border-white/20",
-    glow: "shadow-[0_0_30px_rgba(255,255,255,0.12)]",
-    text: "group-hover:text-white",
-    hoverBorder: "hover:border-white/30",
-    iconBg: "group-hover:bg-white/15",
-    iconColor: "text-white/80",
+    color: "#fff",
+    badge: "bg-[#4dafee]/10 text-[#8fd0ff] border-[#4dafee]/20",
+    glow: "shadow-[0_0_30px_rgba(77,175,238,0.2)]",
+    text: "group-hover:text-[#FFB088]",
+    hoverBorder: "hover:border-[#4dafee]/40",
+    iconBg: "group-hover:bg-[#4dafee]/20",
+    iconColor: "text-white/8",
   },
 ];
 
@@ -324,7 +324,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
 
       {/* 5. Rolling 3D Dice (Top Left) */}
       <motion.div
-        style={{ x: parallaxX1, y: parallaxY1 }}
+        style={{ x: parallaxX1, y: parallaxY1, width: 72, height: 72 }}
         onMouseEnter={() => setIsDiceHovered(true)}
         onMouseLeave={() => setIsDiceHovered(false)}
         animate={{
@@ -338,7 +338,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
         }}
         whileHover={{ scale: 1.3 }}
         className="absolute top-[10%] left-[8%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none w-18 h-18 opacity-80 hover:opacity-100 transition-all duration-300"
-        style={{ width: 72, height: 72 }}
+
       >
         <svg viewBox="0 0 100 100" className={`w-full h-full stroke-2 drop-shadow-[0_0_18px_rgba(255,255,255,0.4)] ${isDiceHovered ? "stroke-[#FF6B4A]" : "stroke-white/60"}`}>
           {/* Isometric dice */}
@@ -358,7 +358,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
 
       {/* 6. Sand Timer / Hourglass (Right side, middle-low) */}
       <motion.div
-        style={{ x: parallaxX4, y: parallaxY4 }}
+        style={{ x: parallaxX4, y: parallaxY4, width: 56, height: 72 }}
         onMouseEnter={() => setIsHourglassHovered(true)}
         onMouseLeave={() => setIsHourglassHovered(false)}
         animate={{
@@ -371,7 +371,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
         }}
         whileHover={{ scale: 1.2 }}
         className="absolute top-[55%] right-[4%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none opacity-80 hover:opacity-100 transition-all duration-300"
-        style={{ width: 56, height: 72 }}
+
       >
         <svg viewBox="0 0 60 80" className={`w-full h-full stroke-2 drop-shadow-[0_0_15px_rgba(255,176,136,0.5)] ${isHourglassHovered ? "stroke-[#FFB088]" : "stroke-white/55"}`}>
           {/* Top frame */}
@@ -408,12 +408,12 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
 
       {/* 7. Playing Card Hand (Left side, lower) */}
       <motion.div
-        style={{ x: parallaxX3, y: parallaxY3 }}
+        style={{ x: parallaxX3, y: parallaxY3, width: 80, height: 64 }}
         onMouseEnter={() => setIsCardHovered(true)}
         onMouseLeave={() => setIsCardHovered(false)}
         whileHover={{ scale: 1.15 }}
         className="absolute bottom-[30%] left-[3%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none opacity-80 hover:opacity-100 transition-all duration-300"
-        style={{ width: 80, height: 64 }}
+
       >
         <svg viewBox="0 0 120 90" className="w-full h-full drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
           {/* Card 1 (back, left-tilted) */}
@@ -447,7 +447,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
 
       {/* 8. Chess Board Pattern (Top center-right) */}
       <motion.div
-        style={{ x: parallaxX4, y: parallaxY4 }}
+        style={{ x: parallaxX4, y: parallaxY4, width: 72, height: 72 }}
         onMouseEnter={() => setIsChessHovered(true)}
         onMouseLeave={() => setIsChessHovered(false)}
         whileHover={{ scale: 1.12 }}
@@ -460,12 +460,12 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
           ease: "easeInOut",
         }}
         className="absolute top-[8%] right-[30%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none opacity-70 hover:opacity-100 transition-all duration-300"
-        style={{ width: 72, height: 72 }}
+
       >
         <svg viewBox="0 0 80 80" className="w-full h-full drop-shadow-[0_0_12px_rgba(255,255,255,0.25)]">
           {/* 4x4 mini chess board */}
-          {[0,1,2,3].map(row =>
-            [0,1,2,3].map(col => (
+          {[0, 1, 2, 3].map(row =>
+            [0, 1, 2, 3].map(col => (
               <motion.rect
                 key={`${row}-${col}`}
                 x={col * 18 + 2}
@@ -497,12 +497,12 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
 
       {/* 9. Spinning Prize Wheel (Bottom center-left) */}
       <motion.div
-        style={{ x: parallaxX2, y: parallaxY2 }}
+        style={{ x: parallaxX2, y: parallaxY2, width: 64, height: 64 }}
         onMouseEnter={() => setIsSpinnerHovered(true)}
         onMouseLeave={() => setIsSpinnerHovered(false)}
         whileHover={{ scale: 1.15 }}
         className="absolute bottom-[10%] left-[28%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none opacity-75 hover:opacity-100 transition-all duration-300"
-        style={{ width: 64, height: 64 }}
+
       >
         <svg viewBox="0 0 80 80" className="w-full h-full drop-shadow-[0_0_15px_rgba(255,107,74,0.4)]">
           {/* Wheel */}
