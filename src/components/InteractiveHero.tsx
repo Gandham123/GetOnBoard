@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { Play } from "lucide-react";
+import ParticleRain from "./ParticleRain";
 
 interface InteractiveHeroProps {
   onOpenBooking: () => void;
@@ -49,12 +49,12 @@ export default function InteractiveHero({ onOpenBooking }: InteractiveHeroProps)
   return (
     <div
       ref={heroRef}
-      className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-[#3F2B2A]"
+      className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-gradient-to-b from-[#0A0714] via-[#0F0A20] to-[#08050E]"
     >
       {/* Background Image with Scroll Parallax */}
       <motion.div
         style={{ y: bgY, scale: 1.1 }}
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100"
         priority-attribute="true"
         aria-hidden="true"
       >
@@ -62,56 +62,71 @@ export default function InteractiveHero({ onOpenBooking }: InteractiveHeroProps)
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('/assets/hero_bg.png')` }}
         />
-        {/* Dark/Warm overlay gradients */}
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-[#3F2B2A] via-[#3F2B2A]/40 to-[#3F2B2A]/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#3F2B2A]/70 via-transparent to-[#3F2B2A]/30" /> */}
       </motion.div>
 
-      {/* Floating game pieces */}
-      <div className="absolute top-20 left-8 text-5xl opacity-200 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "0s" }}>♟</div>
-      <div className="absolute top-32 right-12 text-4xl opacity-150 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "1s" }}>🎯</div>
-      <div className="absolute bottom-32 left-16 text-4xl opacity-200 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "2s" }}>🃏</div>
-      <div className="absolute bottom-24 right-8 text-5xl opacity-150 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "0.5s" }}>🎲</div>
-      <div className="absolute top-1/2 left-4 text-3xl opacity-100 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "1.5s" }}>♛</div>
-      <div className="absolute top-1/3 right-6 text-3xl opacity-100 float-anim text-[#E5E0D5] select-none pointer-events-none" style={{ animationDelay: "2.5s" }}>🧩</div>
+      {/* Background Particle Sprinkler */}
+      <ParticleRain count={25} color="rgba(20, 184, 166, 0.2)" />
 
-      {/* Floating Dice Element 1 (Top Left) */}
-      {/* <motion.div
-        style={{ x: floatX1, y: floatY1 }}
-        className="absolute top-[20%] left-[10%] z-10 w-24 h-24 pointer-events-none hidden md:block select-none animate-float-slow"
+      {/* Floating game pieces with hover transitions */}
+      <motion.div
+        whileHover={{ scale: 1.3, rotate: 15 }}
+        className="absolute top-24 left-[8%] text-5xl opacity-80 float-anim text-teal-400 select-none pointer-events-auto cursor-pointer drop-shadow-[0_0_12px_rgba(20,184,166,0.6)]"
+        style={{ animationDelay: "0s" }}
       >
-        <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-2xl">
-         
-          <polygon points="50,15 85,35 85,75 50,95 15,75 15,35" fill="#C7AB94" opacity="0.9" />
-          <polygon points="50,15 85,35 50,55 15,35" fill="#E5E0D5" opacity="0.9" />
-          <polygon points="50,55 85,35 85,75 50,95" fill="#928A81" opacity="0.9" />
-          
-          <circle cx="50" cy="35" r="4" fill="#3F2B2A" />
-          <circle cx="35" cy="27" r="4" fill="#3F2B2A" />
-          <circle cx="65" cy="43" r="4" fill="#3F2B2A" />
-
-          <circle cx="35" cy="57" r="4" fill="#E5E0D5" />
-          <circle cx="35" cy="73" r="4" fill="#E5E0D5" />
-          <circle cx="45" cy="65" r="4" fill="#E5E0D5" />
-        </svg>
-      </motion.div> */}
+        ♟
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: 1.3, rotate: -15 }}
+        className="absolute top-36 right-[10%] text-4xl opacity-80 float-anim text-pink-400 select-none pointer-events-auto cursor-pointer drop-shadow-[0_0_12px_rgba(236,72,153,0.6)]"
+        style={{ animationDelay: "1s" }}
+      >
+        🎯
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: 1.3, rotate: 10 }}
+        className="absolute bottom-36 left-[12%] text-4xl opacity-80 float-anim text-indigo-400 select-none pointer-events-auto cursor-pointer drop-shadow-[0_0_12px_rgba(99,102,241,0.6)]"
+        style={{ animationDelay: "2s" }}
+      >
+        🃏
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: 1.3, rotate: -10 }}
+        className="absolute bottom-28 right-[8%] text-5xl opacity-80 float-anim text-amber-400 select-none pointer-events-auto cursor-pointer drop-shadow-[0_0_12px_rgba(245,158,11,0.6)]"
+        style={{ animationDelay: "0.5s" }}
+      >
+        🎲
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: 1.3, rotate: 180 }}
+        className="absolute top-1/2 left-[5%] text-3xl opacity-80 float-anim text-purple-400 select-none pointer-events-auto cursor-pointer drop-shadow-[0_0_10px_rgba(139,92,246,0.5)]"
+        style={{ animationDelay: "1.5s" }}
+      >
+        ♛
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: 1.3, rotate: 45 }}
+        className="absolute top-1/3 right-[6%] text-3xl opacity-80 float-anim text-sky-400 select-none pointer-events-auto cursor-pointer drop-shadow-[0_0_10px_rgba(14,165,233,0.5)]"
+        style={{ animationDelay: "2.5s" }}
+      >
+        🧩
+      </motion.div>
 
       {/* Floating Card Element 2 (Bottom Right) */}
       <motion.div
         style={{ x: floatX2, y: floatY2 }}
         className="absolute bottom-[20%] right-[12%] z-10 w-20 h-28 pointer-events-none hidden md:block select-none animate-float-medium"
       >
-        <div className="w-full h-full bg-[#E5E0D5]/95 rounded-xl shadow-2xl border border-[#C7AB94] p-3 transform rotate-12 flex flex-col justify-between">
-          <div className="flex justify-between items-center text-[#8F9B60]">
+        <div className="w-full h-full bg-[#071224]/80 rounded-xl shadow-2xl border border-teal-500/20 p-3 transform rotate-12 flex flex-col justify-between backdrop-blur-sm">
+          <div className="flex justify-between items-center text-teal-400">
             <span className="font-serif text-sm font-bold">A</span>
             <span>♠</span>
           </div>
-          <div className="flex justify-center text-[#3F2B2A] my-auto scale-125">
+          <div className="flex justify-center text-pink-400 my-auto scale-125">
             <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
               <path d="M12 2C11.5 2 10 5 10 9c0 3 2 5 2 5s2-2 2-5c0-4-1.5-7-2-7zm0 13c-2.2 0-4 1.8-4 4h8c0-2.2-1.8-4-4-4z" />
             </svg>
           </div>
-          <div className="flex justify-between items-center text-[#8F9B60] rotate-180">
+          <div className="flex justify-between items-center text-teal-400 rotate-180">
             <span className="font-serif text-sm font-bold">A</span>
             <span>♠</span>
           </div>
@@ -123,7 +138,7 @@ export default function InteractiveHero({ onOpenBooking }: InteractiveHeroProps)
         style={{ x: floatX3, y: floatY3 }}
         className="absolute top-[25%] right-[20%] z-10 w-12 h-12 pointer-events-none hidden lg:block select-none animate-float-fast"
       >
-        <svg viewBox="0 0 100 100" className="w-full h-full fill-[#8F9B60] opacity-80 drop-shadow-xl">
+        <svg viewBox="0 0 100 100" className="w-full h-full fill-indigo-500/20 stroke-indigo-400 stroke-2 opacity-80 drop-shadow-xl">
           <path d="M50,15 C55.5,15 60,19.5 60,25 C60,30.5 55.5,35 50,35 C44.5,35 40,30.5 40,25 C40,19.5 44.5,15 50,15 Z M35,42 L65,42 C67.8,42 70,44.2 70,47 L70,55 C70,57.8 67.8,60 65,60 L62,60 L62,85 C62,87.8 59.8,90 57,90 L43,90 C40.2,90 38,87.8 38,85 L38,60 L35,60 C32.2,60 30,57.8 30,55 L30,47 C30,44.2 32.2,42 35,42 Z" />
         </svg>
       </motion.div>
@@ -140,11 +155,11 @@ export default function InteractiveHero({ onOpenBooking }: InteractiveHeroProps)
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex items-center gap-2 mb-4"
         >
-          <span className="h-px w-6 bg-[#C7AB94]" />
-          <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#C7AB94] font-semibold">
+          <span className="h-px w-6 bg-teal-500/50" />
+          <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-teal-400 font-semibold">
             Where Every Table Tells A Story
           </span>
-          <span className="h-px w-6 bg-[#C7AB94]" />
+          <span className="h-px w-6 bg-teal-500/50" />
         </motion.div>
 
         {/* Brand Title */}
@@ -165,7 +180,7 @@ export default function InteractiveHero({ onOpenBooking }: InteractiveHeroProps)
           className="text-base md:text-xl text-[#E5E0D5]/90 font-light tracking-wide max-w-2xl mb-10 leading-relaxed font-sans"
         >
           India&apos;s Ultimate Board Gaming Destination
-          <span className="block text-xs md:text-sm uppercase tracking-wider text-[#C7AB94] font-semibold mt-2">
+          <span className="block text-xs md:text-sm uppercase tracking-wider text-teal-400 font-semibold mt-3">
             1200+ Games &bull; Celebrity Favorite &bull; Family Friendly &bull; Jubilee Hills
           </span>
         </motion.p>
@@ -179,21 +194,18 @@ export default function InteractiveHero({ onOpenBooking }: InteractiveHeroProps)
         >
           <a
             href="#games"
-            className="w-full sm:w-auto text-center border border-[#E5E0D5]/40 hover:border-[#E5E0D5] text-[#E5E0D5] text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full transition-colors duration-300"
+            className="w-full sm:w-auto text-center border border-white/10 hover:border-teal-500/50 hover:text-teal-400 text-[#E5E0D5]/90 text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full transition-all duration-300"
           >
             Explore Games
           </a>
           <button
             onClick={onOpenBooking}
-            className="w-full sm:w-auto bg-[#8F9B60] hover:bg-[#8F9B60]/90 text-white text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full transition-all duration-300 premium-glow-olive hover:scale-105 active:scale-95"
+            className="w-full sm:w-auto bg-teal-500 hover:bg-teal-400 text-white text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:scale-105 active:scale-95"
           >
             Book A Table
           </button>
         </motion.div>
       </motion.div>
-
-      {/* Decorative Elegant bottom fade to section 2 */}
-      {/* <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#E5E0D5] to-transparent pointer-events-none" /> */}
     </div>
   );
 }

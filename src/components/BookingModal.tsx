@@ -26,7 +26,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
       particleCount: 120,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ["#8F9B60", "#C7AB94", "#3F2B2A", "#E5E0D5"],
+      colors: ["#8F9B60", "#C7AB94", "#4A2013", "#E5E0D5"],
     });
   };
 

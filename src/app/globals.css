@@ -9,7 +9,7 @@
   
   body {
     background-color: #E5E0D5;
-    color: #3F2B2A;
+    color: #4A2013;
   }
 }
 
@@ -26,7 +26,7 @@
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3F2B2A;
+  background: #4A2013;
 }
 
 /* Glassmorphism custom styling */
@@ -38,7 +38,7 @@
 }
 
 .glass-panel-dark {
-  background: rgba(63, 43, 42, 0.65);
+  background: rgba(74, 32, 19, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
