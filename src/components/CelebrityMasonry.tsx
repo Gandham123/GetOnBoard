@@ -95,7 +95,7 @@ export default function CelebrityMasonry() {
       ref={sectionRef}
       className="py-24 text-white relative overflow-hidden"
       style={{
-        background: "linear-gradient(165deg, #3a9be0 0%, #4dafee 20%, #6dc4f5 45%, #8ad4f8 60%, #6dc4f5 75%, #4dafee 90%, #3a9be0 100%)",
+        background: "linear-gradient(165deg, #1565C0 0%, #1E88E5 20%, #4ba3e8 45%, #6bb8f0 60%, #4ba3e8 75%, #1E88E5 90%, #1565C0 100%)",
       }}
     >
       
@@ -104,7 +104,7 @@ export default function CelebrityMasonry() {
         <svg className="relative block w-full h-[80px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <motion.path
             d="M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 C1050,65 1150,90 1200,50 L1200,120 L0,120 Z"
-            fill="rgba(58,155,224,0.35)"
+            fill="rgba(21,101,192,0.35)"
             animate={{
               d: [
                 "M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 C1050,65 1150,90 1200,50 L1200,120 L0,120 Z",
@@ -127,7 +127,7 @@ export default function CelebrityMasonry() {
             height: b.size,
             left: `${b.left}%`,
             bottom: "-5%",
-            background: `radial-gradient(circle at 30% 30%, rgba(255,255,255,${b.opacity + 0.15}), rgba(77,175,238,${b.opacity}))`,
+            background: `radial-gradient(circle at 30% 30%, rgba(255,255,255,${b.opacity + 0.15}), rgba(21,101,192,${b.opacity}))`,
             border: "1px solid rgba(255,255,255,0.1)",
           }}
           animate={{
@@ -159,7 +159,7 @@ export default function CelebrityMasonry() {
           ease: "easeInOut",
         }}
         className="absolute top-1/4 right-[5%] w-[400px] h-[400px] rounded-full blur-[120px] pointer-events-none"
-        style={{ background: "rgba(255,107,74,0.12)" }}
+        style={{ background: "rgba(245,124,0,0.12)" }}
       />
       <motion.div
         animate={{
@@ -175,7 +175,7 @@ export default function CelebrityMasonry() {
           delay: 2.5,
         }}
         className="absolute bottom-1/4 left-[5%] w-[380px] h-[380px] rounded-full blur-[110px] pointer-events-none"
-        style={{ background: "rgba(45,138,208,0.2)" }}
+        style={{ background: "rgba(21,101,192,0.2)" }}
       />
       
       {/* Shimmer sweep overlay */}
@@ -208,7 +208,7 @@ export default function CelebrityMasonry() {
         }}
         className="absolute top-[18%] left-[4%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none w-14 h-14 opacity-80 hover:opacity-100 transition-opacity duration-300"
       >
-        <svg viewBox="0 0 100 100" className={`w-full h-full fill-white/10 stroke-2 drop-shadow-[0_0_15px_rgba(255,107,74,0.65)] ${isStar1Hovered ? "stroke-[#FFB088]" : "stroke-[#FF6B4A]"}`}>
+        <svg viewBox="0 0 100 100" className={`w-full h-full fill-white/10 stroke-2 drop-shadow-[0_0_15px_rgba(245,124,0,0.65)] ${isStar1Hovered ? "stroke-[#FF9800]" : "stroke-[#F57C00]"}`}>
           <path d="M50 10 Q50 50 10 50 Q50 50 50 90 Q50 50 90 50 Q50 50 50 10 Z" />
         </svg>
       </motion.div>
@@ -252,11 +252,11 @@ export default function CelebrityMasonry() {
         whileHover={{ scale: 1.25 }}
         className="absolute top-[15%] right-[6%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none w-20 h-24 opacity-80 hover:opacity-100 transition-all duration-300"
       >
-        <svg viewBox="0 0 100 100" className={`w-full h-full stroke-2 fill-white/10 drop-shadow-[0_0_15px_rgba(255,107,74,0.6)] ${isQueenHovered ? "stroke-[#FFB088]" : "stroke-[#FF6B4A]"}`}>
+        <svg viewBox="0 0 100 100" className={`w-full h-full stroke-2 fill-white/10 drop-shadow-[0_0_15px_rgba(245,124,0,0.6)] ${isQueenHovered ? "stroke-[#FF9800]" : "stroke-[#F57C00]"}`}>
           <path d="M 20 85 h 60 c 0-5-5-10-8-15 c -3-5-2-12-2-18 c 0-8 6-12 4-20 c -2-8-12-10-14-2 c -2-8-12-10-14-2 c -2-8-12-10-14 2 c -2 8 4 12 4 20 c 0 6 1 13-2 18 c -3 5-8 10-8 15 Z" />
-          <circle cx="50" cy="18" r="4.5" className={isQueenHovered ? "fill-[#FFB088]" : "fill-[#FF6B4A]"} />
-          <circle cx="34" cy="24" r="3.5" className={isQueenHovered ? "fill-[#FFB088]" : "fill-[#FF6B4A]"} />
-          <circle cx="66" cy="24" r="3.5" className={isQueenHovered ? "fill-[#FFB088]" : "fill-[#FF6B4A]"} />
+          <circle cx="50" cy="18" r="4.5" className={isQueenHovered ? "fill-[#FF9800]" : "fill-[#F57C00]"} />
+          <circle cx="34" cy="24" r="3.5" className={isQueenHovered ? "fill-[#FF9800]" : "fill-[#F57C00]"} />
+          <circle cx="66" cy="24" r="3.5" className={isQueenHovered ? "fill-[#FF9800]" : "fill-[#F57C00]"} />
         </svg>
       </motion.div>
 
@@ -336,7 +336,7 @@ export default function CelebrityMasonry() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="text-xs uppercase tracking-[0.25em] font-bold mb-3"
-            style={{ color: "#FFB088" }}
+            style={{ color: "#FF9800" }}
           >
             A Celebrity Hangout
           </motion.h4>
@@ -355,7 +355,7 @@ export default function CelebrityMasonry() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="h-[2px] mx-auto mt-5 rounded-full"
-            style={{ background: "linear-gradient(to right, #FF6B4A, #4dafee, #2d8ad0)" }}
+            style={{ background: "linear-gradient(to right, #F57C00, #1E88E5, #1565C0)" }}
           />
         </div>
 
@@ -369,7 +369,7 @@ export default function CelebrityMasonry() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className={`group relative overflow-hidden rounded-2xl border border-white/[0.15] hover:border-[#FF6B4A]/50 hover:shadow-[0_0_45px_rgba(255,107,74,0.25),0_0_80px_rgba(77,175,238,0.15)] transition-all duration-500 ${item.colSpan} ${item.height}`}
+              className={`group relative overflow-hidden rounded-2xl border border-white/[0.15] hover:border-[#F57C00]/50 hover:shadow-[0_0_45px_rgba(245,124,0,0.25),0_0_80px_rgba(21,101,192,0.15)] transition-all duration-500 ${item.colSpan} ${item.height}`}
             >
               {/* Image */}
               <Image
@@ -383,7 +383,7 @@ export default function CelebrityMasonry() {
               {/* Tint Overlay — soft blue tint */}
               <div 
                 className="absolute inset-0 opacity-85 transition-opacity duration-300"
-                style={{ background: "linear-gradient(to top, rgba(45,110,190,0.9) 5%, rgba(77,175,238,0.35) 50%, transparent)" }}
+                style={{ background: "linear-gradient(to top, rgba(13,27,42,0.9) 5%, rgba(21,101,192,0.35) 50%, transparent)" }}
               />
               
               {/* Animated shine on hover */}
@@ -395,11 +395,11 @@ export default function CelebrityMasonry() {
 
               {/* Text / Glass Card Overlay */}
               <div className="absolute inset-x-6 bottom-6 flex flex-col justify-end">
-                <div className="bg-white/[0.06] backdrop-blur-md p-6 rounded-xl border border-white/[0.12] transform translate-y-3 group-hover:translate-y-0 transition-all duration-500 shadow-xl group-hover:border-[#FF6B4A]/30 group-hover:bg-white/[0.1]">
-                  <span className="text-[10px] uppercase tracking-widest font-bold block mb-1" style={{ color: "#FF6B4A" }}>
+                <div className="bg-white/[0.06] backdrop-blur-md p-6 rounded-xl border border-white/[0.12] transform translate-y-3 group-hover:translate-y-0 transition-all duration-500 shadow-xl group-hover:border-[#F57C00]/30 group-hover:bg-white/[0.1]">
+                  <span className="text-[10px] uppercase tracking-widest font-bold block mb-1" style={{ color: "#F57C00" }}>
                     Visited Get On Board
                   </span>
-                  <h3 className="font-serif text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#FFB088] transition-colors">
+                  <h3 className="font-serif text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#FF9800] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs text-white/70 leading-relaxed font-light">
@@ -417,7 +417,7 @@ export default function CelebrityMasonry() {
         <svg className="relative block w-full h-[80px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <motion.path
             d="M0,60 C200,20 400,100 600,60 C800,20 1000,100 1200,60 L1200,120 L0,120 Z"
-            fill="rgba(58,155,224,0.35)"
+            fill="rgba(21,101,192,0.35)"
             animate={{
               d: [
                 "M0,60 C200,20 400,100 600,60 C800,20 1000,100 1200,60 L1200,120 L0,120 Z",

@@ -102,21 +102,21 @@ export default function PinterestGallery() {
   }, [lightboxIndex, filteredItems.length]);
 
   return (
-    <section id="gallery" className="py-16 bg-gradient-to-b from-[#FFFFFF] to-[#F1F5F9] relative overflow-hidden border-t border-slate-200/50">
+    <section id="gallery" className="py-16 bg-gradient-to-b from-white to-[#F9FBFF] relative overflow-hidden border-t border-[#E3F2FD]">
       {/* Particle Sprinkler */}
-      <ParticleRain count={12} color="rgba(20, 184, 166, 0.12)" />
+      <ParticleRain count={12} color="rgba(21, 101, 192, 0.12)" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.25em] text-teal-600 font-bold block mb-3">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#1565C0] font-bold block mb-3">
             Moments & Ambiance
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-[#0D1B2A]">
             Social Club Gallery
           </h2>
-          <div className="h-0.5 w-16 bg-teal-500 mx-auto mt-4" />
+          <div className="h-0.5 w-16 bg-[#1565C0] mx-auto mt-4" />
         </div>
 
         {/* Categories Tabs */}
@@ -130,8 +130,8 @@ export default function PinterestGallery() {
               }}
               className={`text-xs uppercase tracking-widest font-bold px-5 py-3 rounded-full transition-all border ${
                 activeCategory === cat
-                  ? "bg-teal-600 text-white border-teal-600 shadow-md shadow-teal-500/10"
-                  : "bg-white text-slate-700 border-slate-200 hover:border-teal-500 hover:text-teal-600 shadow-sm"
+                  ? "bg-[#1565C0] text-white border-[#1565C0] shadow-md shadow-[#1565C0]/10"
+                  : "bg-white text-[#546E7A] border-[#E3F2FD] hover:border-[#1565C0] hover:text-[#1565C0] shadow-sm"
               }`}
             >
               {cat}
@@ -150,7 +150,7 @@ export default function PinterestGallery() {
               transition={{ duration: 0.4 }}
               key={item.id}
               onClick={() => setLightboxIndex(index)}
-              className={`relative overflow-hidden rounded-2xl border border-slate-200/50 shadow-sm cursor-pointer group break-inside-avoid ${item.aspect} hover:shadow-lg hover:border-teal-500/40 transition-all duration-300`}
+              className={`relative overflow-hidden rounded-2xl border border-[#E3F2FD] shadow-sm cursor-pointer group break-inside-avoid ${item.aspect} hover:shadow-lg hover:border-[#1565C0]/40 transition-all duration-300`}
             >
               <Image
                 src={item.image}
@@ -161,15 +161,15 @@ export default function PinterestGallery() {
               />
               
               {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="bg-white/95 p-3 rounded-full shadow-lg text-teal-600">
+              <div className="absolute inset-0 bg-[#0D1B2A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="bg-white/95 p-3 rounded-full shadow-lg text-[#1565C0]">
                   <ZoomIn size={20} />
                 </div>
               </div>
 
               {/* Title overlay */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/80 to-transparent p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-[9px] uppercase tracking-widest text-teal-300 font-bold">
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0D1B2A]/80 to-transparent p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-[9px] uppercase tracking-widest text-[#FF9800] font-bold">
                   {item.category}
                 </span>
                 <h4 className="font-serif text-sm font-semibold mt-1">{item.title}</h4>
@@ -190,7 +190,7 @@ export default function PinterestGallery() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setLightboxIndex(null)}
-              className="absolute inset-0 bg-slate-950/90 backdrop-blur-md"
+              className="absolute inset-0 bg-[#0D1B2A]/90 backdrop-blur-md"
             />
 
             {/* Lightbox Content */}
@@ -202,13 +202,13 @@ export default function PinterestGallery() {
               className="relative max-w-4xl w-full h-[70vh] flex flex-col justify-between z-10 text-white"
             >
               {/* Top Bar */}
-              <div className="flex justify-between items-center px-6 py-2.5 bg-slate-900/60 border border-slate-800 rounded-full backdrop-blur-sm self-center">
-                <span className="text-xs uppercase tracking-widest text-slate-300 font-bold">
+              <div className="flex justify-between items-center px-6 py-2.5 bg-[#0D1B2A]/60 border border-white/10 rounded-full backdrop-blur-sm self-center">
+                <span className="text-xs uppercase tracking-widest text-white/70 font-bold">
                   {filteredItems[lightboxIndex].title} ({filteredItems[lightboxIndex].category})
                 </span>
                 <button
                   onClick={() => setLightboxIndex(null)}
-                  className="p-1 hover:text-teal-400 transition-colors ml-6"
+                  className="p-1 hover:text-[#FF9800] transition-colors ml-6"
                 >
                   <X size={18} />
                 </button>
@@ -242,7 +242,7 @@ export default function PinterestGallery() {
               </div>
 
               {/* Image Counter */}
-              <div className="text-center text-xs text-slate-400 font-semibold">
+              <div className="text-center text-xs text-white/50 font-semibold">
                 {lightboxIndex + 1} of {filteredItems.length}
               </div>
             </motion.div>

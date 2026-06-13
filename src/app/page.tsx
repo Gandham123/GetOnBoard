@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Navbar2 from "@/components/Navbar2";
-import InteractiveHero from "@/components/InteractiveHero";
+import VideoHero from "@/components/VideoHero";
 import StatsCounter from "@/components/StatsCounter";
 import ExperienceSplit from "@/components/ExperienceSplit";
 import GameExplorer from "@/components/GameExplorer";
@@ -29,7 +29,7 @@ export default function Home() {
       {/* Main Sections */}
       <main>
         {/* Hero Section */}
-        <InteractiveHero onOpenBooking={openBooking} />
+        <VideoHero onOpenBooking={openBooking} />
 
         {/* Stats Section */}
         <StatsCounter />

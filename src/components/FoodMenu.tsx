@@ -119,34 +119,34 @@ export default function FoodMenu() {
   const activeImage = categories.find((cat) => cat.name === activeCategory)?.image || "/assets/food_burger.png";
 
   return (
-    <section id="food" className="py-16 bg-gradient-to-b from-[#F1F5F9] via-[#F8FAFC] to-[#FFFFFF] text-slate-800 border-t border-slate-200/50 relative overflow-hidden">
+    <section id="food" className="py-16 bg-gradient-to-b from-[#F9FBFF] via-white to-white text-[#0D1B2A] border-t border-[#E3F2FD] relative overflow-hidden">
       {/* Visual background decor */}
-      <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#E3F2FD]/40 rounded-full blur-3xl pointer-events-none" />
 
       {/* Particle Sprinkler */}
-      <ParticleRain count={12} color="rgba(20, 184, 166, 0.12)" />
+      <ParticleRain count={12} color="rgba(21, 101, 192, 0.12)" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.25em] text-teal-600 font-bold block mb-3">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#1565C0] font-bold block mb-3">
             Gourmet Kitchen & Mixology
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-[#0D1B2A]">
             Food & Drinks Menu
           </h2>
-          <p className="text-sm text-slate-600 mt-3">
+          <p className="text-sm text-[#546E7A] mt-3">
             Handcrafted luxury dining designed to pair perfectly with your board gaming table.
           </p>
-          <div className="h-0.5 w-16 bg-teal-500 mx-auto mt-4" />
+          <div className="h-0.5 w-16 bg-[#1565C0] mx-auto mt-4" />
         </div>
 
         {/* Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Left: Large Image with Parallax Switch */}
-          <div className="lg:col-span-5 relative h-[400px] md:h-[500px] w-full rounded-2xl overflow-hidden border border-slate-200 shadow-2xl">
+          <div className="lg:col-span-5 relative h-[400px] md:h-[500px] w-full rounded-2xl overflow-hidden border border-[#E3F2FD] shadow-2xl">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeCategory}
@@ -172,15 +172,15 @@ export default function FoodMenu() {
           <div className="lg:col-span-7 space-y-8">
             
             {/* Category Tabs */}
-            <div className="flex flex-wrap gap-2.5 pb-4 border-b border-slate-200/60">
+            <div className="flex flex-wrap gap-2.5 pb-4 border-b border-[#E3F2FD]">
               {categories.map((cat) => (
                 <button
                   key={cat.name}
                   onClick={() => setActiveCategory(cat.name)}
                   className={`text-xs uppercase tracking-widest font-semibold px-5 py-3 rounded-full transition-all border ${
                     activeCategory === cat.name
-                      ? "bg-teal-600 text-white border-teal-600 shadow-md shadow-teal-500/10"
-                      : "bg-white text-slate-700 border-slate-200 hover:border-teal-500 hover:text-teal-600 shadow-sm"
+                      ? "bg-[#1565C0] text-white border-[#1565C0] shadow-md shadow-[#1565C0]/10"
+                      : "bg-white text-[#546E7A] border-[#E3F2FD] hover:border-[#1565C0] hover:text-[#1565C0] shadow-sm"
                   }`}
                 >
                   {cat.name}
@@ -203,21 +203,21 @@ export default function FoodMenu() {
                     <div key={idx} className="group relative">
                       <div className="flex justify-between items-baseline gap-4 mb-2">
                         <div className="flex items-center gap-2">
-                          <h4 className="font-serif text-xl md:text-2xl font-bold text-slate-900 group-hover:text-teal-600 transition-colors">
+                          <h4 className="font-serif text-xl md:text-2xl font-bold text-[#0D1B2A] group-hover:text-[#1565C0] transition-colors">
                             {item.name}
                           </h4>
                           {item.isPopular && (
-                            <span className="text-[9px] uppercase tracking-wider bg-teal-50 text-teal-600 border border-teal-100 font-bold px-2 py-0.5 rounded-full">
+                            <span className="text-[9px] uppercase tracking-wider bg-[#FFF3E0] text-[#F57C00] border border-[#FF9800]/20 font-bold px-2 py-0.5 rounded-full">
                               Chef Spec
                             </span>
                           )}
                         </div>
-                        <span className="h-px flex-grow border-t border-dashed border-slate-200" />
-                        <span className="font-serif text-lg md:text-xl font-bold text-teal-600">
+                        <span className="h-px flex-grow border-t border-dashed border-[#E3F2FD]" />
+                        <span className="font-serif text-lg md:text-xl font-bold text-[#F57C00]">
                           {item.price}
                         </span>
                       </div>
-                      <p className="text-xs md:text-sm text-slate-600 leading-relaxed font-light">
+                      <p className="text-xs md:text-sm text-[#546E7A] leading-relaxed font-light">
                         {item.desc}
                       </p>
                     </div>

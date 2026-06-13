@@ -54,28 +54,28 @@ export default function StatsCounter() {
   const stats = [
     {
       id: 1,
-      icon: <BookOpen className="text-teal-600 w-6 h-6" />,
+      icon: <BookOpen className="text-[#1565C0] w-6 h-6" />,
       label: "Premium Board Games",
       element: <Counter value={1200} suffix="+" />,
       desc: "From family-classics to heavy strategic imports",
     },
     {
       id: 2,
-      icon: <MessageSquare className="text-teal-600 w-6 h-6" />,
+      icon: <MessageSquare className="text-[#1565C0] w-6 h-6" />,
       label: "Google Reviews",
       element: <Counter value={3500} suffix="+" />,
       desc: "Consistently rated by Hyderabad gamers",
     },
     {
       id: 3,
-      icon: <Star className="text-teal-600 w-6 h-6" />,
+      icon: <Star className="text-[#F57C00] w-6 h-6" />,
       label: "Average Rating",
       element: <Counter value={4.7} decimals={1} />,
       desc: "High-end customer service & hospitality",
     },
     {
       id: 4,
-      icon: <Heart className="text-teal-600 w-6 h-6" />,
+      icon: <Heart className="text-[#F57C00] w-6 h-6" />,
       label: "Happy Players",
       element: <span className="font-serif">10K+</span>,
       desc: "Bonding, laughter, and unforgettable moments",
@@ -83,9 +83,9 @@ export default function StatsCounter() {
   ];
 
   return (
-    <section className="relative py-16  overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       {/* Particle Sprinkler */}
-      <ParticleRain count={12} color="rgba(20, 184, 166, 0.12)" />
+      <ParticleRain count={12} color="rgba(21, 101, 192, 0.12)" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -96,18 +96,18 @@ export default function StatsCounter() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               key={stat.id}
-              className="bg-white/80 border border-slate-200/50 backdrop-blur-md hover:border-teal-500/40 rounded-2xl p-8 shadow-sm transition-all duration-300 group hover:-translate-y-1 hover:shadow-lg"
+              className="bg-white/80 border border-[#E3F2FD] backdrop-blur-md hover:border-[#1565C0]/40 rounded-2xl p-8 shadow-sm transition-all duration-300 group hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="bg-teal-500/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-500/20 transition-colors">
+              <div className="bg-[#E3F2FD] w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#1565C0]/20 transition-colors">
                 {stat.icon}
               </div>
-              <div className="text-4xl md:text-5xl font-bold font-serif text-slate-900 mb-2">
+              <div className="text-4xl md:text-5xl font-bold font-serif text-[#0D1B2A] mb-2">
                 {stat.element}
               </div>
-              <h4 className="text-xs uppercase tracking-widest font-bold text-slate-500 mb-2">
+              <h4 className="text-xs uppercase tracking-widest font-bold text-[#546E7A] mb-2">
                 {stat.label}
               </h4>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-[#546E7A] leading-relaxed">
                 {stat.desc}
               </p>
             </motion.div>
