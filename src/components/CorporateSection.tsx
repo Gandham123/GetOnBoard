@@ -10,40 +10,40 @@ interface CorporateSectionProps {
 
 const eventAccents = [
   {
-    color: "#FF6B4A", // Coral
-    badge: "bg-[#FF6B4A]/10 text-[#FFB088] border-[#FFF]/20",
-    glow: "shadow-[0_0_30px_rgba(255,107,74,0.2)]",
-    text: "group-hover:text-[#FFB088]",
-    hoverBorder: "hover:border-[#FF6B4A]/40",
-    iconBg: "group-hover:bg-[#FF6B4A]/20",
-    iconColor: "text-[#FF6B4A]",
+    color: "#F57C00", // Deep Orange
+    badge: "bg-[#F57C00]/10 text-[#FF9800] border-white/20",
+    glow: "shadow-[0_0_30px_rgba(245,124,0,0.2)]",
+    text: "group-hover:text-[#FF9800]",
+    hoverBorder: "hover:border-[#F57C00]/40",
+    iconBg: "group-hover:bg-[#F57C00]/20",
+    iconColor: "text-[#F57C00]",
   },
   {
-    color: "#fff",
-    badge: "bg-[#4dafee]/10 text-[#8fd0ff] border-[#4dafee]/20",
-    glow: "shadow-[0_0_30px_rgba(77,175,238,0.2)]",
-    text: "group-hover:text-[#FFB088]",
-    hoverBorder: "hover:border-[#4dafee]/40",
-    iconBg: "group-hover:bg-[#4dafee]/20",
-    iconColor: "text-white/8",
+    color: "#1E88E5", // Blue 2
+    badge: "bg-[#1E88E5]/10 text-[#E3F2FD] border-[#1E88E5]/20",
+    glow: "shadow-[0_0_30px_rgba(30,136,229,0.25)]",
+    text: "group-hover:text-[#E3F2FD]",
+    hoverBorder: "hover:border-[#1E88E5]/40",
+    iconBg: "group-hover:bg-[#1E88E5]/20",
+    iconColor: "text-[#1E88E5]",
   },
   {
-    color: "#FFB088", // Warm Peach
-    badge: "bg-[#FFB088]/10 text-[#FFB088] border-[#FFB088]/20",
-    glow: "shadow-[0_0_30px_rgba(255,176,136,0.2)]",
-    text: "group-hover:text-[#FFB088]",
-    hoverBorder: "hover:border-[#FFB088]/40",
-    iconBg: "group-hover:bg-[#FFB088]/20",
-    iconColor: "text-[#FFB088]",
+    color: "#FF9800", // Orange 2
+    badge: "bg-[#FF9800]/10 text-[#FF9800] border-[#FF9800]/20",
+    glow: "shadow-[0_0_30px_rgba(255,152,0,0.2)]",
+    text: "group-hover:text-[#FF9800]",
+    hoverBorder: "hover:border-[#FF9800]/40",
+    iconBg: "group-hover:bg-[#FF9800]/20",
+    iconColor: "text-[#FF9800]",
   },
   {
-    color: "#fff",
-    badge: "bg-[#4dafee]/10 text-[#8fd0ff] border-[#4dafee]/20",
-    glow: "shadow-[0_0_30px_rgba(77,175,238,0.2)]",
-    text: "group-hover:text-[#FFB088]",
-    hoverBorder: "hover:border-[#4dafee]/40",
-    iconBg: "group-hover:bg-[#4dafee]/20",
-    iconColor: "text-white/8",
+    color: "#1565C0", // Blue
+    badge: "bg-[#1565C0]/10 text-[#E3F2FD] border-[#1565C0]/20",
+    glow: "shadow-[0_0_30px_rgba(21,101,192,0.25)]",
+    text: "group-hover:text-[#E3F2FD]",
+    hoverBorder: "hover:border-[#1565C0]/40",
+    iconBg: "group-hover:bg-[#1565C0]/20",
+    iconColor: "text-[#1565C0]",
   },
 ];
 
@@ -134,7 +134,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
       ref={sectionRef}
       className="py-24 text-white relative overflow-hidden"
       style={{
-        background: "linear-gradient(175deg, #3a9be0 0%, #4dafee 18%, #6dc4f5 35%, #8ad4f8 50%, #6dc4f5 65%, #4dafee 82%, #3a9be0 100%)",
+        background: "linear-gradient(175deg, #1565C0 0%, #1E88E5 18%, #4ba3e8 35%, #6bb8f0 50%, #4ba3e8 65%, #1E88E5 82%, #1565C0 100%)",
       }}
     >
 
@@ -166,7 +166,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
             <div className="w-full h-full rounded-full border border-white/25" />
           )}
           {shape.type === 1 && (
-            <div className="w-full h-full border border-[#FF6B4A]/30 rotate-45" />
+            <div className="w-full h-full border border-[#F57C00]/30 rotate-45" />
           )}
           {shape.type === 2 && (
             <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -190,7 +190,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
           ease: "easeInOut",
         }}
         className="absolute top-1/4 left-[5%] w-[420px] h-[420px] rounded-full blur-[130px] pointer-events-none"
-        style={{ background: "rgba(255,107,74,0.1)" }}
+        style={{ background: "rgba(245,124,0,0.12)" }}
       />
       <motion.div
         animate={{
@@ -206,7 +206,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
           delay: 2.0,
         }}
         className="absolute bottom-1/4 right-[5%] w-[380px] h-[380px] rounded-full blur-[110px] pointer-events-none"
-        style={{ background: "rgba(45,138,208,0.2)" }}
+        style={{ background: "rgba(21,101,192,0.2)" }}
       />
 
       {/* Shimmer sweep overlay */}
@@ -246,7 +246,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
             animate={isPuzzleHovered ? { x: -10 } : { x: 0 }}
             transition={{ type: "spring", stiffness: 100, damping: 10 }}
             strokeWidth="2.5"
-            className={isPuzzleHovered ? "stroke-[#FF6B4A]" : "stroke-white/50"}
+            className={isPuzzleHovered ? "stroke-[#F57C00]" : "stroke-white/50"}
           />
         </svg>
       </motion.div>
@@ -268,12 +268,12 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
         whileHover={{ scale: 1.25 }}
         className="absolute bottom-[16%] left-[6%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none w-20 h-20 opacity-80 hover:opacity-100 transition-opacity duration-300"
       >
-        <svg viewBox="0 0 100 100" className={`w-full h-full fill-[#FF6B4A]/10 drop-shadow-[0_0_15px_rgba(255,107,74,0.5)] ${isTrophyHovered ? "stroke-[#FFB088]" : "stroke-[#FF6B4A]"}`}>
+        <svg viewBox="0 0 100 100" className={`w-full h-full fill-[#F57C00]/10 drop-shadow-[0_0_15px_rgba(245,124,0,0.5)] ${isTrophyHovered ? "stroke-[#FF9800]" : "stroke-[#F57C00]"}`}>
           <path d="M 25 20 L 75 20 Q 75 50, 50 65 Q 25 50, 25 20 Z" strokeWidth="2.5" />
           <path d="M 25 25 L 15 25 Q 10 25, 10 35 Q 10 45, 15 45 L 25 45" strokeWidth="2" fill="none" />
           <path d="M 75 25 L 85 25 Q 90 25, 90 35 Q 90 45, 85 45 L 75 45" strokeWidth="2" fill="none" />
           <path d="M 50 65 L 50 80 M 35 80 L 65 80 L 65 85 L 35 85 Z" strokeWidth="2.5" />
-          <path d="M 50 28 Q 50 38, 40 38 Q 50 38, 50 48 Q 50 38, 60 38 Q 50 38, 50 28 Z" className="fill-[#FF6B4A] stroke-none" />
+          <path d="M 50 28 Q 50 38, 40 38 Q 50 38, 50 48 Q 50 38, 60 38 Q 50 38, 50 28 Z" className="fill-[#F57C00] stroke-none" />
         </svg>
       </motion.div>
 
@@ -298,7 +298,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
           <circle cx="20" cy="80" r="5" className={isNetworkHovered ? "fill-white" : "fill-white/30"} />
           <circle cx="100" cy="80" r="5" className={isNetworkHovered ? "fill-white" : "fill-white/30"} />
 
-          <circle cx="60" cy="50" r="8" className={isNetworkHovered ? "fill-[#FF6B4A] stroke-[#FFB088]" : "fill-white/40"} strokeWidth="2.5" />
+          <circle cx="60" cy="50" r="8" className={isNetworkHovered ? "fill-[#F57C00] stroke-[#FF9800]" : "fill-white/40"} strokeWidth="2.5" />
         </svg>
       </motion.div>
 
@@ -311,7 +311,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
         className="absolute bottom-[18%] right-[10%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none w-20 h-24 opacity-80 hover:opacity-100 transition-opacity duration-300"
       >
         <svg viewBox="0 0 100 120" className="w-full h-full fill-white/10 stroke-white/50 stroke-2 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-          <polygon points="40,25 45,15 50,22 55,15 60,25" className="fill-[#FF6B4A] stroke-none" />
+          <polygon points="40,25 45,15 50,22 55,15 60,25" className="fill-[#F57C00] stroke-none" />
           <motion.g
             style={{ transformOrigin: "50px 100px" }}
             animate={isMeepleHovered ? { y: [0, -15, 0], scaleY: [1, 0.8, 1.2, 1] } : {}}
@@ -340,19 +340,19 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
         className="absolute top-[10%] left-[8%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none w-18 h-18 opacity-80 hover:opacity-100 transition-all duration-300"
 
       >
-        <svg viewBox="0 0 100 100" className={`w-full h-full stroke-2 drop-shadow-[0_0_18px_rgba(255,255,255,0.4)] ${isDiceHovered ? "stroke-[#FF6B4A]" : "stroke-white/60"}`}>
+        <svg viewBox="0 0 100 100" className={`w-full h-full stroke-2 drop-shadow-[0_0_18px_rgba(255,255,255,0.4)] ${isDiceHovered ? "stroke-[#F57C00]" : "stroke-white/60"}`}>
           {/* Isometric dice */}
-          <polygon points="50,12 88,32 50,52 12,32" fill={isDiceHovered ? "rgba(255,107,74,0.15)" : "rgba(255,255,255,0.08)"} />
-          <polygon points="12,32 50,52 50,90 12,70" fill={isDiceHovered ? "rgba(255,107,74,0.1)" : "rgba(255,255,255,0.05)"} />
-          <polygon points="50,52 88,32 88,70 50,90" fill={isDiceHovered ? "rgba(255,107,74,0.08)" : "rgba(255,255,255,0.03)"} />
+          <polygon points="50,12 88,32 50,52 12,32" fill={isDiceHovered ? "rgba(245,124,0,0.15)" : "rgba(255,255,255,0.08)"} />
+          <polygon points="12,32 50,52 50,90 12,70" fill={isDiceHovered ? "rgba(245,124,0,0.1)" : "rgba(255,255,255,0.05)"} />
+          <polygon points="50,52 88,32 88,70 50,90" fill={isDiceHovered ? "rgba(245,124,0,0.08)" : "rgba(255,255,255,0.03)"} />
           {/* Dots on top face */}
-          <circle cx="38" cy="30" r="2.5" className={isDiceHovered ? "fill-[#FF6B4A]" : "fill-white/50"} />
-          <circle cx="50" cy="25" r="2.5" className={isDiceHovered ? "fill-[#FF6B4A]" : "fill-white/50"} />
-          <circle cx="62" cy="30" r="2.5" className={isDiceHovered ? "fill-[#FF6B4A]" : "fill-white/50"} />
-          <circle cx="50" cy="38" r="2.5" className={isDiceHovered ? "fill-[#FF6B4A]" : "fill-white/50"} />
+          <circle cx="38" cy="30" r="2.5" className={isDiceHovered ? "fill-[#F57C00]" : "fill-white/50"} />
+          <circle cx="50" cy="25" r="2.5" className={isDiceHovered ? "fill-[#F57C00]" : "fill-white/50"} />
+          <circle cx="62" cy="30" r="2.5" className={isDiceHovered ? "fill-[#F57C00]" : "fill-white/50"} />
+          <circle cx="50" cy="38" r="2.5" className={isDiceHovered ? "fill-[#F57C00]" : "fill-white/50"} />
           {/* Dots on left face */}
-          <circle cx="28" cy="48" r="2" className={isDiceHovered ? "fill-[#FFB088]/60" : "fill-white/30"} />
-          <circle cx="35" cy="58" r="2" className={isDiceHovered ? "fill-[#FFB088]/60" : "fill-white/30"} />
+          <circle cx="28" cy="48" r="2" className={isDiceHovered ? "fill-[#FF9800]/60" : "fill-white/30"} />
+          <circle cx="35" cy="58" r="2" className={isDiceHovered ? "fill-[#FF9800]/60" : "fill-white/30"} />
         </svg>
       </motion.div>
 
@@ -373,25 +373,25 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
         className="absolute top-[55%] right-[4%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none opacity-80 hover:opacity-100 transition-all duration-300"
 
       >
-        <svg viewBox="0 0 60 80" className={`w-full h-full stroke-2 drop-shadow-[0_0_15px_rgba(255,176,136,0.5)] ${isHourglassHovered ? "stroke-[#FFB088]" : "stroke-white/55"}`}>
+        <svg viewBox="0 0 60 80" className={`w-full h-full stroke-2 drop-shadow-[0_0_15px_rgba(255,152,0,0.5)] ${isHourglassHovered ? "stroke-[#FF9800]" : "stroke-white/55"}`}>
           {/* Top frame */}
           <line x1="10" y1="8" x2="50" y2="8" strokeWidth="3" />
           {/* Bottom frame */}
           <line x1="10" y1="72" x2="50" y2="72" strokeWidth="3" />
           {/* Glass body */}
-          <path d="M14,8 L14,28 Q14,40 30,40 Q46,40 46,28 L46,8" fill={isHourglassHovered ? "rgba(255,176,136,0.1)" : "rgba(255,255,255,0.05)"} />
-          <path d="M14,72 L14,52 Q14,40 30,40 Q46,40 46,52 L46,72" fill={isHourglassHovered ? "rgba(255,176,136,0.1)" : "rgba(255,255,255,0.05)"} />
+          <path d="M14,8 L14,28 Q14,40 30,40 Q46,40 46,28 L46,8" fill={isHourglassHovered ? "rgba(255,152,0,0.1)" : "rgba(255,255,255,0.05)"} />
+          <path d="M14,72 L14,52 Q14,40 30,40 Q46,40 46,52 L46,72" fill={isHourglassHovered ? "rgba(255,152,0,0.1)" : "rgba(255,255,255,0.05)"} />
           {/* Sand in top */}
           <motion.path
             d="M20,14 L40,14 L30,32 Z"
-            className={isHourglassHovered ? "fill-[#FF6B4A]/40" : "fill-white/20"}
+            className={isHourglassHovered ? "fill-[#F57C00]/40" : "fill-white/20"}
             animate={isHourglassHovered ? { opacity: [1, 0.3] } : {}}
             transition={{ duration: 1.5 }}
           />
           {/* Sand in bottom */}
           <motion.path
             d="M20,66 L40,66 L30,48 Z"
-            className={isHourglassHovered ? "fill-[#FF6B4A]/50" : "fill-white/15"}
+            className={isHourglassHovered ? "fill-[#F57C00]/50" : "fill-white/15"}
             animate={isHourglassHovered ? { opacity: [0.3, 1] } : {}}
             transition={{ duration: 1.5 }}
           />
@@ -399,7 +399,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
           <motion.line
             x1="30" y1="32" x2="30" y2="48"
             strokeWidth="1.5"
-            className={isHourglassHovered ? "stroke-[#FF6B4A]/70" : "stroke-white/20"}
+            className={isHourglassHovered ? "stroke-[#F57C00]/70" : "stroke-white/20"}
             animate={{ opacity: [0.3, 1, 0.3] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           />
@@ -422,16 +422,16 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
             transition={{ type: "spring", stiffness: 120, damping: 12 }}
             style={{ transformOrigin: "60px 75px" }}
           >
-            <rect x="30" y="10" width="35" height="55" rx="4" fill={isCardHovered ? "rgba(255,107,74,0.12)" : "rgba(255,255,255,0.06)"} stroke={isCardHovered ? "#FF6B4A" : "rgba(255,255,255,0.3)"} strokeWidth="1.5" />
-            <text x="36" y="30" fontSize="14" fill={isCardHovered ? "#FF6B4A" : "rgba(255,255,255,0.5)"} fontWeight="bold">♠</text>
+            <rect x="30" y="10" width="35" height="55" rx="4" fill={isCardHovered ? "rgba(245,124,0,0.12)" : "rgba(255,255,255,0.06)"} stroke={isCardHovered ? "#F57C00" : "rgba(255,255,255,0.3)"} strokeWidth="1.5" />
+            <text x="36" y="30" fontSize="14" fill={isCardHovered ? "#F57C00" : "rgba(255,255,255,0.5)"} fontWeight="bold">♠</text>
           </motion.g>
           {/* Card 2 (middle) */}
           <motion.g
             animate={isCardHovered ? { y: -5 } : { y: 0 }}
             transition={{ type: "spring", stiffness: 120, damping: 12 }}
           >
-            <rect x="42" y="8" width="35" height="55" rx="4" fill={isCardHovered ? "rgba(255,176,136,0.12)" : "rgba(255,255,255,0.08)"} stroke={isCardHovered ? "#FFB088" : "rgba(255,255,255,0.35)"} strokeWidth="1.5" />
-            <text x="48" y="28" fontSize="14" fill={isCardHovered ? "#FFB088" : "rgba(255,255,255,0.6)"} fontWeight="bold">♥</text>
+            <rect x="42" y="8" width="35" height="55" rx="4" fill={isCardHovered ? "rgba(255,152,0,0.12)" : "rgba(255,255,255,0.08)"} stroke={isCardHovered ? "#FF9800" : "rgba(255,255,255,0.35)"} strokeWidth="1.5" />
+            <text x="48" y="28" fontSize="14" fill={isCardHovered ? "#FF9800" : "rgba(255,255,255,0.6)"} fontWeight="bold">♥</text>
           </motion.g>
           {/* Card 3 (front, right-tilted) */}
           <motion.g
@@ -474,7 +474,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
                 height="16"
                 rx="1"
                 fill={(row + col) % 2 === 0
-                  ? (isChessHovered ? "rgba(255,107,74,0.2)" : "rgba(255,255,255,0.12)")
+                  ? (isChessHovered ? "rgba(245,124,0,0.2)" : "rgba(255,255,255,0.12)")
                   : "rgba(255,255,255,0.03)"}
                 stroke="rgba(255,255,255,0.15)"
                 strokeWidth="0.5"
@@ -486,8 +486,8 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
           {/* Chess piece silhouette - Knight */}
           <motion.path
             d="M35,62 L35,55 Q35,48 40,45 L38,40 Q35,38 38,34 Q42,30 45,32 Q48,28 48,24 Q50,20 55,22 Q52,28 50,32 L52,35 Q55,35 55,40 L52,45 Q56,48 56,55 L56,62 Z"
-            fill={isChessHovered ? "rgba(255,107,74,0.5)" : "rgba(255,255,255,0.25)"}
-            stroke={isChessHovered ? "#FF6B4A" : "rgba(255,255,255,0.4)"}
+            fill={isChessHovered ? "rgba(245,124,0,0.5)" : "rgba(255,255,255,0.25)"}
+            stroke={isChessHovered ? "#F57C00" : "rgba(255,255,255,0.4)"}
             strokeWidth="1"
             animate={isChessHovered ? { y: [0, -3, 0] } : {}}
             transition={{ duration: 0.5 }}
@@ -517,7 +517,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
               ease: isSpinnerHovered ? "easeOut" : "linear",
             }}
           >
-            <circle cx="40" cy="40" r="30" fill="none" stroke={isSpinnerHovered ? "#FFB088" : "rgba(255,255,255,0.3)"} strokeWidth="2" />
+            <circle cx="40" cy="40" r="30" fill="none" stroke={isSpinnerHovered ? "#FF9800" : "rgba(255,255,255,0.3)"} strokeWidth="2" />
             {/* Wheel segments */}
             {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
               <line
@@ -526,7 +526,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
                 y1="40"
                 x2={40 + 30 * Math.cos(angle * Math.PI / 180)}
                 y2={40 + 30 * Math.sin(angle * Math.PI / 180)}
-                stroke={i % 2 === 0 ? (isSpinnerHovered ? "#FF6B4A" : "rgba(255,255,255,0.25)") : (isSpinnerHovered ? "#FFB088" : "rgba(255,255,255,0.15)")}
+                stroke={i % 2 === 0 ? (isSpinnerHovered ? "#F57C00" : "rgba(255,255,255,0.25)") : (isSpinnerHovered ? "#FF9800" : "rgba(255,255,255,0.15)")}
                 strokeWidth="1.5"
               />
             ))}
@@ -537,14 +537,14 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
                 cx={40 + 25 * Math.cos(angle * Math.PI / 180)}
                 cy={40 + 25 * Math.sin(angle * Math.PI / 180)}
                 r="3"
-                fill={isSpinnerHovered ? "#FF6B4A" : "rgba(255,255,255,0.3)"}
+                fill={isSpinnerHovered ? "#F57C00" : "rgba(255,255,255,0.3)"}
               />
             ))}
           </motion.g>
           {/* Center hub */}
-          <circle cx="40" cy="40" r="5" fill={isSpinnerHovered ? "#FF6B4A" : "rgba(255,255,255,0.4)"} />
+          <circle cx="40" cy="40" r="5" fill={isSpinnerHovered ? "#F57C00" : "rgba(255,255,255,0.4)"} />
           {/* Pointer (fixed, doesn't spin) */}
-          <polygon points="40,6 36,14 44,14" fill={isSpinnerHovered ? "#FFB088" : "rgba(255,255,255,0.6)"} />
+          <polygon points="40,6 36,14 44,14" fill={isSpinnerHovered ? "#FF9800" : "rgba(255,255,255,0.6)"} />
         </svg>
       </motion.div>
 
@@ -560,7 +560,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <span className="text-xs uppercase tracking-[0.25em] font-bold block" style={{ color: "#FFB088" }}>
+            <span className="text-xs uppercase tracking-[0.25em] font-bold block" style={{ color: "#FF9800" }}>
               Exclusive Gatherings
             </span>
             <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-white">
@@ -569,7 +569,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
             <p className="text-sm md:text-base text-white/75 leading-relaxed font-light">
               Elevate your corporate culture or private milestones. From team building sessions guided by our Game Masters to exclusive custom cocktail menus, we host Hyderabad&apos;s most memorable group events.
             </p>
-            <div className="h-[2px] w-24 rounded-full" style={{ background: "linear-gradient(to right, #FF6B4A, #4dafee, #2d8ad0)" }} />
+            <div className="h-[2px] w-24 rounded-full" style={{ background: "linear-gradient(to right, #F57C00, #1E88E5, #1565C0)" }} />
             <div className="pt-4">
               <motion.button
                 onClick={onOpenBooking}
@@ -577,8 +577,8 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
                 whileTap={{ scale: 0.95 }}
                 className="text-white text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full transition-all duration-300"
                 style={{
-                  background: "linear-gradient(135deg, #FF6B4A, #e05a3a)",
-                  boxShadow: "0 0 25px rgba(255,107,74,0.3)",
+                  background: "linear-gradient(135deg, #F57C00, #FF9800)",
+                  boxShadow: "0 0 25px rgba(245,124,0,0.3)",
                 }}
               >
                 Plan Your Event
@@ -626,7 +626,7 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
         <svg className="relative block w-full h-[60px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
           <motion.path
             d="M0,80 C300,30 600,100 900,50 C1050,30 1150,60 1200,80 L1200,120 L0,120 Z"
-            fill="rgba(58,155,224,0.35)"
+            fill="rgba(21,101,192,0.35)"
             animate={{
               d: [
                 "M0,80 C300,30 600,100 900,50 C1050,30 1150,60 1200,80 L1200,120 L0,120 Z",

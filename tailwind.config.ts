@@ -10,11 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          dark: "#3F2B2A",
-          brown: "#928A81",
-          olive: "#8F9B60",
-          beige: "#C7AB94",
-          cream: "#E5E0D5",
+          dark: "#0D1B2A",
+          brown: "#546E7A",
+          olive: "#1565C0",
+          beige: "#FF9800",
+          cream: "#F9FBFF",
         },
       },
       fontFamily: {
@@ -22,8 +22,8 @@ const config: Config = {
         sans: ["var(--font-inter)", "sans-serif"],
       },
       backgroundImage: {
-        "gradient-brand-dark": "linear-gradient(to right, #3F2B2A, #928A81)",
-        "gradient-brand-olive": "linear-gradient(to right, #8F9B60, #C7AB94)",
+        "gradient-brand-dark": "linear-gradient(to right, #0D1B2A, #1565C0)",
+        "gradient-brand-olive": "linear-gradient(to right, #1565C0, #FF9800)",
       },
       animation: {
         "fade-in": "fadeIn 1s ease-out forwards",

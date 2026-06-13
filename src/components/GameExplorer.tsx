@@ -23,52 +23,52 @@ const categoryAccents: Record<string, {
   btnActive: string;
 }> = {
   "Strategy": {
-    color: "#7C3AED", // Purple
-    badge: "bg-purple-100 text-purple-800 border-purple-200",
-    glow: "shadow-[0_0_30px_rgba(124,58,237,0.25)]",
-    text: "group-hover:text-purple-700",
-    hoverBorder: "hover:border-purple-500/50",
-    btnActive: "bg-purple-600 text-white border-purple-500 shadow-[0_0_15px_rgba(124,58,237,0.4)]",
+    color: "#1565C0", // Blue
+    badge: "bg-[#1565C0]/10 text-[#1565C0] border-[#1565C0]/20",
+    glow: "shadow-[0_0_30px_rgba(21,101,192,0.25)]",
+    text: "group-hover:text-[#1565C0]",
+    hoverBorder: "hover:border-[#1565C0]/50",
+    btnActive: "bg-[#1565C0] text-white border-[#1565C0] shadow-[0_0_15px_rgba(21,101,192,0.4)]",
   },
   "Party": {
-    color: "#D946EF", // Pink
-    badge: "bg-pink-100 text-pink-800 border-pink-200",
-    glow: "shadow-[0_0_30px_rgba(217,70,239,0.25)]",
-    text: "group-hover:text-pink-700",
-    hoverBorder: "hover:border-pink-500/50",
-    btnActive: "bg-pink-600 text-white border-pink-500 shadow-[0_0_15px_rgba(217,70,239,0.4)]",
+    color: "#F57C00", // Orange
+    badge: "bg-[#F57C00]/10 text-[#F57C00] border-[#F57C00]/20",
+    glow: "shadow-[0_0_30px_rgba(245,124,0,0.25)]",
+    text: "group-hover:text-[#F57C00]",
+    hoverBorder: "hover:border-[#F57C00]/50",
+    btnActive: "bg-[#F57C00] text-white border-[#F57C00] shadow-[0_0_15px_rgba(245,124,0,0.4)]",
   },
   "Family": {
-    color: "#059669", // Emerald
-    badge: "bg-emerald-100 text-emerald-800 border-emerald-200",
-    glow: "shadow-[0_0_30px_rgba(5,150,105,0.25)]",
-    text: "group-hover:text-emerald-700",
-    hoverBorder: "hover:border-emerald-500/50",
-    btnActive: "bg-emerald-600 text-white border-emerald-500 shadow-[0_0_15px_rgba(5,150,105,0.4)]",
+    color: "#FF9800", // Orange 2
+    badge: "bg-[#FF9800]/10 text-[#FF9800] border-[#FF9800]/20",
+    glow: "shadow-[0_0_30px_rgba(255,152,0,0.25)]",
+    text: "group-hover:text-[#FF9800]",
+    hoverBorder: "hover:border-[#FF9800]/50",
+    btnActive: "bg-[#FF9800] text-white border-[#FF9800] shadow-[0_0_15px_rgba(255,152,0,0.4)]",
   },
   "Card": {
-    color: "#4F46E5", // Indigo
-    badge: "bg-indigo-100 text-indigo-800 border-indigo-200",
-    glow: "shadow-[0_0_30px_rgba(79,70,229,0.25)]",
-    text: "group-hover:text-indigo-700",
-    hoverBorder: "hover:border-indigo-500/50",
-    btnActive: "bg-indigo-600 text-white border-indigo-500 shadow-[0_0_15px_rgba(79,70,229,0.4)]",
+    color: "#1E88E5", // Blue 2
+    badge: "bg-[#1E88E5]/10 text-[#1E88E5] border-[#1E88E5]/20",
+    glow: "shadow-[0_0_30px_rgba(30,136,229,0.25)]",
+    text: "group-hover:text-[#1E88E5]",
+    hoverBorder: "hover:border-[#1E88E5]/50",
+    btnActive: "bg-[#1E88E5] text-white border-[#1E88E5] shadow-[0_0_15px_rgba(30,136,229,0.4)]",
   },
   "Adventure": {
-    color: "#D97706", // Amber
-    badge: "bg-amber-100 text-amber-800 border-amber-200",
-    glow: "shadow-[0_0_30px_rgba(217,119,6,0.25)]",
-    text: "group-hover:text-amber-700",
-    hoverBorder: "hover:border-amber-500/50",
-    btnActive: "bg-amber-600 text-white border-amber-500 shadow-[0_0_15px_rgba(217,119,6,0.4)]",
+    color: "#546E7A", // Gray
+    badge: "bg-[#546E7A]/10 text-[#546E7A] border-[#546E7A]/20",
+    glow: "shadow-[0_0_30px_rgba(84,110,122,0.25)]",
+    text: "group-hover:text-[#546E7A]",
+    hoverBorder: "hover:border-[#546E7A]/50",
+    btnActive: "bg-[#546E7A] text-white border-[#546E7A] shadow-[0_0_15px_rgba(84,110,122,0.4)]",
   },
   "All": {
-    color: "#0891B2", // Cyan
-    badge: "bg-cyan-100 text-cyan-800 border-cyan-200",
-    glow: "shadow-[0_0_30px_rgba(8,145,178,0.25)]",
-    text: "group-hover:text-cyan-700",
-    hoverBorder: "hover:border-cyan-500/50",
-    btnActive: "bg-cyan-600 text-white border-cyan-500 shadow-[0_0_15px_rgba(8,145,178,0.4)]",
+    color: "#1565C0", // Blue
+    badge: "bg-[#1565C0]/10 text-[#1565C0] border-[#1565C0]/20",
+    glow: "shadow-[0_0_30px_rgba(21,101,192,0.25)]",
+    text: "group-hover:text-[#1565C0]",
+    hoverBorder: "hover:border-[#1565C0]/50",
+    btnActive: "bg-[#1565C0] text-white border-[#1565C0] shadow-[0_0_15px_rgba(21,101,192,0.4)]",
   },
 };
 
@@ -215,14 +215,14 @@ export default function GameExplorer() {
     <section 
       id="games" 
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-[#3ea4f0] via-[#5cbbf5] to-[#258edb] border-t border-white/20 relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-[#1565C0] via-[#1E88E5] to-[#0D1B2A] border-t border-white/20 relative overflow-hidden"
     >
       
       {/* --- Ambient Soft Glowing Background Blobs --- */}
       <motion.div
         animate={{
           scale: [1, 1.15, 1],
-          opacity: [0.3, 0.45, 0.3],
+          opacity: [0.15, 0.3, 0.15],
           x: [0, 40, 0],
           y: [0, -40, 0],
         }}
@@ -231,12 +231,12 @@ export default function GameExplorer() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-1/4 left-[5%] w-[380px] h-[380px] bg-white/25 rounded-full blur-[110px] pointer-events-none"
+        className="absolute top-1/4 left-[5%] w-[380px] h-[380px] bg-white/10 rounded-full blur-[110px] pointer-events-none"
       />
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.2, 0.35, 0.2],
+          opacity: [0.1, 0.25, 0.1],
           x: [0, -30, 0],
           y: [0, 30, 0],
         }}
@@ -246,12 +246,12 @@ export default function GameExplorer() {
           ease: "easeInOut",
           delay: 3,
         }}
-        className="absolute bottom-1/4 right-[5%] w-[480px] h-[480px] bg-cyan-200/20 rounded-full blur-[130px] pointer-events-none"
+        className="absolute bottom-1/4 right-[5%] w-[480px] h-[480px] bg-[#1E88E5]/15 rounded-full blur-[130px] pointer-events-none"
       />
       <motion.div
         animate={{
           scale: [1, 1.1, 1],
-          opacity: [0.15, 0.25, 0.15],
+          opacity: [0.1, 0.2, 0.1],
         }}
         transition={{
           duration: 12,
@@ -259,7 +259,7 @@ export default function GameExplorer() {
           ease: "easeInOut",
           delay: 1.5,
         }}
-        className="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-amber-200/20 rounded-full blur-[100px] pointer-events-none"
+        className="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-[#FF9800]/10 rounded-full blur-[100px] pointer-events-none"
       />
 
       {/* --- High Visibility Interactive Floating Game Components --- */}
@@ -271,7 +271,7 @@ export default function GameExplorer() {
         className="absolute top-[12%] left-[6%] z-0 pointer-events-auto select-none opacity-80 hover:opacity-100 transition-opacity duration-300"
       >
         <div className="relative w-44 h-44 flex items-center justify-between">
-          <div className="absolute inset-x-0 bottom-12 h-[2px] bg-gradient-to-r from-transparent via-[#4c1d95]/40 to-transparent" />
+          <div className="absolute inset-x-0 bottom-12 h-[2px] bg-gradient-to-r from-transparent via-[#1565C0]/40 to-transparent" />
           
           {/* Chess Knight */}
           <motion.div
@@ -293,12 +293,12 @@ export default function GameExplorer() {
             }}
             className="w-16 h-16 cursor-pointer"
           >
-            <svg viewBox="0 0 100 100" className="w-full h-full stroke-[#4c1d95] fill-white/10 drop-shadow-[0_0_15px_rgba(139,92,246,0.4)]">
+            <svg viewBox="0 0 100 100" className="w-full h-full stroke-[#1565C0] fill-white/10 drop-shadow-[0_0_15px_rgba(21,101,192,0.4)]">
               <path d="M35 85 h30 C65 85 68 80 65 72 C62 65 58 55 62 48 C65 40 70 38 68 30 C65 20 50 15 45 20 C35 25 30 38 32 45 C35 52 30 55 25 60 C20 65 25 72 30 72 C32 65 38 68 35 85 Z" strokeWidth="2" />
-              <circle cx="45" cy="35" r="3" className="fill-purple-300" />
+              <circle cx="45" cy="35" r="3" className="fill-[#E3F2FD]" />
             </svg>
           </motion.div>
-
+ 
           {/* Chess Pawn */}
           <motion.div
             animate={{
@@ -315,9 +315,9 @@ export default function GameExplorer() {
             whileHover={{ y: -15, scale: 1.2 }}
             className="w-12 h-12 cursor-pointer"
           >
-            <svg viewBox="0 0 100 100" className="w-full h-full stroke-[#4c1d95] fill-white/10 drop-shadow-[0_0_12px_rgba(139,92,246,0.4)]">
+            <svg viewBox="0 0 100 100" className="w-full h-full stroke-[#1565C0] fill-white/10 drop-shadow-[0_0_12px_rgba(21,101,192,0.4)]">
               <path d="M35 85 h30 c2-15-5-20-5-30 c0-5 3-8 3-12 c0-5-3-8-8-8 s-8 3-8 8 c0 4 3 7 3 12 c0 10-7 15-5 30 Z" strokeWidth="2" />
-              <circle cx="50" cy="25" r="5" className="fill-purple-300" />
+              <circle cx="50" cy="25" r="5" className="fill-[#E3F2FD]" />
             </svg>
           </motion.div>
         </div>
@@ -344,19 +344,19 @@ export default function GameExplorer() {
             whileHover={{ scale: 1.3, rotate: 360, transition: { duration: 0.6, ease: "easeOut" } }}
             className="absolute left-0 top-4 w-16 h-16 cursor-pointer"
           >
-            <svg viewBox="0 0 100 100" className="w-full h-full stroke-[#9d174d] fill-white/10 drop-shadow-[0_0_15px_rgba(236,72,153,0.4)]">
+            <svg viewBox="0 0 100 100" className="w-full h-full stroke-[#FF9800] fill-white/10 drop-shadow-[0_0_15px_rgba(255,152,0,0.4)]">
               <polygon points="50,15 85,35 50,55 15,35" strokeWidth="2" />
               <polygon points="15,35 50,55 50,90 15,70" strokeWidth="2" />
               <polygon points="50,55 85,35 85,70 50,90" strokeWidth="2" />
-              <circle cx="50" cy="35" r="3" className="fill-pink-300" />
-              <circle cx="32" cy="52" r="2.5" className="fill-pink-300/80" />
-              <circle cx="32" cy="72" r="2.5" className="fill-pink-300/80" />
-              <circle cx="68" cy="52" r="2.5" className="fill-pink-300/80" />
-              <circle cx="68" cy="72" r="2.5" className="fill-pink-300/80" />
-              <circle cx="59" cy="62" r="2.5" className="fill-pink-300/80" />
+              <circle cx="50" cy="35" r="3" className="fill-[#FFF3E0]" />
+              <circle cx="32" cy="52" r="2.5" className="fill-[#FFF3E0]/80" />
+              <circle cx="32" cy="72" r="2.5" className="fill-[#FFF3E0]/80" />
+              <circle cx="68" cy="52" r="2.5" className="fill-[#FFF3E0]/80" />
+              <circle cx="68" cy="72" r="2.5" className="fill-[#FFF3E0]/80" />
+              <circle cx="59" cy="62" r="2.5" className="fill-[#FFF3E0]/80" />
             </svg>
           </motion.div>
-
+ 
           {/* Die 2 (D20) */}
           <motion.div
             animate={{
@@ -373,7 +373,7 @@ export default function GameExplorer() {
             whileHover={{ scale: 1.3, rotate: 360, transition: { duration: 0.6 } }}
             className="absolute right-2 bottom-4 w-18 h-18 cursor-pointer"
           >
-            <svg viewBox="0 0 100 100" className="w-full h-full stroke-[#9d174d] fill-white/10 drop-shadow-[0_0_12px_rgba(236,72,153,0.4)]">
+            <svg viewBox="0 0 100 100" className="w-full h-full stroke-[#FF9800] fill-white/10 drop-shadow-[0_0_12px_rgba(255,152,0,0.4)]">
               <polygon points="50,10 85,30 85,70 50,90 15,70 15,30" strokeWidth="2" />
               <polygon points="50,10 50,45 15,30" strokeWidth="2" />
               <polygon points="50,10 85,30 50,45" strokeWidth="2" />
@@ -381,7 +381,7 @@ export default function GameExplorer() {
               <polygon points="85,30 50,45 85,70" strokeWidth="2" />
               <polygon points="15,70 50,45 50,90" strokeWidth="2" />
               <polygon points="85,70 50,45 50,90" strokeWidth="2" />
-              <text x="50" y="52" textAnchor="middle" dominantBaseline="middle" className="fill-[#9d174d] font-sans text-xs font-bold" stroke="none">20</text>
+              <text x="50" y="52" textAnchor="middle" dominantBaseline="middle" className="fill-[#FF9800] font-sans text-xs font-bold" stroke="none">20</text>
             </svg>
           </motion.div>
         </div>
@@ -403,18 +403,18 @@ export default function GameExplorer() {
         whileHover={{ scale: 1.25, rotate: 18 }}
         className="absolute bottom-[8%] right-[5%] z-0 pointer-events-auto select-none opacity-80 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
       >
-        <svg viewBox="0 0 120 120" className="w-28 h-28 stroke-[#0369a1] fill-white/10 drop-shadow-[0_0_15px_rgba(14,165,233,0.4)]">
+        <svg viewBox="0 0 120 120" className="w-28 h-28 stroke-[#1E88E5] fill-white/10 drop-shadow-[0_0_15px_rgba(30,136,229,0.4)]">
           <g transform="rotate(-15 60 60)">
-            <rect x="25" y="20" width="45" height="70" rx="4" strokeWidth="2" fill="#f0f9ff" />
+            <rect x="25" y="20" width="45" height="70" rx="4" strokeWidth="2" fill="#E3F2FD" />
           </g>
           <g transform="rotate(0 60 60)">
-            <rect x="35" y="15" width="45" height="70" rx="4" strokeWidth="2" fill="#f0f9ff" />
-            <path d="M57.5 45 C57.5 45 52 40 47.5 45 C43 50 57.5 60 57.5 60 C57.5 60 72 50 67.5 45 C63 40 57.5 45 57.5 45 Z" className="fill-[#0284c7]/40 stroke-none" />
+            <rect x="35" y="15" width="45" height="70" rx="4" strokeWidth="2" fill="#E3F2FD" />
+            <path d="M57.5 45 C57.5 45 52 40 47.5 45 C43 50 57.5 60 57.5 60 C57.5 60 72 50 67.5 45 C63 40 57.5 45 57.5 45 Z" className="fill-[#1E88E5]/40 stroke-none" />
           </g>
           <g transform="rotate(15 60 60)">
-            <rect x="45" y="20" width="45" height="70" rx="4" strokeWidth="2" fill="#f0f9ff" />
-            <text x="52" y="34" className="fill-[#0284c7] text-[10px] font-bold" stroke="none">A</text>
-            <path d="M67.5 50 C67.5 50 63.5 47 60 50 C56.5 53 67.5 62 67.5 62 C67.5 62 78.5 53 75 50 C71.5 47 67.5 50 67.5 50 Z" className="fill-[#0284c7]/80 stroke-none" />
+            <rect x="45" y="20" width="45" height="70" rx="4" strokeWidth="2" fill="#E3F2FD" />
+            <text x="52" y="34" className="fill-[#1E88E5] text-[10px] font-bold" stroke="none">A</text>
+            <path d="M67.5 50 C67.5 50 63.5 47 60 50 C56.5 53 67.5 62 67.5 62 C67.5 62 78.5 53 75 50 C71.5 47 67.5 50 67.5 50 Z" className="fill-[#1E88E5]/80 stroke-none" />
           </g>
         </svg>
       </motion.div>
@@ -426,14 +426,14 @@ export default function GameExplorer() {
       >
         <div className="relative w-56 h-32">
           {/* Glow Dotted Path */}
-          <svg viewBox="0 0 200 100" className="w-full h-full stroke-[#047857] fill-none">
-            <path d="M 20 80 Q 70 20 120 75 T 180 35" strokeDasharray="5,7" strokeWidth="2.5" className="drop-shadow-[0_0_8px_rgba(4,120,87,0.4)]" />
-            <circle cx="20" cy="80" r="5" className="fill-[#059669]" />
-            <circle cx="72" cy="45" r="4.5" className="fill-[#059669]" />
-            <circle cx="120" cy="75" r="4.5" className="fill-[#059669]" />
-            <circle cx="180" cy="35" r="5" className="fill-[#059669]" />
+          <svg viewBox="0 0 200 100" className="w-full h-full stroke-[#546E7A] fill-none">
+            <path d="M 20 80 Q 70 20 120 75 T 180 35" strokeDasharray="5,7" strokeWidth="2.5" className="drop-shadow-[0_0_8px_rgba(84,110,122,0.4)]" />
+            <circle cx="20" cy="80" r="5" className="fill-[#546E7A]" />
+            <circle cx="72" cy="45" r="4.5" className="fill-[#546E7A]" />
+            <circle cx="120" cy="75" r="4.5" className="fill-[#546E7A]" />
+            <circle cx="180" cy="35" r="5" className="fill-[#546E7A]" />
           </svg>
-
+ 
           {/* Yellow Meeple */}
           <motion.div
             animate={{
@@ -447,11 +447,11 @@ export default function GameExplorer() {
             }}
             className="absolute left-[30px] top-[18px] w-9 h-9"
           >
-            <svg viewBox="0 0 100 100" className="w-full h-full fill-[#047857]/20 stroke-[#047857] drop-shadow-[0_0_12px_rgba(4,120,87,0.4)]">
+            <svg viewBox="0 0 100 100" className="w-full h-full fill-[#546E7A]/20 stroke-[#546E7A] drop-shadow-[0_0_12px_rgba(84,110,122,0.4)]">
               <path d="M50,15 C55.5,15 60,19.5 60,25 C60,30.5 55.5,35 50,35 C44.5,35 40,30.5 40,25 C40,19.5 44.5,15 50,15 Z M35,42 L65,42 C67.8,42 70,44.2 70,47 L70,55 C70,57.8 67.8,60 65,60 L62,60 L62,85 C62,87.8 59.8,90 57,90 L43,90 C40.2,90 38,87.8 38,85 L38,60 L35,60 C32.2,60 30,57.8 30,55 L30,47 C30,44.2 32.2,42 35,42 Z" strokeWidth="2" />
             </svg>
           </motion.div>
-
+ 
           {/* Red Meeple */}
           <motion.div
             animate={{
@@ -466,7 +466,7 @@ export default function GameExplorer() {
             }}
             className="absolute left-0 top-0 w-9 h-9"
           >
-            <svg viewBox="0 0 100 100" className="w-full h-full fill-[#b45309]/20 stroke-[#b45309] drop-shadow-[0_0_12px_rgba(180,83,9,0.4)]">
+            <svg viewBox="0 0 100 100" className="w-full h-full fill-[#FF9800]/20 stroke-[#FF9800] drop-shadow-[0_0_12px_rgba(255,152,0,0.4)]">
               <path d="M50,15 C55.5,15 60,19.5 60,25 C60,30.5 55.5,35 50,35 C44.5,35 40,30.5 40,25 C40,19.5 44.5,15 50,15 Z M35,42 L65,42 C67.8,42 70,44.2 70,47 L70,55 C70,57.8 67.8,60 65,60 L62,60 L62,85 C62,87.8 59.8,90 57,90 L43,90 C40.2,90 38,87.8 38,85 L38,60 L35,60 C32.2,60 30,57.8 30,55 L30,47 C30,44.2 32.2,42 35,42 Z" strokeWidth="2" />
             </svg>
           </motion.div>
@@ -486,14 +486,14 @@ export default function GameExplorer() {
         }}
         className="absolute top-[38%] right-[2%] z-0 pointer-events-none select-none opacity-80"
       >
-        <svg viewBox="0 0 120 120" className="w-36 h-36 stroke-[#0f766e] fill-none drop-shadow-[0_0_12px_rgba(13,148,136,0.4)]">
+        <svg viewBox="0 0 120 120" className="w-36 h-36 stroke-[#1E88E5] fill-none drop-shadow-[0_0_12px_rgba(30,136,229,0.4)]">
           <polygon points="60,20 90,37 90,72 60,90 30,72 30,37" strokeWidth="1.5" />
           <polygon points="90,37 120,54 120,89 90,107 60,90 90,72" strokeWidth="1.5" />
           <polygon points="30,37 60,54 60,89 30,107 0,89 0,54" strokeWidth="1.5" />
-          <circle cx="60" cy="20" r="3.5" className="fill-[#0d9488]" />
-          <circle cx="90" cy="37" r="4.5" className="fill-[#0d9488]" />
-          <circle cx="30" cy="37" r="3.5" className="fill-[#0d9488]" />
-          <circle cx="60" cy="90" r="5.5" className="fill-[#0d9488]" />
+          <circle cx="60" cy="20" r="3.5" className="fill-[#1E88E5]" />
+          <circle cx="90" cy="37" r="4.5" className="fill-[#1E88E5]" />
+          <circle cx="30" cy="37" r="3.5" className="fill-[#1E88E5]" />
+          <circle cx="60" cy="90" r="5.5" className="fill-[#1E88E5]" />
         </svg>
       </motion.div>
 
@@ -512,13 +512,13 @@ export default function GameExplorer() {
         }}
         className="absolute top-[42%] left-[3%] z-0 pointer-events-none select-none opacity-85"
       >
-        <svg viewBox="0 0 80 80" className="w-14 h-14 stroke-[#b45309] fill-white/10 drop-shadow-[0_0_12px_rgba(180,83,9,0.4)]">
+        <svg viewBox="0 0 80 80" className="w-14 h-14 stroke-[#F57C00] fill-white/10 drop-shadow-[0_0_12px_rgba(245,124,0,0.4)]">
           <ellipse cx="40" cy="50" rx="25" ry="10" strokeWidth="2" />
           <line x1="15" y1="50" x2="15" y2="55" strokeWidth="2" />
           <line x1="65" y1="50" x2="65" y2="55" strokeWidth="2" />
           <ellipse cx="40" cy="55" rx="25" ry="10" strokeWidth="2" />
-          <ellipse cx="40" cy="40" rx="25" ry="10" strokeWidth="2" fill="#fef3c7" />
-          <path d="M 25 40 A 15 6 0 0 0 55 40" strokeWidth="1.2" strokeDasharray="3,3" className="stroke-[#b45309]" />
+          <ellipse cx="40" cy="40" rx="25" ry="10" strokeWidth="2" fill="#FFF3E0" />
+          <path d="M 25 40 A 15 6 0 0 0 55 40" strokeWidth="1.2" strokeDasharray="3,3" className="stroke-[#F57C00]" />
         </svg>
       </motion.div>
 
@@ -541,10 +541,10 @@ export default function GameExplorer() {
         whileHover={{ scale: 1.25 }}
         className="absolute top-[36%] left-[6%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none w-20 h-28 opacity-85 hover:opacity-100 transition-all duration-300"
       >
-        <svg viewBox="0 0 100 120" className="w-full h-full stroke-[#047857] fill-white/10 drop-shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+        <svg viewBox="0 0 100 120" className="w-full h-full stroke-[#546E7A] fill-white/10 drop-shadow-[0_0_15px_rgba(84,110,122,0.4)]">
           {/* Wooden Plates */}
-          <rect x="18" y="10" width="64" height="8" rx="2" strokeWidth="2.5" className="fill-[#065f46]" />
-          <rect x="18" y="102" width="64" height="8" rx="2" strokeWidth="2.5" className="fill-[#065f46]" />
+          <rect x="18" y="10" width="64" height="8" rx="2" strokeWidth="2.5" className="fill-[#546E7A]" />
+          <rect x="18" y="102" width="64" height="8" rx="2" strokeWidth="2.5" className="fill-[#546E7A]" />
           
           {/* Outer Glass Bulbs */}
           <path d="M 28 18 C 28 50, 48 56, 48 60 C 48 64, 28 70, 28 102" strokeWidth="2.5" fill="none" />
@@ -563,9 +563,9 @@ export default function GameExplorer() {
               ease: "linear",
               times: [0, 0.45, 0.5, 0.51]
             }}
-            className={isHourglassHovered ? "fill-pink-500/80 stroke-none" : "fill-[#059669]/70 stroke-none"}
+            className={isHourglassHovered ? "fill-[#F57C00]/80 stroke-none" : "fill-[#546E7A]/70 stroke-none"}
           />
-
+ 
           {/* Trickling Sand Line */}
           <motion.line
             x1="50"
@@ -584,9 +584,9 @@ export default function GameExplorer() {
               ease: "linear",
               times: [0, 0.8, 0.9, 0.95, 1]
             }}
-            className={isHourglassHovered ? "stroke-pink-400" : "stroke-[#059669]"}
+            className={isHourglassHovered ? "stroke-[#FF9800]" : "stroke-[#546E7A]"}
           />
-
+ 
           {/* Sand Bottom (accumulating) */}
           <motion.path
             d="M 30 102 L 70 102 L 55 76 L 45 76 Z"
@@ -600,7 +600,7 @@ export default function GameExplorer() {
               ease: "linear",
               times: [0, 0.45, 0.5, 0.51]
             }}
-            className={isHourglassHovered ? "fill-pink-500/80 stroke-none" : "fill-[#059669]/70 stroke-none"}
+            className={isHourglassHovered ? "fill-[#F57C00]/80 stroke-none" : "fill-[#546E7A]/70 stroke-none"}
           />
         </svg>
       </motion.div>
@@ -613,13 +613,13 @@ export default function GameExplorer() {
         whileHover={{ scale: 1.25 }}
         className="absolute top-[48%] right-[8%] z-0 pointer-events-auto cursor-pointer hidden md:block select-none w-24 h-24 opacity-85 hover:opacity-100 transition-opacity duration-300"
       >
-        <svg viewBox="0 0 100 100" className="w-full h-full stroke-[#b45309] fill-white/10 drop-shadow-[0_0_15px_rgba(180,83,9,0.4)]">
+        <svg viewBox="0 0 100 100" className="w-full h-full stroke-[#FF9800] fill-white/10 drop-shadow-[0_0_15px_rgba(255,152,0,0.4)]">
           <circle cx="50" cy="50" r="45" strokeWidth="2.5" />
           <line x1="5" y1="50" x2="95" y2="50" strokeWidth="1" strokeDasharray="4,4" />
           <line x1="50" y1="5" x2="50" y2="95" strokeWidth="1" strokeDasharray="4,4" />
           <line x1="18" y1="18" x2="82" y2="82" strokeWidth="1" strokeDasharray="4,4" />
           <line x1="18" y1="82" x2="82" y2="18" strokeWidth="1" strokeDasharray="4,4" />
-          <circle cx="50" cy="50" r="6" className="fill-[#b45309]" />
+          <circle cx="50" cy="50" r="6" className="fill-[#FF9800]" />
           
           <motion.g
             style={{ transformOrigin: "50px 50px" }}
@@ -634,7 +634,7 @@ export default function GameExplorer() {
               times: isSpinnerHovered ? [0, 0.2, 0.5, 0.8, 1] : [0, 0.1, 0.3, 0.5, 0.6, 1],
             }}
           >
-            <polygon points="50,15 56,35 52,35 52,65 48,65 48,35 44,35" className="fill-[#b45309] stroke-none" />
+            <polygon points="50,15 56,35 52,35 52,65 48,65 48,35 44,35" className="fill-[#FF9800] stroke-none" />
             <circle cx="50" cy="50" r="3" className="fill-black" />
           </motion.g>
         </svg>
@@ -648,12 +648,12 @@ export default function GameExplorer() {
         whileHover={{ scale: 1.2 }}
         className="absolute top-[28%] left-[45%] -translate-x-1/2 z-0 pointer-events-auto cursor-pointer hidden lg:block select-none w-28 h-28 opacity-80 hover:opacity-100 transition-opacity duration-300"
       >
-        <svg viewBox="0 0 100 100" className="w-full h-full fill-none drop-shadow-[0_0_15px_rgba(236,72,153,0.4)]">
+        <svg viewBox="0 0 100 100" className="w-full h-full fill-none drop-shadow-[0_0_15px_rgba(255,152,0,0.4)]">
           {/* Grid Lines */}
-          <line x1="33" y1="5" x2="33" y2="95" strokeWidth="2.5" className={isTttHovered ? "stroke-[#b45309]" : "stroke-[#9d174d]"} />
-          <line x1="66" y1="5" x2="66" y2="95" strokeWidth="2.5" className={isTttHovered ? "stroke-[#b45309]" : "stroke-[#9d174d]"} />
-          <line x1="5" y1="33" x2="95" y2="33" strokeWidth="2.5" className={isTttHovered ? "stroke-[#b45309]" : "stroke-[#9d174d]"} />
-          <line x1="5" y1="66" x2="95" y2="66" strokeWidth="2.5" className={isTttHovered ? "stroke-[#b45309]" : "stroke-[#9d174d]"} />
+          <line x1="33" y1="5" x2="33" y2="95" strokeWidth="2.5" className={isTttHovered ? "stroke-[#FF9800]" : "stroke-[#546E7A]"} />
+          <line x1="66" y1="5" x2="66" y2="95" strokeWidth="2.5" className={isTttHovered ? "stroke-[#FF9800]" : "stroke-[#546E7A]"} />
+          <line x1="5" y1="33" x2="95" y2="33" strokeWidth="2.5" className={isTttHovered ? "stroke-[#FF9800]" : "stroke-[#546E7A]"} />
+          <line x1="5" y1="66" x2="95" y2="66" strokeWidth="2.5" className={isTttHovered ? "stroke-[#FF9800]" : "stroke-[#546E7A]"} />
           
           {/* X in center */}
           <motion.g
@@ -667,8 +667,8 @@ export default function GameExplorer() {
               ease: "easeInOut",
             }}
           >
-            <line x1="42" y1="42" x2="58" y2="58" strokeWidth="3" className={isTttHovered ? "stroke-[#b45309]" : "stroke-[#9d174d]"} />
-            <line x1="58" y1="42" x2="42" y2="58" strokeWidth="3" className={isTttHovered ? "stroke-[#b45309]" : "stroke-[#9d174d]"} />
+            <line x1="42" y1="42" x2="58" y2="58" strokeWidth="3" className={isTttHovered ? "stroke-[#FF9800]" : "stroke-[#1565C0]"} />
+            <line x1="58" y1="42" x2="42" y2="58" strokeWidth="3" className={isTttHovered ? "stroke-[#FF9800]" : "stroke-[#1565C0]"} />
           </motion.g>
 
           {/* O in top-left */}
@@ -683,7 +683,7 @@ export default function GameExplorer() {
               ease: "easeInOut",
             }}
           >
-            <circle cx="19" cy="19" r="8" strokeWidth="3" className={isTttHovered ? "stroke-[#b45309]" : "stroke-[#0284c7]"} />
+            <circle cx="19" cy="19" r="8" strokeWidth="3" className={isTttHovered ? "stroke-[#FF9800]" : "stroke-[#1E88E5]"} />
           </motion.g>
 
           {/* X in bottom-right */}
@@ -698,8 +698,8 @@ export default function GameExplorer() {
               ease: "easeInOut",
             }}
           >
-            <line x1="75" y1="75" x2="91" y2="91" strokeWidth="3" className={isTttHovered ? "stroke-[#b45309]" : "stroke-[#9d174d]"} />
-            <line x1="91" y1="75" x2="75" y2="91" strokeWidth="3" className={isTttHovered ? "stroke-[#b45309]" : "stroke-[#9d174d]"} />
+            <line x1="75" y1="75" x2="91" y2="91" strokeWidth="3" className={isTttHovered ? "stroke-[#FF9800]" : "stroke-[#1565C0]"} />
+            <line x1="91" y1="75" x2="75" y2="91" strokeWidth="3" className={isTttHovered ? "stroke-[#FF9800]" : "stroke-[#1565C0]"} />
           </motion.g>
 
           {/* O in top-right */}
@@ -714,7 +714,7 @@ export default function GameExplorer() {
               ease: "easeInOut",
             }}
           >
-            <circle cx="82" cy="19" r="8" strokeWidth="3" className={isTttHovered ? "stroke-[#b45309]" : "stroke-[#0284c7]"} />
+            <circle cx="82" cy="19" r="8" strokeWidth="3" className={isTttHovered ? "stroke-[#FF9800]" : "stroke-[#1E88E5]"} />
           </motion.g>
 
           {/* Winning Strike line */}
@@ -724,7 +724,7 @@ export default function GameExplorer() {
             x2="90"
             y2="90"
             strokeWidth="3.5"
-            className="stroke-[#b45309]"
+            className="stroke-[#F57C00]"
             animate={{
               opacity: [0, 0, 0, 0, 1, 1, 0, 0],
             }}
@@ -746,7 +746,7 @@ export default function GameExplorer() {
         whileHover={{ scale: 1.15 }}
         className="absolute top-[52%] left-[45%] -translate-x-1/2 z-0 pointer-events-auto cursor-pointer hidden lg:block select-none w-36 h-28 opacity-85 hover:opacity-100 transition-opacity duration-300"
       >
-        <svg viewBox="0 0 120 80" className="w-full h-full stroke-[#4338ca] fill-white/10 drop-shadow-[0_0_15px_rgba(99,102,241,0.4)]">
+        <svg viewBox="0 0 120 80" className="w-full h-full stroke-[#FF9800] fill-white/10 drop-shadow-[0_0_15px_rgba(255,152,0,0.4)]">
           {/* Domino 1 */}
           <motion.g
             style={{ transformOrigin: "20px 70px" }}
@@ -754,11 +754,11 @@ export default function GameExplorer() {
             transition={{ type: "spring", stiffness: 150, damping: 12 }}
           >
             <rect x="10" y="10" width="20" height="60" rx="3" strokeWidth="2.5" />
-            <line x1="10" y1="40" x2="30" y2="40" strokeWidth="2" className="stroke-[#4338ca]/50" />
-            <circle cx="20" cy="25" r="2.5" className="fill-[#4338ca]" />
-            <circle cx="20" cy="55" r="2.5" className="fill-[#4338ca]" />
+            <line x1="10" y1="40" x2="30" y2="40" strokeWidth="2" className="stroke-[#FF9800]/50" />
+            <circle cx="20" cy="25" r="2.5" className="fill-[#FF9800]" />
+            <circle cx="20" cy="55" r="2.5" className="fill-[#FF9800]" />
           </motion.g>
-
+ 
           {/* Domino 2 */}
           <motion.g
             style={{ transformOrigin: "50px 70px" }}
@@ -766,12 +766,12 @@ export default function GameExplorer() {
             transition={{ type: "spring", stiffness: 150, damping: 12, delay: 0.12 }}
           >
             <rect x="40" y="10" width="20" height="60" rx="3" strokeWidth="2.5" />
-            <line x1="40" y1="40" x2="60" y2="40" strokeWidth="2" className="stroke-[#4338ca]/50" />
-            <circle cx="50" cy="25" r="2.5" className="fill-[#4338ca]" />
-            <circle cx="45" cy="50" r="2" className="fill-[#4338ca]" />
-            <circle cx="55" cy="60" r="2" className="fill-[#4338ca]" />
+            <line x1="40" y1="40" x2="60" y2="40" strokeWidth="2" className="stroke-[#FF9800]/50" />
+            <circle cx="50" cy="25" r="2.5" className="fill-[#FF9800]" />
+            <circle cx="45" cy="50" r="2" className="fill-[#FF9800]" />
+            <circle cx="55" cy="60" r="2" className="fill-[#FF9800]" />
           </motion.g>
-
+ 
           {/* Domino 3 */}
           <motion.g
             style={{ transformOrigin: "80px 70px" }}
@@ -779,10 +779,10 @@ export default function GameExplorer() {
             transition={{ type: "spring", stiffness: 150, damping: 12, delay: 0.24 }}
           >
             <rect x="70" y="10" width="20" height="60" rx="3" strokeWidth="2.5" />
-            <line x1="70" y1="40" x2="90" y2="40" strokeWidth="2" className="stroke-[#4338ca]/50" />
-            <circle cx="75" cy="20" r="2" className="fill-[#4338ca]" />
-            <circle cx="85" cy="30" r="2" className="fill-[#4338ca]" />
-            <circle cx="80" cy="55" r="2.5" className="fill-[#4338ca]" />
+            <line x1="70" y1="40" x2="90" y2="40" strokeWidth="2" className="stroke-[#FF9800]/50" />
+            <circle cx="75" cy="20" r="2" className="fill-[#FF9800]" />
+            <circle cx="85" cy="30" r="2" className="fill-[#FF9800]" />
+            <circle cx="80" cy="55" r="2.5" className="fill-[#FF9800]" />
           </motion.g>
         </svg>
       </motion.div>
@@ -795,7 +795,7 @@ export default function GameExplorer() {
         whileHover={{ scale: 1.15 }}
         className="absolute bottom-[16%] left-[45%] -translate-x-1/2 z-0 pointer-events-auto cursor-pointer hidden lg:block select-none w-24 h-32 opacity-80 hover:opacity-100 transition-opacity duration-300"
       >
-        <svg viewBox="0 0 100 120" className="w-full h-full fill-white/10 stroke-[#047857] drop-shadow-[0_0_15px_rgba(16,185,129,0.4)]">
+        <svg viewBox="0 0 100 120" className="w-full h-full fill-white/10 stroke-[#FF9800] drop-shadow-[0_0_15px_rgba(255,152,0,0.4)]">
           {/* Bottom Meeple */}
           <motion.g
             style={{ transformOrigin: "50px 105px" }}
@@ -833,7 +833,7 @@ export default function GameExplorer() {
         whileHover={{ scale: 1.15 }}
         className="absolute bottom-[20%] right-[10%] z-0 pointer-events-auto cursor-pointer hidden lg:block select-none w-32 h-28 opacity-85 hover:opacity-100 transition-opacity duration-300"
       >
-        <svg viewBox="0 0 120 100" className="w-full h-full stroke-[#0f766e] fill-white/10 drop-shadow-[0_0_15px_rgba(20,184,166,0.4)]">
+        <svg viewBox="0 0 120 100" className="w-full h-full stroke-[#FF9800] fill-white/10 drop-shadow-[0_0_15px_rgba(255,152,0,0.4)]">
           <polygon points="10,90 25,20 40,90" strokeWidth="1.5" />
           <polygon points="40,90 55,20 70,90" strokeWidth="1.5" />
           <polygon points="70,90 85,20 100,90" strokeWidth="1.5" />
@@ -844,7 +844,7 @@ export default function GameExplorer() {
             r="7"
             animate={isBgHovered ? { x: 30, y: -15 } : { x: 0, y: 0 }}
             transition={{ type: "spring", stiffness: 100, damping: 10 }}
-            className="fill-[#0d9488]"
+            className="fill-[#FF9800]"
             stroke="none"
           />
 
@@ -854,7 +854,7 @@ export default function GameExplorer() {
             r="7"
             animate={isBgHovered ? { x: -30, y: -5 } : { x: 0, y: 0 }}
             transition={{ type: "spring", stiffness: 120, damping: 10, delay: 0.1 }}
-            className="fill-[#14b8a6]"
+            className="fill-[#FF9800]"
             stroke="none"
           />
         </svg>
@@ -865,16 +865,16 @@ export default function GameExplorer() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#0a2540] font-bold block mb-3">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#FF9800] font-bold block mb-3">
             Explore 1200+ Titles
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-[#0a2540]">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-white">
             Curated Game Library
           </h2>
-          <p className="text-sm text-[#0a2540]/80 mt-3 font-normal">
+          <p className="text-sm text-white/80 mt-3 font-normal">
             From quick party games to epic heavy strategy campaigns, our Game Masters will set up the perfect match.
           </p>
-          <div className="h-[2px] w-20 bg-gradient-to-r from-[#0a2540]/40 via-[#0a2540] to-[#0a2540]/40 mx-auto mt-5 rounded-full" />
+          <div className="h-[2px] w-20 bg-gradient-to-r from-transparent via-[#FF9800] to-transparent mx-auto mt-5 rounded-full" />
         </div>
 
         {/* Categories Tab Selector (Glassmorphism Tabs) */}
@@ -889,7 +889,7 @@ export default function GameExplorer() {
                 className={`text-xs uppercase tracking-widest font-bold px-6 py-3.5 rounded-full transition-all duration-300 border backdrop-blur-md ${
                   isSelected
                     ? accent.btnActive
-                    : "bg-white/30 text-[#0a2540] border-white/40 hover:border-[#0a2540]/30 hover:bg-white/50"
+                    : "bg-white/5 text-white border-white/20 hover:border-white/40 hover:bg-white/10"
                 }`}
               >
                 {cat} {cat !== "All" && "Games"}
@@ -912,7 +912,7 @@ export default function GameExplorer() {
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.4 }}
                     key={game.id}
-                    className={`bg-white/45 border border-white/50 rounded-2xl p-6 shadow-lg transition-all duration-500 group flex flex-col justify-between backdrop-blur-md ${accent.hoverBorder} hover:bg-white/65 hover:-translate-y-1.5 hover:${accent.glow}`}
+                    className={`bg-white/[0.08] border border-white/[0.12] rounded-2xl p-6 shadow-lg transition-all duration-500 group flex flex-col justify-between backdrop-blur-md ${accent.hoverBorder} hover:bg-white/[0.12] hover:-translate-y-1.5 hover:${accent.glow}`}
                   >
                     <div>
                       {/* Badge / Metadata header */}
@@ -920,29 +920,29 @@ export default function GameExplorer() {
                         <span className={`text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full border ${accent.badge}`}>
                           {game.category}
                         </span>
-                        <span className="text-[10px] uppercase tracking-wider font-semibold text-[#0a2540]/50">
+                        <span className="text-[10px] uppercase tracking-wider font-semibold text-white/50">
                           ID: GOB-{1000 + game.id}
                         </span>
                       </div>
-
+ 
                       {/* Title & Desc */}
-                      <h3 className={`font-serif text-2xl font-bold text-[#0a2540] mb-2 transition-colors duration-300 ${accent.text}`}>
+                      <h3 className={`font-serif text-2xl font-bold text-white mb-2 transition-colors duration-300 ${accent.text}`}>
                         {game.title}
                       </h3>
-                      <p className="text-sm text-[#0a2540]/80 leading-relaxed mb-6 font-normal">
+                      <p className="text-sm text-white/70 leading-relaxed mb-6 font-normal">
                         {game.desc}
                       </p>
                     </div>
-
+ 
                     {/* Metadata Bar */}
-                    <div className="flex items-center justify-between border-t border-[#0a2540]/10 pt-4 text-xs font-semibold text-[#0a2540]/70">
-                      <span className="flex items-center gap-1.5 hover:text-black transition-colors duration-200">
+                    <div className="flex items-center justify-between border-t border-white/10 pt-4 text-xs font-semibold text-white/70">
+                      <span className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
                         <Users size={14} className="opacity-80" /> {game.players}
                       </span>
-                      <span className="flex items-center gap-1.5 hover:text-black transition-colors duration-200">
+                      <span className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
                         <Clock size={14} className="opacity-80" /> {game.time}
                       </span>
-                      <span className="flex items-center gap-1.5 hover:text-black transition-colors duration-200">
+                      <span className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
                         <Flame size={14} className="opacity-80" /> Complexity: {game.complexity}
                       </span>
                     </div>

@@ -67,7 +67,7 @@ export default function Footer() {
       ref={sectionRef}
       className="text-white border-t border-white/10 pt-20 pb-6 relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #0a1628 0%, #0d2847 25%, #1a4a7a 50%, #4dafee 80%, #6dc4f5 100%)",
+        background: "linear-gradient(180deg, #0D1B2A 0%, #1565C0 40%, #1E88E5 75%, #4ba3e8 100%)",
       }}
     >
       
@@ -110,23 +110,22 @@ export default function Footer() {
           ease: "easeInOut",
         }}
         className="absolute top-1/3 left-[10%] w-[350px] h-[350px] rounded-full blur-[100px] pointer-events-none"
-        style={{ background: "rgba(255,107,74,0.1)" }}
+        style={{ background: "rgba(245,124,0,0.12)" }}
       />
       <motion.div
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.2, 0.1],
-          x: [0, -30, 0],
-          y: [0, 30, 0],
+          scale: [1, 1.15, 1],
+          opacity: [0.12, 0.25, 0.12],
+          x: [0, 25, 0],
+          y: [0, -25, 0],
         }}
         transition={{
-          duration: 18,
+          duration: 15,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 2.0,
         }}
         className="absolute bottom-1/4 right-[10%] w-[400px] h-[400px] rounded-full blur-[120px] pointer-events-none"
-        style={{ background: "rgba(77,175,238,0.15)" }}
+        style={{ background: "rgba(21,101,192,0.2)" }}
       />
 
       {/* Shimmer sweep */}
@@ -156,7 +155,7 @@ export default function Footer() {
         }}
         className="absolute top-[20%] left-[3%] z-0 pointer-events-none opacity-40 select-none hidden lg:block"
       >
-        <svg viewBox="0 0 100 100" className="w-8 h-8 fill-[#FF6B4A]/10 stroke-[#FF6B4A]/40 drop-shadow-[0_0_8px_rgba(255,107,74,0.3)]">
+        <svg viewBox="0 0 100 100" className="w-8 h-8 fill-[#F57C00]/10 stroke-[#F57C00]/40 drop-shadow-[0_0_8px_rgba(245,124,0,0.3)]">
           <path d="M50 10 Q50 50 10 50 Q50 50 50 90 Q50 50 90 50 Q50 50 50 10 Z" strokeWidth="1.5" />
         </svg>
       </motion.div>
@@ -257,7 +256,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <h4 className="text-xs uppercase tracking-widest font-bold" style={{ color: "#FFB088" }}>
+          <h4 className="text-xs uppercase tracking-widest font-bold" style={{ color: "#FF9800" }}>
             Quick Links
           </h4>
           <ul className="space-y-3 text-sm font-light text-white/80">
@@ -265,8 +264,8 @@ export default function Footer() {
               <li key={idx}>
                 <motion.a 
                   href={link.href}
-                  whileHover={{ x: 6, color: "#FF6B4A" }}
-                  className="hover:text-[#FF6B4A] transition-colors inline-block duration-200"
+                  whileHover={{ x: 6, color: "#FF9800" }}
+                  className="hover:text-[#FF9800] transition-colors inline-block duration-200"
                 >
                   {link.name}
                 </motion.a>
@@ -283,29 +282,30 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h4 className="text-xs uppercase tracking-widest font-bold" style={{ color: "#FFB088" }}>
+          <h4 className="text-xs uppercase tracking-widest font-bold" style={{ color: "#FF9800" }}>
             Club Info
           </h4>
           <div className="space-y-4 text-xs font-light text-white/80">
             <div>
-              <p className="font-semibold uppercase tracking-wider text-[10px]" style={{ color: "#FF6B4A" }}>Address</p>
+              <p className="font-semibold uppercase tracking-wider text-[10px]" style={{ color: "#F57C00" }}>Address</p>
               <p className="mt-1 leading-relaxed">
                 Plot 482, Road No. 36, Jubilee Hills,<br />
                 Hyderabad, Telangana - 500033
               </p>
             </div>
+
             <div>
-              <p className="font-semibold uppercase tracking-wider text-[10px]" style={{ color: "#FF6B4A" }}>Club Timings</p>
+              <p className="font-semibold uppercase tracking-wider text-[10px]" style={{ color: "#F57C00" }}>Club Timings</p>
               <p className="mt-1 leading-relaxed">
                 Mon - Thu: 11:00 AM - 11:00 PM <br />
                 Fri - Sun: 11:00 AM - 01:00 AM
               </p>
             </div>
             <div>
-              <p className="font-semibold uppercase tracking-wider text-[10px]" style={{ color: "#FF6B4A" }}>Contact</p>
+              <p className="font-semibold uppercase tracking-wider text-[10px]" style={{ color: "#F57C00" }}>Contact</p>
               <p className="mt-1">
-                <a href="tel:+919123456789" className="hover:text-[#FFB088] transition-colors leading-relaxed block">+91 91234 56789</a>
-                <a href="mailto:hello@getonboardcafe.com" className="hover:text-[#FFB088] transition-colors leading-relaxed block mt-0.5">hello@getonboardcafe.com</a>
+                <a href="tel:+919123456789" className="hover:text-[#FF9800] transition-colors leading-relaxed block">+91 91234 56789</a>
+                <a href="mailto:hello@getonboardcafe.com" className="hover:text-[#FF9800] transition-colors leading-relaxed block mt-0.5">hello@getonboardcafe.com</a>
               </p>
             </div>
           </div>
@@ -319,7 +319,7 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <h4 className="text-xs uppercase tracking-widest font-bold" style={{ color: "#FFB088" }}>
+          <h4 className="text-xs uppercase tracking-widest font-bold" style={{ color: "#FF9800" }}>
             Stay Updated
           </h4>
           <p className="text-xs text-white/70 leading-relaxed font-light">
@@ -332,15 +332,15 @@ export default function Footer() {
               placeholder="Your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-white/[0.06] border border-white/[0.15] backdrop-blur-md focus:border-[#FF6B4A]/60 rounded-lg p-3.5 pr-12 outline-none text-xs text-white transition-colors placeholder:text-white/40"
+              className="w-full bg-white/[0.06] border border-white/[0.15] backdrop-blur-md focus:border-[#F57C00]/60 rounded-lg p-3.5 pr-12 outline-none text-xs text-white transition-colors placeholder:text-white/40"
               required
             />
             <button
               type="submit"
               className="absolute right-2 p-2 text-white rounded-md transition-all duration-300 hover:scale-105 active:scale-95"
               style={{
-                background: "linear-gradient(135deg, #FF6B4A, #e05a3a)",
-                boxShadow: "0 0 15px rgba(255,107,74,0.3)",
+                background: "linear-gradient(135deg, #F57C00, #FF9800)",
+                boxShadow: "0 0 15px rgba(245,124,0,0.3)",
               }}
             >
               <ArrowRight size={14} />
@@ -352,7 +352,7 @@ export default function Footer() {
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-xs font-semibold mt-2"
-              style={{ color: "#FF6B4A" }}
+              style={{ color: "#F57C00" }}
             >
               Thank you for subscribing!
             </motion.p>

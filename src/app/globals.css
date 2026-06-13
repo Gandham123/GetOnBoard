@@ -2,14 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --blue:     #1565C0;
+  --blue2:    #1E88E5;
+  --blue3:    #E3F2FD;
+  --orange:   #F57C00;
+  --orange2:  #FF9800;
+  --orange3:  #FFF3E0;
+  --white:    #FFFFFF;
+  --offwhite: #F9FBFF;
+  --dark:     #0D1B2A;
+  --gray:     #546E7A;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    background-color: #E5E0D5;
-    color: #4A2013;
+    background-color: var(--offwhite);
+    color: var(--dark);
   }
 }
 
@@ -18,39 +31,48 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #E5E0D5;
+  background: var(--offwhite);
 }
 ::-webkit-scrollbar-thumb {
-  background: #928A81;
-  border: 2px solid #E5E0D5;
+  background: var(--gray);
+  border: 2px solid var(--offwhite);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #4A2013;
+  background: var(--blue);
 }
 
 /* Glassmorphism custom styling */
 .glass-panel {
-  background: rgba(229, 224, 213, 0.45);
+  background: rgba(227, 242, 253, 0.45);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .glass-panel-dark {
-  background: rgba(74, 32, 19, 0.65);
+  background: rgba(13, 27, 42, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Premium active glow effects */
+.premium-glow-blue {
+  box-shadow: 0 0 20px 2px rgba(21, 101, 192, 0.3);
+}
+
+.premium-glow-orange {
+  box-shadow: 0 0 20px 2px rgba(245, 124, 0, 0.4);
+}
+
+/* Legacy glow class aliases for BookingModal compatibility */
 .premium-glow-olive {
-  box-shadow: 0 0 20px 2px rgba(143, 155, 96, 0.3);
+  box-shadow: 0 0 20px 2px rgba(21, 101, 192, 0.3);
 }
 
 .premium-glow-gold {
-  box-shadow: 0 0 20px 2px rgba(199, 171, 148, 0.4);
+  box-shadow: 0 0 20px 2px rgba(245, 124, 0, 0.4);
 }
 
 /* Custom hides for scrollbars in slide marquees */

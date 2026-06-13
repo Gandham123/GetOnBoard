@@ -44,7 +44,7 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
           {/* Main Capsule Navbar */}
           <div
             className={`w-full rounded-2xl h-[60px] flex items-center justify-between px-6 relative transition-all duration-300 border ${isScrolled
-              ? "bg-[#0B0A16]/90 border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+              ? "bg-[#0D1B2A]/90 border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
               : "bg-white/[0.03] backdrop-blur-md border border-white/[0.08] shadow-lg"
               }`}
           >
@@ -53,7 +53,7 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
               {/* Hamburger Button (hidden above lg) */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 text-[#E5E0D5] hover:text-teal-400 transition-colors focus:outline-none lg:hidden"
+                className="p-2 text-white hover:text-[#FF9800] transition-colors focus:outline-none lg:hidden"
                 aria-label="Toggle Menu"
               >
                 {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -67,7 +67,7 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
                     <a
                       key={link.label}
                       href={link.href}
-                      className="group flex flex-col items-center gap-1 text-[#E5E0D5]/80 hover:text-teal-400 transition-colors"
+                      className="group flex flex-col items-center gap-1 text-white/80 hover:text-[#FF9800] transition-colors"
                     >
                       <Icon size={18} className="group-hover:scale-110 transition-transform duration-200" />
                       <span className="text-[10px] uppercase tracking-widest font-bold font-sans">
@@ -83,7 +83,7 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
             <div className="relative w-22 h-full flex items-center justify-center z-20">
               <a
                 href="#"
-                className="absolute -top-[4px] sm:-top-[10px] w-[68px] h-[68px] sm:w-[80px] sm:h-[80px] bg-[#0A0714] border-2 border-teal-500/50 rounded-2xl shadow-[0_0_20px_rgba(20,184,166,0.4)] flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 group"
+                className="absolute -top-[4px] sm:-top-[10px] w-[68px] h-[68px] sm:w-[80px] sm:h-[80px] bg-[#0D1B2A] border-2 border-[#1565C0]/50 rounded-2xl shadow-[0_0_20px_rgba(21,101,192,0.4)] flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 group"
               >
                 {/* Logo Image with background, filling the entire space */}
                 <img
@@ -106,7 +106,7 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
                     <a
                       key={link.label}
                       href={link.href}
-                      className="group flex flex-col items-center gap-1 text-[#E5E0D5]/80 hover:text-teal-400 transition-colors"
+                      className="group flex flex-col items-center gap-1 text-white/80 hover:text-[#FF9800] transition-colors"
                     >
                       <Icon size={18} className="group-hover:scale-110 transition-transform duration-200" />
                       <span className="text-[10px] uppercase tracking-widest font-bold font-sans">
@@ -120,7 +120,7 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
               {/* Book a Table Button */}
               <button
                 onClick={onOpenBooking}
-                className="bg-teal-500 hover:bg-teal-400 text-white text-[10px] lg:text-[11px] uppercase tracking-widest font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg shadow-teal-500/20 border border-teal-500/30"
+                className="bg-[#F57C00] hover:bg-[#FF9800] text-white text-[10px] lg:text-[11px] uppercase tracking-widest font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg shadow-[#F57C00]/20 border border-[#F57C00]/30"
               >
                 <span className="hidden sm:inline">Book A Table</span>
                 <span className="inline sm:hidden">Book</span>
@@ -150,7 +150,7 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 left-0 bottom-0 z-[95] w-full max-w-[300px] bg-[#5ab6f0] border-r border-white/[0.08] shadow-2xl flex flex-col justify-between p-8 pt-28 lg:hidden"
+              className="fixed top-0 left-0 bottom-0 z-[95] w-full max-w-[300px] bg-[#0D1B2A] border-r border-white/[0.08] shadow-2xl flex flex-col justify-between p-8 pt-28 lg:hidden"
             >
               {/* Menu Links with Icons */}
               <div className="flex flex-col gap-6">
@@ -164,10 +164,10 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
                       key={link.label}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="group flex items-center gap-4 text-xl font-medium text-[#E5E0D5] hover:text-[#14B8A6] transition-colors"
+                      className="group flex items-center gap-4 text-xl font-medium text-white/90 hover:text-[#FF9800] transition-colors"
                     >
-                      <div className=" border border-[#f56645] p-2.5 rounded-xl text-[#14B8A6] group-hover:bg-[#14B8A6]/20 transition-all">
-                        <Icon size={20} color="#f56645" />
+                      <div className="border border-[#F57C00]/40 bg-[#F57C00]/10 p-2.5 rounded-xl text-[#FF9800] group-hover:bg-[#F57C00]/20 transition-all">
+                        <Icon size={20} />
                       </div>
                       <span className="font-serif tracking-wide text-2xl">{link.label}</span>
                     </motion.a>
@@ -187,13 +187,13 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
                     setIsMobileMenuOpen(false);
                     onOpenBooking();
                   }}
-                  className="w-full bg-[#f56645] hover:bg-teal-400 text-white text-xs uppercase tracking-widest font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all shadow-md shadow-teal-500/10"
+                  className="w-full bg-[#F57C00] hover:bg-[#FF9800] text-white text-xs uppercase tracking-widest font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all shadow-md shadow-[#F57C00]/20"
                 >
                   Book A Table <Calendar size={14} />
                 </button>
-                <div className="text-center text-xs text-[#928A81] font-light leading-relaxed">
-                  <p className="font-bold text-[#fff] uppercase tracking-wider mb-1">Get On Board Cafe</p>
-                  <p>Jubilee Hills, Hyderabad | Open Daily</p>
+                <div className="text-center text-xs text-[#546E7A] font-light leading-relaxed">
+                  <p className="font-bold text-[#FF9800] uppercase tracking-wider mb-1">Get On Board Cafe</p>
+                  <p className="text-white/60">Jubilee Hills, Hyderabad | Open Daily</p>
                 </div>
               </motion.div>
             </motion.div>

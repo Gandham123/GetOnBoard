@@ -66,19 +66,19 @@ export default function Testimonials() {
   const doubledRow2 = [...row2, ...row2, ...row2];
 
   return (
-    <section id="reviews" className="py-16 bg-gradient-to-b from-white via-[#F8FAFC] to-[#F1F5F9] relative overflow-hidden border-t border-slate-200/50">
+    <section id="reviews" className="py-16 bg-gradient-to-b from-white via-[#F9FBFF] to-[#F9FBFF] relative overflow-hidden border-t border-[#E3F2FD]">
       {/* Particle Sprinkler */}
-      <ParticleRain count={15} color="rgba(20, 184, 166, 0.12)" />
+      <ParticleRain count={15} color="rgba(21, 101, 192, 0.12)" />
 
       {/* Header */}
       <div className="relative z-10 text-center max-w-2xl mx-auto mb-20 px-6">
-        <span className="text-xs uppercase tracking-[0.25em] text-teal-600 font-bold block mb-3">
+        <span className="text-xs uppercase tracking-[0.25em] text-[#1565C0] font-bold block mb-3">
           Voice of our community
         </span>
-        <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-slate-900">
+        <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-[#0D1B2A]">
           Why People Love Us
         </h2>
-        <div className="h-0.5 w-16 bg-teal-500 mx-auto mt-4" />
+        <div className="h-0.5 w-16 bg-[#1565C0] mx-auto mt-4" />
       </div>
 
       {/* Marquee 1 (Right to Left) */}
@@ -95,22 +95,22 @@ export default function Testimonials() {
           {doubledRow1.map((item, idx) => (
             <div
               key={`${item.id}-${idx}`}
-              className="w-[350px] md:w-[450px] bg-white/80 border border-slate-200/50 backdrop-blur-md hover:border-teal-500/40 rounded-2xl p-8 shadow-sm flex flex-col justify-between hover:shadow-md transition-all duration-300"
+              className="w-[350px] md:w-[450px] bg-white/80 border border-[#E3F2FD] backdrop-blur-md hover:border-[#1565C0]/40 rounded-2xl p-8 shadow-sm flex flex-col justify-between hover:shadow-md transition-all duration-300"
             >
               <div>
-                <div className="flex items-center gap-1 mb-4 text-teal-500">
+                <div className="flex items-center gap-1 mb-4 text-[#FF9800]">
                   {[...Array(item.rating)].map((_, i) => (
                     <Star key={i} size={14} className="fill-current" />
                   ))}
                 </div>
-                <Quote size={32} className="text-teal-500/20 mb-2" />
-                <p className="font-serif text-lg md:text-xl font-medium text-slate-900 leading-relaxed mb-6">
+                <Quote size={32} className="text-[#1565C0]/20 mb-2" />
+                <p className="font-serif text-lg md:text-xl font-medium text-[#0D1B2A] leading-relaxed mb-6">
                   &ldquo;{item.text}&rdquo;
                 </p>
               </div>
-              <div className="border-t border-slate-200/60 pt-4 flex flex-col">
-                <span className="font-bold text-sm text-slate-900">{item.author}</span>
-                <span className="text-xs text-slate-500 mt-0.5">{item.tag}</span>
+              <div className="border-t border-[#E3F2FD] pt-4 flex flex-col">
+                <span className="font-bold text-sm text-[#0D1B2A]">{item.author}</span>
+                <span className="text-xs text-[#546E7A] mt-0.5">{item.tag}</span>
               </div>
             </div>
           ))}
@@ -131,22 +131,22 @@ export default function Testimonials() {
           {doubledRow2.map((item, idx) => (
             <div
               key={`${item.id}-${idx}`}
-              className="w-[350px] md:w-[450px] bg-white/80 border border-slate-200/50 backdrop-blur-md hover:border-teal-500/40 rounded-2xl p-8 shadow-sm flex flex-col justify-between hover:shadow-md transition-all duration-300"
+              className="w-[350px] md:w-[450px] bg-white/80 border border-[#E3F2FD] backdrop-blur-md hover:border-[#1565C0]/40 rounded-2xl p-8 shadow-sm flex flex-col justify-between hover:shadow-md transition-all duration-300"
             >
               <div>
-                <div className="flex items-center gap-1 mb-4 text-teal-500">
+                <div className="flex items-center gap-1 mb-4 text-[#FF9800]">
                   {[...Array(item.rating)].map((_, i) => (
                     <Star key={i} size={14} className="fill-current" />
                   ))}
                 </div>
-                <Quote size={32} className="text-teal-500/20 mb-2" />
-                <p className="font-serif text-lg md:text-xl font-medium text-slate-900 leading-relaxed mb-6">
+                <Quote size={32} className="text-[#1565C0]/20 mb-2" />
+                <p className="font-serif text-lg md:text-xl font-medium text-[#0D1B2A] leading-relaxed mb-6">
                   &ldquo;{item.text}&rdquo;
                 </p>
               </div>
-              <div className="border-t border-slate-200/60 pt-4 flex flex-col">
-                <span className="font-bold text-sm text-slate-900">{item.author}</span>
-                <span className="text-xs text-slate-500 mt-0.5">{item.tag}</span>
+              <div className="border-t border-[#E3F2FD] pt-4 flex flex-col">
+                <span className="font-bold text-sm text-[#0D1B2A]">{item.author}</span>
+                <span className="text-xs text-[#546E7A] mt-0.5">{item.tag}</span>
               </div>
             </div>
           ))}

@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} scroll-smooth`}>
-      <body className="font-sans antialiased text-brand-dark bg-[#E5E0D5] selection:bg-[#8F9B60] selection:text-white overflow-x-hidden">
+      <body className="font-sans antialiased text-brand-dark bg-[#F9FBFF] selection:bg-[#1565C0] selection:text-white overflow-x-hidden">
         {children}
       </body>
     </html>
