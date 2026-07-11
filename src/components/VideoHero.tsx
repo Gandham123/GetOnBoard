@@ -3,11 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-interface VideoHeroProps {
-  onOpenBooking: () => void;
-}
-
-export default function VideoHero({ onOpenBooking }: VideoHeroProps) {
+export default function VideoHero() {
   const heroRef = useRef<HTMLDivElement>(null);
 
   // Scroll Parallax for Hero Background and Text
@@ -94,12 +90,6 @@ export default function VideoHero({ onOpenBooking }: VideoHeroProps) {
           >
             Explore Games
           </a>
-          <button
-            onClick={onOpenBooking}
-            className="w-full sm:w-auto bg-[#F57C00] hover:bg-[#FF9800] text-white text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(245,124,0,0.3)] hover:scale-105 active:scale-95"
-          >
-            Book A Table
-          </button>
         </motion.div>
       </motion.div>
     </div>

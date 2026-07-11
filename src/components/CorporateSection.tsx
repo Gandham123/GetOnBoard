@@ -47,7 +47,7 @@ const eventAccents = [
   },
 ];
 
-export default function CorporateSection({ onOpenBooking }: CorporateSectionProps) {
+export default function CorporateSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Hover states for background animations
@@ -571,18 +571,18 @@ export default function CorporateSection({ onOpenBooking }: CorporateSectionProp
             </p>
             <div className="h-[2px] w-24 rounded-full" style={{ background: "linear-gradient(to right, #F57C00, #1E88E5, #1565C0)" }} />
             <div className="pt-4">
-              <motion.button
-                onClick={onOpenBooking}
+              <motion.a
+                href="tel:+919123456789"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(255,107,74,0.4)" }}
                 whileTap={{ scale: 0.95 }}
-                className="text-white text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full transition-all duration-300"
+                className="inline-block text-white text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full transition-all duration-300"
                 style={{
                   background: "linear-gradient(135deg, #F57C00, #FF9800)",
                   boxShadow: "0 0 25px rgba(245,124,0,0.3)",
                 }}
               >
                 Plan Your Event
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
 

@@ -1,14 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Dices, Users, Image as ImageIcon, MapPin, Calendar, Utensils, Star } from "lucide-react";
+import { Menu, X, Dices, Users, Image as ImageIcon, MapPin, Calendar, Utensils, Star, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-interface Navbar2Props {
-  onOpenBooking: () => void;
-}
-
-export default function Navbar2({ onOpenBooking }: Navbar2Props) {
+export default function Navbar2() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -28,6 +24,8 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
   ];
 
   const rightLinks = [
+    { label: "Events", href: "#events", icon: Calendar },
+    { label: "Celebrities", href: "#celebrities", icon: Sparkles },
     { label: "Gallery", href: "#gallery", icon: ImageIcon },
     { label: "Contact", href: "#location", icon: MapPin },
   ];
@@ -83,7 +81,7 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
             <div className="relative w-22 h-full flex items-center justify-center z-20">
               <a
                 href="#"
-                className="absolute -top-[4px] sm:-top-[10px] w-[68px] h-[68px] sm:w-[80px] sm:h-[80px] bg-[#0D1B2A] border-2 border-[#1565C0]/50 rounded-2xl shadow-[0_0_20px_rgba(21,101,192,0.4)] flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 group"
+                className="absolute -top-[4px] sm:-top-[10px] w-[68px] h-[68px] sm:w-[88px] sm:h-[80px] bg-[#0D1B2A] border-2 border-[#1565C0]/50 rounded-2xl shadow-[0_0_20px_rgba(21,101,192,0.4)] flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 group"
               >
                 {/* Logo Image with background, filling the entire space */}
                 <img
@@ -117,15 +115,7 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
                 })}
               </div>
 
-              {/* Book a Table Button */}
-              <button
-                onClick={onOpenBooking}
-                className="bg-[#F57C00] hover:bg-[#FF9800] text-white text-[10px] lg:text-[11px] uppercase tracking-widest font-bold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all duration-200 flex items-center gap-2 shadow-md hover:shadow-lg shadow-[#F57C00]/20 border border-[#F57C00]/30"
-              >
-                <span className="hidden sm:inline">Book A Table</span>
-                <span className="inline sm:hidden">Book</span>
-                <Calendar size={13} />
-              </button>
+
             </div>
           </div>
         </motion.div>
@@ -182,15 +172,6 @@ export default function Navbar2({ onOpenBooking }: Navbar2Props) {
                 transition={{ delay: 0.3 }}
                 className="space-y-6"
               >
-                <button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    onOpenBooking();
-                  }}
-                  className="w-full bg-[#F57C00] hover:bg-[#FF9800] text-white text-xs uppercase tracking-widest font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all shadow-md shadow-[#F57C00]/20"
-                >
-                  Book A Table <Calendar size={14} />
-                </button>
                 <div className="text-center text-xs text-[#546E7A] font-light leading-relaxed">
                   <p className="font-bold text-[#FF9800] uppercase tracking-wider mb-1">Get On Board Cafe</p>
                   <p className="text-white/60">Jubilee Hills, Hyderabad | Open Daily</p>

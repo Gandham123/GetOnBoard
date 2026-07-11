@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Navbar2 from "@/components/Navbar2";
 import VideoHero from "@/components/VideoHero";
 import StatsCounter from "@/components/StatsCounter";
@@ -13,23 +12,18 @@ import CorporateSection from "@/components/CorporateSection";
 import PinterestGallery from "@/components/PinterestGallery";
 import LocationMap from "@/components/LocationMap";
 import Footer from "@/components/Footer";
-import BookingModal from "@/components/BookingModal";
+import { Phone } from "lucide-react";
 
 export default function Home() {
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-
-  const openBooking = () => setIsBookingOpen(true);
-  const closeBooking = () => setIsBookingOpen(false);
-
   return (
     <>
       {/* Floating Navigation */}
-      <Navbar2 onOpenBooking={openBooking} />
+      <Navbar2 />
 
       {/* Main Sections */}
       <main>
         {/* Hero Section */}
-        <VideoHero onOpenBooking={openBooking} />
+        <VideoHero />
 
         {/* Stats Section */}
         <StatsCounter />
@@ -50,7 +44,7 @@ export default function Home() {
         <Testimonials />
 
         {/* Corporate Space */}
-        <CorporateSection onOpenBooking={openBooking} />
+        <CorporateSection />
 
         {/* Pinterest Gallery Grid */}
         <PinterestGallery />
@@ -62,8 +56,18 @@ export default function Home() {
       {/* Footing Section */}
       <Footer />
 
-      {/* Multi-step Booking System Overlay */}
-      <BookingModal isOpen={isBookingOpen} onClose={closeBooking} />
+      {/* Sticky Call Button */}
+      <div className="fixed bottom-6 right-6 z-40 flex items-center justify-center">
+        {/* Pulsing ring background */}
+        <div className="absolute w-16 h-16 bg-[#F57C00]/30 rounded-full animate-ping pointer-events-none" />
+        <a
+          href="tel:+919123456789"
+          className="relative flex items-center justify-center w-14 h-14 bg-gradient-to-r from-[#F57C00] to-[#FF9800] text-white rounded-full shadow-[0_0_20px_rgba(245,124,0,0.5)] transition-all duration-300 hover:scale-110 active:scale-95 group hover:shadow-[0_0_30px_rgba(245,124,0,0.8)]"
+          aria-label="Call Us"
+        >
+          <Phone className="w-6 h-6 transition-transform duration-300 group-hover:rotate-12" />
+        </a>
+      </div>
     </>
   );
 }
