@@ -18,12 +18,12 @@ export default function ExperienceSplit() {
       desc: "No prior tabletop experience needed. We match games to your group's size and play style.",
     },
     {
-      icon: <Heart className="w-5 h-5 text-[#F57C00]" />,
+      icon: <Heart className="w-5 h-5 text-[#1565C0]" />,
       title: "Family Friendly & Date Nights",
       desc: "Warm ambient lighting, delicious food pairings, and social games for all age groups.",
     },
     {
-      icon: <Award className="w-5 h-5 text-[#F57C00]" />,
+      icon: <Award className="w-5 h-5 text-[#1565C0]" />,
       title: "Team Bonding & Corporate Events",
       desc: "Break organizational silos and build genuine human connection through collaborative problem-solving.",
     },
@@ -90,10 +90,10 @@ export default function ExperienceSplit() {
               <span className="text-xs uppercase tracking-[0.25em] text-[#1565C0] font-bold block">
                 More Than A Cafe
               </span>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-[#0D1B2A]">
+              <h2 className="font-serif text-4xl  font-bold tracking-tight text-[#0D1B2A]">
                 This is not just a cafe. It&apos;s an experience.
               </h2>
-              <p className="text-[#546E7A] text-base md:text-lg leading-relaxed">
+              <p className="text-[#546E7A] text-base md:text-sm leading-relaxed">
                 Step into a premium, custom-curated social club where board gaming is treated as an art. Our focus is on high-end hospitality, connection, and creating memories.
               </p>
             </div>
@@ -104,7 +104,7 @@ export default function ExperienceSplit() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="space-y-6"
+              className="space-y-4"
             >
               {features.map((feature, idx) => (
                 <motion.div
@@ -119,7 +119,7 @@ export default function ExperienceSplit() {
                     <h4 className="font-semibold text-lg text-[#0D1B2A]">
                       {feature.title}
                     </h4>
-                    <p className="text-sm text-[#546E7A] leading-relaxed mt-1">
+                    <p className="text-sm text-[#546E7A] leading-relaxed ">
                       {feature.desc}
                     </p>
                   </div>

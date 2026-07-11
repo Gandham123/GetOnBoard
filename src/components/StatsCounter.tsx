@@ -68,14 +68,14 @@ export default function StatsCounter() {
     },
     {
       id: 3,
-      icon: <Star className="text-[#F57C00] w-6 h-6" />,
+      icon: <Star className="text-[#1565C0] w-6 h-6" />,
       label: "Average Rating",
       element: <Counter value={4.7} decimals={1} />,
       desc: "High-end customer service & hospitality",
     },
     {
       id: 4,
-      icon: <Heart className="text-[#F57C00] w-6 h-6" />,
+      icon: <Heart className="text-[#1565C0] w-6 h-6" />,
       label: "Happy Players",
       element: <span className="font-serif">10K+</span>,
       desc: "Bonding, laughter, and unforgettable moments",
@@ -98,7 +98,7 @@ export default function StatsCounter() {
               key={stat.id}
               className="bg-white/80 border border-[#E3F2FD] backdrop-blur-md hover:border-[#1565C0]/40 rounded-2xl p-8 shadow-sm transition-all duration-300 group hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="bg-[#E3F2FD] w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#1565C0]/20 transition-colors">
+              <div className="bg-[#E3F2FD] w-12 h-12 rounded-xl flex items-center justify-center mb-2 group-hover:bg-[#1565C0]/20 transition-colors">
                 {stat.icon}
               </div>
               <div className="text-4xl md:text-5xl font-bold font-serif text-[#0D1B2A] mb-2">
