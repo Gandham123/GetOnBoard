@@ -59,11 +59,11 @@ export default function LocationMap() {
                     Club Timings
                   </h4>
                   <div className="text-sm text-[#546E7A] font-light space-y-1">
-                    <div className="flex justify-between w-64">
+                    <div className="flex justify-start gap-1 w-64">
                       <span>Mon - Thu:</span>
                       <span className="font-semibold text-right text-[#0D1B2A]">11:00 AM - 11:00 PM</span>
                     </div>
-                    <div className="flex justify-between w-64">
+                    <div className="flex justify-start gap-1 w-64">
                       <span>Fri - Sun:</span>
                       <span className="font-semibold text-right text-[#0D1B2A]">11:00 AM - 01:00 AM</span>
                     </div>
@@ -109,7 +109,7 @@ export default function LocationMap() {
             <iframe
               title="Get On Board Jubilee Hills Cafe Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.460429922691!2d78.3977561751661!3d17.437663183458103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91463b7ebb4b%3A0x16a4ba4ed2262687!2sRoad%20No.%2036%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1780797347373!5m2!1sen!2sin"
-              className="w-full h-full border-none opacity-95 filter contrast-110 grayscale"
+              className="w-full h-full border-none opacity-95 filter contrast-110 "
               loading="lazy"
             />
             {/* Soft decorative frame border */}

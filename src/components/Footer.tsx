@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Instagram, Facebook, Twitter, ArrowRight } from "lucide-react";
+import { Instagram, Facebook, Twitter, ArrowRight, Youtube } from "lucide-react";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -244,6 +244,15 @@ export default function Footer() {
               className="p-3 rounded-full bg-white/10 hover:bg-[#1DA1F2] transition-all duration-300 text-white"
             >
               <Twitter size={16} />
+            </motion.a>
+            <motion.a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -4, scale: 1.12 }}
+              className="p-3 rounded-full bg-white/10 hover:bg-[#FF0000] transition-all duration-300 text-white"
+            >
+              <Youtube size={16} />
             </motion.a>
           </div>
         </motion.div>
