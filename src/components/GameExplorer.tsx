@@ -2,16 +2,22 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, LayoutGroup, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Users, Clock, Flame } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 
-interface Game {
-  id: number;
-  title: string;
+interface CategoryOverview {
+  id: string;
   category: string;
-  players: string;
-  time: string;
-  complexity: "Easy" | "Medium" | "Hard" | "Expert";
+  badge: string;
+  heading: string;
   desc: string;
+  perfectFor: string[];
+  whatYoullExperience: string[];
+  indicators: {
+    sessionLength: number;
+    learningCurve: number;
+    interactionLevel: number;
+    energyLevel: number;
+  };
 }
 
 const categoryAccents: Record<string, {
@@ -123,99 +129,93 @@ export default function GameExplorer() {
     "Adventure",
   ];
 
-  const gamesList: Game[] = [
+  const categoryOverviews: CategoryOverview[] = [
     {
-      id: 1,
-      title: "Scythe",
+      id: "strategy",
       category: "Strategy",
-      players: "1-5 Players",
-      time: "90-115 Min",
-      complexity: "Hard",
-      desc: "An alternate-history 1920s engine-building game of farming, war, and giant mechs.",
+      badge: "Strategy Games",
+      heading: "Think Before Every Move",
+      desc: "Immerse yourself in games of planning, logistics, and tactics. Every choice counts as you manage limited resources, build engines, out-maneuver opponents, and execute long-term decisions to secure victory.",
+      perfectFor: ["Competitive Players", "Friends", "Team Building"],
+      whatYoullExperience: ["Strategy", "Resource Management", "Puzzle Solving"],
+      indicators: {
+        sessionLength: 75,
+        learningCurve: 85,
+        interactionLevel: 60,
+        energyLevel: 50,
+      },
     },
     {
-      id: 2,
-      title: "Codenames",
+      id: "party",
       category: "Party",
-      players: "2-8 Players",
-      time: "15-20 Min",
-      complexity: "Easy",
-      desc: "Give one-word clues to help your team identify their secret agents first.",
+      badge: "Party Games",
+      heading: "Laugh Together",
+      desc: "Break the ice with fast-paced, high-interaction games of communication, social deduction, guessing, and active laughter. Perfect for keeping the energy high, sharing inside jokes, and creating unforgettable memories.",
+      perfectFor: ["Large Groups", "Friends", "Beginners", "Team Building"],
+      whatYoullExperience: ["Communication", "Bluffing", "Quick Thinking"],
+      indicators: {
+        sessionLength: 25,
+        learningCurve: 20,
+        interactionLevel: 95,
+        energyLevel: 90,
+      },
     },
     {
-      id: 3,
-      title: "Azul",
+      id: "family",
       category: "Family",
-      players: "2-4 Players",
-      time: "30-45 Min",
-      complexity: "Easy",
-      desc: "A beautiful draft game where players compete to build the most gorgeous mosaic wall.",
+      badge: "Family Games",
+      heading: "Fun For Everyone",
+      desc: "Gather everyone around the table with accessible games featuring intuitive rules, engaging mechanics, and high-replayability. Designed to bring ages from kids to grandparents together for fun, friendly bonding.",
+      perfectFor: ["Families", "Kids", "Beginners", "Couples"],
+      whatYoullExperience: ["Teamwork", "Puzzle Solving", "Quick Thinking"],
+      indicators: {
+        sessionLength: 40,
+        learningCurve: 30,
+        interactionLevel: 75,
+        energyLevel: 65,
+      },
     },
     {
-      id: 4,
-      title: "Monopoly Deal",
+      id: "card",
       category: "Card",
-      players: "2-5 Players",
-      time: "15 Min",
-      complexity: "Easy",
-      desc: "Fast-paced property trading card game. Steal properties, collect rent, make deals.",
+      badge: "Card Games",
+      heading: "Master Every Card",
+      desc: "Test your skill in deck building, hand management, and tactical card plays. From classic bluffing games to modern cooperative card challenges, learn to read the room and play your hand at the perfect moment.",
+      perfectFor: ["Couples", "Friends", "Competitive Players"],
+      whatYoullExperience: ["Bluffing", "Resource Management", "Quick Thinking"],
+      indicators: {
+        sessionLength: 30,
+        learningCurve: 40,
+        interactionLevel: 70,
+        energyLevel: 60,
+      },
     },
     {
-      id: 5,
-      title: "Pandemic Legacy",
+      id: "adventure",
       category: "Adventure",
-      players: "2-4 Players",
-      time: "60 Min",
-      complexity: "Medium",
-      desc: "Cooperative campaign game where your decisions carry over across multiple game months.",
-    },
-    {
-      id: 6,
-      title: "Terraforming Mars",
-      category: "Strategy",
-      players: "1-5 Players",
-      time: "120-150 Min",
-      complexity: "Expert",
-      desc: "Run giant corporations and coordinate oxygen, heat, and water to make Mars habitable.",
-    },
-    {
-      id: 7,
-      title: "Secret Hitler",
-      category: "Party",
-      players: "5-10 Players",
-      time: "45 Min",
-      complexity: "Medium",
-      desc: "A dramatic social deduction game of political intrigue, distrust, and hidden factions.",
-    },
-    {
-      id: 8,
-      title: "Wingspan",
-      category: "Strategy",
-      players: "1-5 Players",
-      time: "40-70 Min",
-      complexity: "Medium",
-      desc: "An award-winning card-driven engine building game about attracting diverse birds to your sanctuary.",
-    },
-    {
-      id: 9,
-      title: "Gloomhaven: Jaws of the Lion",
-      category: "Adventure",
-      players: "1-4 Players",
-      time: "60-90 Min",
-      complexity: "Hard",
-      desc: "Immersive tactical campaign battles in a deep, fantasy-narrative adventure world.",
+      badge: "Adventure Games",
+      heading: "Live the Story",
+      desc: "Embark on cooperative quests, campaign-driven exploration, and immersive roleplay. Work together with your teammates to solve mysteries, complete dangerous missions, and uncover stories where your choices shape the outcome.",
+      perfectFor: ["Competitive Players", "Friends", "Couples", "Team Building"],
+      whatYoullExperience: ["Storytelling", "Teamwork", "Puzzle Solving"],
+      indicators: {
+        sessionLength: 80,
+        learningCurve: 70,
+        interactionLevel: 85,
+        energyLevel: 70,
+      },
     },
   ];
 
-  const filteredGames = activeCategory === "All"
-    ? gamesList
-    : gamesList.filter((game) => game.category === activeCategory);
+  const filteredOverviews = activeCategory === "All"
+    ? categoryOverviews
+    : categoryOverviews.filter((overview) => overview.category === activeCategory);
 
   return (
     <section 
       id="games" 
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b from-[#1565C0] via-[#1E88E5] to-[#0D1B2A] border-t border-white/20 relative overflow-hidden"
+      className="py-24 bg-[#102c47] border-t border-white/20 relative overflow-hidden"
     >
       
       {/* --- Ambient Soft Glowing Background Blobs --- */}
@@ -900,10 +900,17 @@ export default function GameExplorer() {
 
         {/* Games Grid */}
         <LayoutGroup>
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <motion.div 
+            layout 
+            className={`grid grid-cols-1 ${
+              filteredOverviews.length > 1 
+                ? "md:grid-cols-2 lg:grid-cols-3 justify-center" 
+                : "max-w-xl mx-auto"
+            } gap-6 md:gap-8`}
+          >
             <AnimatePresence mode="popLayout">
-              {filteredGames.map((game) => {
-                const accent = categoryAccents[game.category] || categoryAccents["All"];
+              {filteredOverviews.map((overview) => {
+                const accent = categoryAccents[overview.category] || categoryAccents["All"];
                 return (
                   <motion.div
                     layout
@@ -911,40 +918,162 @@ export default function GameExplorer() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.4 }}
-                    key={game.id}
-                    className={`bg-white/[0.08] border border-white/[0.12] rounded-2xl p-6 shadow-lg transition-all duration-500 group flex flex-col justify-between backdrop-blur-md ${accent.hoverBorder} hover:bg-white/[0.12] hover:-translate-y-1.5 hover:${accent.glow}`}
+                    key={overview.id}
+                    className="bg-white/[0.05] border border-white/[0.1] rounded-[24px] md:rounded-[28px] p-8 shadow-lg transition-all duration-500 group flex flex-col justify-between backdrop-blur-md hover:border-[#FF9800]/50 hover:bg-white/[0.09] hover:-translate-y-2 hover:backdrop-blur-lg hover:shadow-2xl hover:shadow-[0_0_30px_rgba(255,152,0,0.25)]"
                   >
                     <div>
-                      {/* Badge / Metadata header */}
-                      <div className="flex items-center justify-between mb-4">
-                        <span className={`text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full border ${accent.badge}`}>
-                          {game.category}
+                      {/* Badge / Category Header */}
+                      <div className="flex items-center justify-between mb-5">
+                        <span className="text-[10px] uppercase font-bold tracking-wider px-3.5 py-1.5 rounded-full border bg-[#FF9800]/10 text-[#FF9800] border-[#FF9800]/20">
+                          {overview.badge}
                         </span>
-                        <span className="text-[10px] uppercase tracking-wider font-semibold text-white/50">
-                          ID: GOB-{1000 + game.id}
+                        <span className="text-[10px] uppercase tracking-wider font-semibold text-white/40">
+                          Curated Guide
                         </span>
                       </div>
- 
-                      {/* Title & Desc */}
-                      <h3 className={`font-serif text-2xl font-bold text-white mb-2 transition-colors duration-300 ${accent.text}`}>
-                        {game.title}
+
+                      {/* Accent line that animates on hover */}
+                      <div className="h-[2px] w-12 bg-[#FF9800]/50 group-hover:w-20 group-hover:bg-[#FF9800] transition-all duration-500 rounded-full mb-4" />
+
+                      {/* Premium Heading */}
+                      <h3 className="font-serif text-2xl md:text-3xl font-bold text-white mb-3 transition-colors duration-300 group-hover:text-[#FF9800]">
+                        {overview.heading}
                       </h3>
+
+                      {/* Short Description */}
                       <p className="text-sm text-white/70 leading-relaxed mb-6 font-normal">
-                        {game.desc}
+                        {overview.desc}
                       </p>
+
+                      {/* "Perfect For" Section */}
+                      <div className="mb-6">
+                        <p className="text-[10px] uppercase tracking-widest text-[#FF9800] font-bold mb-2.5">Perfect For</p>
+                        <div className="flex flex-wrap gap-2">
+                          {overview.perfectFor.map((pill, i) => (
+                            <span
+                              key={i}
+                              className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-white/80 transition-all duration-300 hover:bg-white/10 hover:border-white/20"
+                            >
+                              {pill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* "What You'll Experience" Section */}
+                      <div className="mb-6">
+                        <p className="text-[10px] uppercase tracking-widest text-[#FF9800] font-bold mb-2.5">What You&apos;ll Experience</p>
+                        <div className="flex flex-wrap gap-3">
+                          {overview.whatYoullExperience.map((chip, i) => (
+                            <div key={i} className="flex items-center gap-1.5 text-xs text-white/80 font-normal">
+                              <Check size={12} className="text-[#FF9800] group-hover:scale-110 transition-transform duration-300" />
+                              <span>{chip}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
- 
-                    {/* Metadata Bar */}
-                    <div className="flex items-center justify-between border-t border-white/10 pt-4 text-xs font-semibold text-white/70">
-                      <span className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
-                        <Users size={14} className="opacity-80" /> {game.players}
-                      </span>
-                      <span className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
-                        <Clock size={14} className="opacity-80" /> {game.time}
-                      </span>
-                      <span className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
-                        <Flame size={14} className="opacity-80" /> Complexity: {game.complexity}
-                      </span>
+
+                    <div>
+                      {/* Experience Indicator Section (Circular Progress Bars) */}
+                      <div className="border-t border-white/10 pt-5 mb-6">
+                        <p className="text-[10px] uppercase tracking-widest text-[#FF9800] font-bold mb-4">Experience Indicator</p>
+                        
+                        <div className="grid grid-cols-4 gap-2">
+                          {/* 1. Session Length */}
+                          <div className="flex flex-col items-center">
+                            <div className="relative w-12 h-12 flex items-center justify-center">
+                              <svg className="w-full h-full transform -rotate-90">
+                                <circle cx="24" cy="24" r="18" className="stroke-white/5 fill-none" strokeWidth="2.5" />
+                                <circle
+                                  cx="24"
+                                  cy="24"
+                                  r="18"
+                                  className="stroke-[#FF9800] fill-none transition-all duration-1000"
+                                  strokeWidth="2.5"
+                                  strokeDasharray={`${2 * Math.PI * 18}`}
+                                  strokeDashoffset={`${2 * Math.PI * 18 * (1 - overview.indicators.sessionLength / 100)}`}
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                              <span className="absolute text-[9px] font-bold text-white">{overview.indicators.sessionLength}%</span>
+                            </div>
+                            <span className="text-[8px] uppercase tracking-wider text-white/50 font-bold mt-2 text-center leading-tight">Length</span>
+                          </div>
+
+                          {/* 2. Learning Curve */}
+                          <div className="flex flex-col items-center">
+                            <div className="relative w-12 h-12 flex items-center justify-center">
+                              <svg className="w-full h-full transform -rotate-90">
+                                <circle cx="24" cy="24" r="18" className="stroke-white/5 fill-none" strokeWidth="2.5" />
+                                <circle
+                                  cx="24"
+                                  cy="24"
+                                  r="18"
+                                  className="stroke-[#1E88E5] fill-none transition-all duration-1000"
+                                  strokeWidth="2.5"
+                                  strokeDasharray={`${2 * Math.PI * 18}`}
+                                  strokeDashoffset={`${2 * Math.PI * 18 * (1 - overview.indicators.learningCurve / 100)}`}
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                              <span className="absolute text-[9px] font-bold text-white">{overview.indicators.learningCurve}%</span>
+                            </div>
+                            <span className="text-[8px] uppercase tracking-wider text-white/50 font-bold mt-2 text-center leading-tight">Learning</span>
+                          </div>
+
+                          {/* 3. Interaction Level */}
+                          <div className="flex flex-col items-center">
+                            <div className="relative w-12 h-12 flex items-center justify-center">
+                              <svg className="w-full h-full transform -rotate-90">
+                                <circle cx="24" cy="24" r="18" className="stroke-white/5 fill-none" strokeWidth="2.5" />
+                                <circle
+                                  cx="24"
+                                  cy="24"
+                                  r="18"
+                                  className="stroke-[#F57C00] fill-none transition-all duration-1000"
+                                  strokeWidth="2.5"
+                                  strokeDasharray={`${2 * Math.PI * 18}`}
+                                  strokeDashoffset={`${2 * Math.PI * 18 * (1 - overview.indicators.interactionLevel / 100)}`}
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                              <span className="absolute text-[9px] font-bold text-white">{overview.indicators.interactionLevel}%</span>
+                            </div>
+                            <span className="text-[8px] uppercase tracking-wider text-white/50 font-bold mt-2 text-center leading-tight">Interact</span>
+                          </div>
+
+                          {/* 4. Energy Level */}
+                          <div className="flex flex-col items-center">
+                            <div className="relative w-12 h-12 flex items-center justify-center">
+                              <svg className="w-full h-full transform -rotate-90">
+                                <circle cx="24" cy="24" r="18" className="stroke-white/5 fill-none" strokeWidth="2.5" />
+                                <circle
+                                  cx="24"
+                                  cy="24"
+                                  r="18"
+                                  className="stroke-[#546E7A] fill-none transition-all duration-1000"
+                                  strokeWidth="2.5"
+                                  strokeDasharray={`${2 * Math.PI * 18}`}
+                                  strokeDashoffset={`${2 * Math.PI * 18 * (1 - overview.indicators.energyLevel / 100)}`}
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                              <span className="absolute text-[9px] font-bold text-white">{overview.indicators.energyLevel}%</span>
+                            </div>
+                            <span className="text-[8px] uppercase tracking-wider text-white/50 font-bold mt-2 text-center leading-tight">Energy</span>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      {/* CTA Button */}
+                      <a
+                        href="#location"
+                        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-white hover:text-[#FF9800] transition-colors duration-300 mt-2 border border-white/10 hover:border-[#FF9800]/50 rounded-full px-5 py-2.5 bg-white/5 hover:bg-[#FF9800]/5 group/btn"
+                      >
+                        Explore This Category <ArrowRight size={14} className="group-hover/btn:translate-x-1.5 transition-transform duration-300 text-[#FF9800]" />
+                      </a>
                     </div>
                   </motion.div>
                 );

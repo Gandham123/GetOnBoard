@@ -15,7 +15,7 @@ export default function VideoHero() {
   return (
     <div
       ref={heroRef}
-      className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-[#0D1B2A]"
+      className="relative w-full h-[70vh] md:h-screen overflow-hidden flex items-center justify-center bg-[#0D1B2A]"
     >
       {/* Background Video with Scroll Parallax */}
       <motion.div
@@ -45,7 +45,7 @@ export default function VideoHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex items-center gap-2 mb-4"
+          className="flex items-center gap-2 mb-2 md:mb-4"
         >
           <span className="h-px w-6 bg-[#1565C0]/50" />
           <span className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#FF9800] font-semibold">
@@ -59,7 +59,7 @@ export default function VideoHero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, type: "spring", delay: 0.3 }}
-          className="font-serif text-3xl md:text-6xl lg:text-8xl font-bold text-white leading-none mb-6 tracking-tight"
+          className="font-serif text-3xl md:text-6xl lg:text-8xl font-bold text-white leading-none mb-3 md:mb-6 tracking-tight"
         >
           Get On Board
         </motion.h1>
@@ -69,10 +69,10 @@ export default function VideoHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-base md:text-xl text-white/90 font-light tracking-wide max-w-2xl mb-10 leading-relaxed font-sans"
+          className="text-base md:text-xl text-white/90 font-light tracking-wide max-w-2xl mb-6 md:mb-10 leading-relaxed font-sans"
         >
           India&apos;s Ultimate Board Gaming Destination
-          <span className="block text-xs md:text-sm uppercase tracking-wider text-[#FF9800] font-semibold mt-3">
+          <span className="block text-xs md:text-sm uppercase tracking-wider text-[#FF9800] font-semibold mt-2 md:mt-3">
             1200+ Games &bull; Celebrity Favorite &bull; Family Friendly &bull; Jubilee Hills
           </span>
         </motion.p>
@@ -86,7 +86,7 @@ export default function VideoHero() {
         >
           <a
             href="#games"
-            className="w-full sm:w-auto text-center border border-white/10 hover:border-[#1E88E5]/50 hover:text-[#1E88E5] text-white/90 text-xs uppercase tracking-widest font-bold px-8 py-4 rounded-full transition-all duration-300"
+            className="w-full sm:w-auto text-center border border-white/10 hover:border-[#1E88E5]/50 hover:text-[#1E88E5] text-white/90 text-xs uppercase tracking-widest font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-full transition-all duration-300"
           >
             Explore Games
           </a>

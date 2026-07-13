@@ -47,7 +47,7 @@ export default function Home() {
         <CorporateSection />
 
         {/* Pinterest Gallery Grid */}
-        <PinterestGallery />
+        {/* <PinterestGallery /> */}
 
         {/* Location Map Section */}
         <LocationMap />

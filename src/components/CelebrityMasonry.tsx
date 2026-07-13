@@ -8,17 +8,17 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 // Image dimension metadata parsed directly from original files to prevent Layout Shifts (CLS)
 const celebrityImages = [
   { id: 1, width: 1202, height: 1308, alt: "Tollywood Star Game Night" },
-  { id: 2, width: 1399, height: 1124, alt: "National Cricket Team Members" },
-  { id: 3, width: 824, height: 1909, alt: "Leading Content Creators Meetup" },
-  { id: 4, width: 1323, height: 1189, alt: "Luxury Lifestyle Influencers" },
-  { id: 5, width: 861, height: 1827, alt: "Actors & Film Personalities Gathering" },
+  { id: 2, width: 1399, height: 1124, alt: "Tollywood Star Game Night" },
+  { id: 3, width: 824, height: 1909, alt: "South Cinema Directors Night" },
+  { id: 4, width: 1323, height: 1189, alt: "Tollywood Star Game Night" },
+  { id: 5, width: 861, height: 1827, alt: "Pro Cricketers Gaming Session" },
   { id: 6, width: 941, height: 1672, alt: "South Cinema Directors Night" },
-  { id: 7, width: 1663, height: 946, alt: "Pro Athletes Gaming Session" },
-  { id: 8, width: 934, height: 1684, alt: "Music Artists & Composers Lounge" },
-  { id: 9, width: 941, height: 1672, alt: "Top Tech Founders Boardgame Meetup" },
-  { id: 10, width: 1195, height: 1316, alt: "Fashion Designers Social Night" },
-  { id: 11, width: 1284, height: 1225, alt: "Popular Stand-up Comedians Night" },
-  { id: 12, width: 1624, height: 969, alt: "Gourmet Chefs & Vloggers Special Table" },
+  { id: 7, width: 1663, height: 946, alt: "Actors & Film Personalities Gathering" },
+  { id: 8, width: 934, height: 1684, alt: "Tollywood Star Game Night" },
+  { id: 9, width: 941, height: 1672, alt: "Tollywood Star Game Night" },
+  { id: 10, width: 1195, height: 1316, alt: "Tollywood Star Game Night" },
+  { id: 11, width: 1284, height: 1225, alt: "Tollywood Star Game Night" },
+  { id: 12, width: 1624, height: 969, alt: "Tollywood Star Game Night" },
 ];
 
 const containerVariants = {
@@ -356,7 +356,7 @@ export default function CelebrityMasonry() {
 
       {/* --- Main Grid Content Container --- */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        
+
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <motion.h4

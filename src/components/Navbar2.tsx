@@ -115,7 +115,16 @@ export default function Navbar2() {
                 })}
               </div>
 
-
+              {/* Contact Link (Mobile only) */}
+              <a
+                href="#location"
+                className="lg:hidden group flex items-center gap-1.5 text-white/80 hover:text-[#FF9800] transition-colors"
+              >
+                <MapPin size={16} className="text-[#FFF] group-hover:scale-110 transition-transform duration-200" />
+                <span className="text-[10px] uppercase tracking-widest font-bold font-sans">
+                  Contact
+                </span>
+              </a>
             </div>
           </div>
         </motion.div>

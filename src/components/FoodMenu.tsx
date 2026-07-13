@@ -650,10 +650,26 @@ export default function FoodMenu() {
         </div>
 
         {/* Layout Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-20 items-center">
+
+          {/* Category Tabs (Mobile only) */}
+          <div className="lg:hidden flex flex-wrap gap-2.5 pb-4 border-b border-[#E3F2FD]">
+            {categories.map((cat) => (
+              <button
+                key={cat.name}
+                onClick={() => setActiveCategory(cat.name)}
+                className={`text-xs uppercase tracking-widest font-semibold px-5 py-3 rounded-full transition-all border ${activeCategory === cat.name
+                  ? "bg-[#1565C0] text-white border-[#1565C0] shadow-md shadow-[#1565C0]/10"
+                  : "bg-white text-[#546E7A] border-[#E3F2FD] hover:border-[#1565C0] hover:text-[#1565C0] shadow-sm"
+                  }`}
+              >
+                {cat.name}
+              </button>
+            ))}
+          </div>
 
           {/* Left: Large Image with Parallax Switch */}
-          <div className="lg:col-span-5 relative h-[400px] md:h-[500px] w-full">
+          <div className="lg:col-span-5 relative h-[240px] sm:h-[320px] md:h-[500px] w-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeCategory}
@@ -681,8 +697,8 @@ export default function FoodMenu() {
           {/* Right: Interactive Tabs & Menu List */}
           <div className="lg:col-span-7 space-y-8">
 
-            {/* Category Tabs */}
-            <div className="flex flex-wrap gap-2.5 pb-4 border-b border-[#E3F2FD]">
+            {/* Category Tabs (Desktop only) */}
+            <div className="hidden lg:flex flex-wrap gap-2.5 pb-4 border-b border-[#E3F2FD]">
               {categories.map((cat) => (
                 <button
                   key={cat.name}
