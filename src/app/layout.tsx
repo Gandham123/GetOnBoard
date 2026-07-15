@@ -18,10 +18,13 @@ export const metadata: Metadata = {
   title: "Get On Board | Premium Board Game Cafe & Social Club Hyderabad",
   description: "Hyderabad's ultimate board gaming destination in Jubilee Hills. 1200+ games, gourmet cafe, family-friendly vibe, and a favorite destination for celebrities.",
   keywords: "board game cafe, hyderabad cafe, jubilee hills cafe, get on board, social club, strategy games, premium board games, team bonding, Hyderabad celebrity hangouts",
+  icons: {
+    icon: "/assets/Logo.png",
+  },
   openGraph: {
     title: "Get On Board | Premium Board Game Cafe & Social Club",
     description: "Experience Hyderabad's finest board gaming lounge in Jubilee Hills. 1200+ games, custom-crafted food, and premium hospitality.",
-    images: [{ url: "/assets/hero_background.jpg" }],
+    images: [{ url: "/assets/hero_background.png" }],
   },
 };
 
