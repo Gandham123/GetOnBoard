@@ -81,13 +81,13 @@ export default function Navbar2() {
             <div className="relative w-22 h-full flex items-center justify-center z-20">
               <a
                 href="#"
-                className="absolute -top-[4px] sm:-top-[10px] w-[68px] h-[68px] sm:w-[88px] sm:h-[80px] bg-[#0D1B2A] border-2 border-[#1565C0]/50 rounded-2xl shadow-[0_0_20px_rgba(21,101,192,0.4)] flex items-center justify-center overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 group"
+                className="absolute -top-[4px] sm:-top-[10px] w-[68px] h-[68px] sm:w-[88px] sm:h-[80px] bg-[#0D1B2A] border-2 border-[#1565C0]/50 rounded-2xl shadow-[0_0_20px_rgba(21,101,192,0.4)] flex items-center justify-center overflow-hidden transition-all duration-300 active:scale-95 group"
               >
                 {/* Logo Image with background, filling the entire space */}
                 <img
                   src="/assets/Logo.png"
                   alt="Get On Board Logo"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                 />
                 {/* Soft glow hover effect overlay */}
                 <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />

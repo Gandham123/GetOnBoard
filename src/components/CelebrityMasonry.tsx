@@ -430,7 +430,7 @@ export default function CelebrityMasonry() {
               className="break-inside-avoid relative rounded-2xl overflow-hidden border border-white/15 shadow-lg hover:shadow-2xl hover:shadow-[#FF9800]/15 hover:border-[#FF9800]/50 transition-all duration-300 group cursor-pointer bg-white/5 mb-6"
             >
               <Image
-                src={`/assets/c${image.id}.png`}
+                src={`/assets/c${image.id}.jpeg`}
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
@@ -509,7 +509,7 @@ export default function CelebrityMasonry() {
             >
               <div className="relative w-auto h-auto max-h-[75vh] flex items-center justify-center overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-black/40">
                 <Image
-                  src={`/assets/c${celebrityImages[selectedImageIndex].id}.png`}
+                  src={`/assets/c${celebrityImages[selectedImageIndex].id}.jpeg`}
                   alt={celebrityImages[selectedImageIndex].alt}
                   width={celebrityImages[selectedImageIndex].width}
                   height={celebrityImages[selectedImageIndex].height}

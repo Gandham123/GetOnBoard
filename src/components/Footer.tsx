@@ -63,14 +63,14 @@ export default function Footer() {
   }));
 
   return (
-    <footer 
+    <footer
       ref={sectionRef}
       className="text-white border-t border-white/10 pt-20 pb-6 relative overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #0D1B2A 0%, #1565C0 40%, #1E88E5 75%, #4ba3e8 100%)",
       }}
     >
-      
+
       {/* --- Twinkling Star Particles --- */}
       {stars.map((star) => (
         <motion.div
@@ -140,7 +140,7 @@ export default function Footer() {
       />
 
       {/* --- Faint Floating Background Elements --- */}
-      
+
       {/* 1. Sparkle Star (Top Left) */}
       <motion.div
         style={{ x: parallaxX1, y: parallaxY1 }}
@@ -204,7 +204,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-12 border-b border-white/10 relative z-10">
 
         {/* Brand Column */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-4 space-y-5"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -219,7 +219,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4 pt-2">
             <motion.a
-              href="https://instagram.com"
+              href="https://www.instagram.com/getonboardcafe?igsh=MWJjZW9laHZndXllMQ=="
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -4, scale: 1.12 }}
@@ -258,7 +258,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Navigation Column */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-2 space-y-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -271,7 +271,7 @@ export default function Footer() {
           <ul className="space-y-3 text-sm font-light text-white/80">
             {quickLinks.map((link, idx) => (
               <li key={idx}>
-                <motion.a 
+                <motion.a
                   href={link.href}
                   whileHover={{ x: 6, color: "#FF9800" }}
                   className="hover:text-[#FF9800] transition-colors inline-block duration-200"
@@ -284,7 +284,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Location & Timings Column */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-3 space-y-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -321,7 +321,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Newsletter Column */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-3 space-y-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -357,7 +357,7 @@ export default function Footer() {
           </form>
 
           {subscribed && (
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-xs font-semibold mt-2"
