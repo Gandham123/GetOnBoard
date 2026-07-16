@@ -19,6 +19,14 @@ const celebrityImages = [
   { id: 10, width: 1195, height: 1316, alt: "Tollywood Star Game Night" },
   { id: 11, width: 1284, height: 1225, alt: "Tollywood Star Game Night" },
   { id: 12, width: 1624, height: 969, alt: "Tollywood Star Game Night" },
+  { id: 13, width: 960, height: 1280, alt: "Tollywood Star Game Night" },
+  { id: 14, width: 1080, height: 485, alt: "South Cinema Directors Night" },
+  { id: 15, width: 597, height: 1280, alt: "Celebrity Board Game Session" },
+  { id: 16, width: 1077, height: 449, alt: "Actors & Film Personalities Gathering" },
+  { id: 17, width: 1599, height: 755, alt: "Tollywood Star Game Night" },
+  { id: 18, width: 1080, height: 714, alt: "Celebrity Game Night Gathering" },
+  { id: 19, width: 1080, height: 522, alt: "Tollywood Star Game Night" },
+  { id: 20, width: 899, height: 1599, alt: "South Cinema Directors Night" },
 ];
 
 const containerVariants = {

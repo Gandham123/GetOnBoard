@@ -9,6 +9,7 @@ import FoodMenu from "@/components/FoodMenu";
 import CelebrityMasonry from "@/components/CelebrityMasonry";
 import Testimonials from "@/components/Testimonials";
 import CorporateSection from "@/components/CorporateSection";
+import CelebrityReviews from "@/components/CelebrityReviews";
 import PinterestGallery from "@/components/PinterestGallery";
 import LocationMap from "@/components/LocationMap";
 import Footer from "@/components/Footer";
@@ -45,6 +46,9 @@ export default function Home() {
 
         {/* Corporate Space */}
         <CorporateSection />
+
+        {/* Celebrity Video Reviews */}
+        <CelebrityReviews />
 
         {/* Pinterest Gallery Grid */}
         {/* <PinterestGallery /> */}
