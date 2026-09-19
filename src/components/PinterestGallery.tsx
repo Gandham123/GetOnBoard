@@ -3,78 +3,101 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ZoomIn, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import ParticleRain from "./ParticleRain";
 
 interface GalleryItem {
   id: number;
-  image: string;
+  type: "image" | "video";
+  src: string;
   category: "Cafe" | "Games" | "Events" | "Food" | "Celebrities";
   title: string;
-  aspect: string;
 }
 
 export default function PinterestGallery() {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [activeTab, setActiveTab] = useState<string>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const categories = ["All", "Cafe", "Games", "Events", "Food", "Celebrities"];
+  const tabs = ["All", "Images", "Videos"];
 
   const items: GalleryItem[] = [
     {
       id: 1,
-      image: "/assets/hero_bg.png",
-      category: "Cafe",
-      title: "Main Lounge Gaming Area",
-      aspect: "aspect-[4/3] md:aspect-[3/4]",
+      type: "image",
+      src: "/gallery/g1.jpeg",
+      category: "Games",
+      title: "Board Game Masters & Fun",
     },
     {
       id: 2,
-      image: "/assets/experience_gm.png",
-      category: "Games",
-      title: "Game Master Strategy Session",
-      aspect: "aspect-square",
+      type: "image",
+      src: "/gallery/g2.jpeg",
+      category: "Cafe",
+      title: "GetOnBoard Premium Lounge",
     },
     {
       id: 3,
-      image: "/assets/celebrity_visit.png",
-      category: "Celebrities",
-      title: "Tollywood Celebrities Night",
-      aspect: "aspect-[4/3] md:aspect-[16/9]",
+      type: "image",
+      src: "/gallery/g3.jpeg",
+      category: "Events",
+      title: "Group Gaming & Outings",
     },
     {
       id: 4,
-      image: "/assets/food_burger.png",
-      category: "Food",
-      title: "Signature GOB Wagyu Burger",
-      aspect: "aspect-[4/5] md:aspect-square",
+      type: "image",
+      src: "/gallery/g4.jpeg",
+      category: "Celebrities",
+      title: "Celebrity Gaming Experience",
     },
     {
       id: 5,
-      image: "/assets/food_pizza.png",
+      type: "image",
+      src: "/gallery/g5.jpeg",
       category: "Food",
-      title: "Artisanal Wood-Fired Pizza",
-      aspect: "aspect-square md:aspect-[4/3]",
+      title: "Culinary Delights & Drinks",
     },
     {
       id: 6,
-      image: "/assets/food_drink.png",
-      category: "Food",
-      title: "Smoked Rosemary Amber Tonic",
-      aspect: "aspect-[4/3] md:aspect-[3/4]",
+      type: "image",
+      src: "/gallery/g6.jpeg",
+      category: "Events",
+      title: "Corporate Tournament & Celebration",
     },
     {
       id: 7,
-      image: "/assets/experience_gm.png",
+      type: "video",
+      src: "/gallery/v1.mp4",
+      category: "Cafe",
+      title: "Inside GetOnBoard Lounge",
+    },
+    {
+      id: 8,
+      type: "video",
+      src: "/gallery/v2.mp4",
+      category: "Games",
+      title: "Live Board Gaming Action",
+    },
+    {
+      id: 9,
+      type: "video",
+      src: "/gallery/v3.mp4",
       category: "Events",
-      title: "Corporate Engagement Tournament",
-      aspect: "aspect-[16/9] md:aspect-square",
+      title: "Game Night Highlights",
+    },
+    {
+      id: 10,
+      type: "video",
+      src: "/gallery/v4.mp4",
+      category: "Games",
+      title: "Epic Gaming Moments",
     },
   ];
 
-  const filteredItems = activeCategory === "All"
+  const filteredItems = activeTab === "All"
     ? items
-    : items.filter((item) => item.category === activeCategory);
+    : activeTab === "Images"
+      ? items.filter((item) => item.type === "image")
+      : items.filter((item) => item.type === "video");
 
   const handleNext = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -102,12 +125,12 @@ export default function PinterestGallery() {
   }, [lightboxIndex, filteredItems.length]);
 
   return (
-    <section id="gallery" className="py-16 bg-gradient-to-b from-white to-[#F9FBFF] relative overflow-hidden border-t border-[#E3F2FD]">
+    <section id="gallery" className="py-20 bg-gradient-to-b from-white to-[#F9FBFF] relative overflow-hidden border-t border-[#E3F2FD]">
       {/* Particle Sprinkler */}
       <ParticleRain count={12} color="rgba(21, 101, 192, 0.12)" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-        
+
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-[#1565C0] font-bold block mb-3">
@@ -116,67 +139,88 @@ export default function PinterestGallery() {
           <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-[#0D1B2A]">
             Social Club Gallery
           </h2>
-          <div className="h-0.5 w-16 bg-[#1565C0] mx-auto mt-4" />
+          <p className="text-sm text-[#546E7A] mt-3 font-normal">
+            Explore photos and highlights from gaming nights, celebrity visits, food delights, and corporate outings.
+          </p>
+          <div className="h-0.5 w-16 bg-[#1565C0] mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Categories Tabs */}
+        {/* Media Type Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-          {categories.map((cat) => (
+          {tabs.map((tab) => (
             <button
-              key={cat}
+              key={tab}
               onClick={() => {
-                setActiveCategory(cat);
+                setActiveTab(tab);
                 setLightboxIndex(null);
               }}
-              className={`text-xs uppercase tracking-widest font-bold px-5 py-3 rounded-full transition-all border ${
-                activeCategory === cat
+              className={`text-xs uppercase tracking-widest font-bold px-5 py-3 rounded-full transition-all border ${activeTab === tab
                   ? "bg-[#1565C0] text-white border-[#1565C0] shadow-md shadow-[#1565C0]/10"
                   : "bg-white text-[#546E7A] border-[#E3F2FD] hover:border-[#1565C0] hover:text-[#1565C0] shadow-sm"
-              }`}
+                }`}
             >
-              {cat}
+              {tab}
             </button>
           ))}
         </div>
 
-        {/* Pinterest-Style Grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-          {filteredItems.map((item, index) => (
-            <motion.div
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.4 }}
-              key={item.id}
-              onClick={() => setLightboxIndex(index)}
-              className={`relative overflow-hidden rounded-2xl border border-[#E3F2FD] shadow-sm cursor-pointer group break-inside-avoid ${item.aspect} hover:shadow-lg hover:border-[#1565C0]/40 transition-all duration-300`}
-            >
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-[#0D1B2A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="bg-white/95 p-3 rounded-full shadow-lg text-[#1565C0]">
-                  <ZoomIn size={20} />
-                </div>
-              </div>
+        {/* Responsive Grid Gallery */}
+        <motion.div
+          layout
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredItems.map((item, index) => (
+              <motion.div
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                key={item.id}
+                onClick={() => setLightboxIndex(index)}
+                className="relative overflow-hidden rounded-2xl border border-[#E3F2FD] shadow-sm cursor-pointer group aspect-[4/3] hover:shadow-xl hover:shadow-[#1565C0]/8 hover:border-[#1565C0]/40 transition-all duration-300 bg-[#f0f5fa]"
+              >
+                {item.type === "video" ? (
+                  <video
+                    src={item.src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                ) : (
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                )}
 
-              {/* Title overlay */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0D1B2A]/80 to-transparent p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-[9px] uppercase tracking-widest text-[#FF9800] font-bold">
-                  {item.category}
-                </span>
-                <h4 className="font-serif text-sm font-semibold mt-1">{item.title}</h4>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                {/* Video Badge Icon */}
+                {item.type === "video" && (
+                  <div className="absolute top-3 right-3 z-10 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 border border-white/20 shadow-md">
+                    <Play size={10} className="fill-white text-white" />
+                    <span>VIDEO</span>
+                  </div>
+                )}
+
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-[#0D1B2A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                  <div className="bg-white/95 p-3.5 rounded-full shadow-lg text-[#1565C0] flex items-center justify-center">
+                    {item.type === "video" ? <Play size={20} className="fill-[#1565C0]" /> : <ZoomIn size={20} />}
+                  </div>
+                </div>
+
+
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
       </div>
 
@@ -199,50 +243,62 @@ export default function PinterestGallery() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ type: "spring", damping: 25 }}
-              className="relative max-w-4xl w-full h-[70vh] flex flex-col justify-between z-10 text-white"
+              className="relative max-w-4xl w-full h-[75vh] flex flex-col justify-between z-10 text-white"
             >
-              {/* Top Bar */}
-              <div className="flex justify-between items-center px-6 py-2.5 bg-[#0D1B2A]/60 border border-white/10 rounded-full backdrop-blur-sm self-center">
-                <span className="text-xs uppercase tracking-widest text-white/70 font-bold">
-                  {filteredItems[lightboxIndex].title} ({filteredItems[lightboxIndex].category})
-                </span>
-                <button
-                  onClick={() => setLightboxIndex(null)}
-                  className="p-1 hover:text-[#FF9800] transition-colors ml-6"
-                >
-                  <X size={18} />
-                </button>
-              </div>
+              {/* Close Button */}
+              <button
+                onClick={() => setLightboxIndex(null)}
+                className="self-end p-2.5 bg-[#0D1B2A]/80 border border-white/10 rounded-full backdrop-blur-sm hover:text-[#FF9800] transition-colors"
+                aria-label="Close modal"
+              >
+                <X size={18} />
+              </button>
 
-              {/* Image Container with Nav buttons */}
-              <div className="relative flex-grow my-4 flex items-center justify-center">
+              {/* Image / Video Container with Nav buttons */}
+              <div className="relative flex-grow my-1 flex items-center justify-center">
                 <button
                   onClick={handlePrev}
-                  className="absolute left-2 md:-left-12 p-3 bg-white/5 hover:bg-white/10 rounded-full text-white backdrop-blur-sm transition-colors border border-white/10 z-20"
+                  className="absolute left-2 md:-left-12 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white backdrop-blur-sm transition-colors border border-white/20 z-20"
+                  aria-label="Previous item"
                 >
                   <ChevronLeft size={24} />
                 </button>
 
-                <div className="relative w-full h-full max-h-[55vh] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                  <Image
-                    src={filteredItems[lightboxIndex].image}
-                    alt={filteredItems[lightboxIndex].title}
-                    fill
-                    className="object-contain"
-                    sizes="100vw"
-                  />
-                </div>
+                {filteredItems[lightboxIndex].type === "video" ? (
+                  <div className="relative w-full h-full max-h-[60vh] flex items-center justify-center rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+                    <video
+                      key={filteredItems[lightboxIndex].src}
+                      src={filteredItems[lightboxIndex].src}
+                      controls
+                      autoPlay
+                      loop
+                      playsInline
+                      className="max-w-full max-h-[60vh] object-contain rounded-2xl"
+                    />
+                  </div>
+                ) : (
+                  <div className="relative w-full h-full max-h-[60vh] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <Image
+                      src={filteredItems[lightboxIndex].src}
+                      alt={filteredItems[lightboxIndex].title}
+                      fill
+                      className="object-contain"
+                      sizes="100vw"
+                    />
+                  </div>
+                )}
 
                 <button
                   onClick={handleNext}
-                  className="absolute right-2 md:-right-12 p-3 bg-white/5 hover:bg-white/10 rounded-full text-white backdrop-blur-sm transition-colors border border-white/10 z-20"
+                  className="absolute right-2 md:-right-12 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white backdrop-blur-sm transition-colors border border-white/20 z-20"
+                  aria-label="Next item"
                 >
                   <ChevronRight size={24} />
                 </button>
               </div>
 
-              {/* Image Counter */}
-              <div className="text-center text-xs text-white/50 font-semibold">
+              {/* Image / Video Counter */}
+              <div className="text-center text-xs text-white/60 font-semibold">
                 {lightboxIndex + 1} of {filteredItems.length}
               </div>
             </motion.div>

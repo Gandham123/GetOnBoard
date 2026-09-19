@@ -5,27 +5,25 @@ import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-// Image dimension metadata parsed directly from original files to prevent Layout Shifts (CLS)
 const celebrityImages = [
   { id: 1, width: 1202, height: 1308, alt: "Tollywood Star Game Night" },
-  { id: 2, width: 1399, height: 1124, alt: "Tollywood Star Game Night" },
-  { id: 3, width: 824, height: 1909, alt: "South Cinema Directors Night" },
-  { id: 4, width: 1323, height: 1189, alt: "Tollywood Star Game Night" },
-  { id: 5, width: 861, height: 1827, alt: "Pro Cricketers Gaming Session" },
-  { id: 6, width: 941, height: 1672, alt: "South Cinema Directors Night" },
-  { id: 7, width: 1663, height: 946, alt: "Actors & Film Personalities Gathering" },
-  { id: 8, width: 934, height: 1684, alt: "Tollywood Star Game Night" },
-  { id: 9, width: 941, height: 1672, alt: "Tollywood Star Game Night" },
-  { id: 10, width: 1195, height: 1316, alt: "Tollywood Star Game Night" },
-  { id: 11, width: 1284, height: 1225, alt: "Tollywood Star Game Night" },
   { id: 12, width: 1624, height: 969, alt: "Tollywood Star Game Night" },
-  { id: 13, width: 960, height: 1280, alt: "Tollywood Star Game Night" },
+  { id: 3, width: 824, height: 1909, alt: "South Cinema Directors Night" },
+  { id: 2, width: 1399, height: 1124, alt: "Tollywood Star Game Night" },
+  { id: 5, width: 861, height: 1827, alt: "Pro Cricketers Gaming Session" },
   { id: 14, width: 1080, height: 485, alt: "South Cinema Directors Night" },
-  { id: 15, width: 597, height: 1280, alt: "Celebrity Board Game Session" },
-  { id: 16, width: 1077, height: 449, alt: "Actors & Film Personalities Gathering" },
+  { id: 4, width: 1323, height: 1189, alt: "Tollywood Star Game Night" },
+  { id: 6, width: 941, height: 1672, alt: "South Cinema Directors Night" },
   { id: 17, width: 1599, height: 755, alt: "Tollywood Star Game Night" },
+  { id: 8, width: 934, height: 1684, alt: "Tollywood Star Game Night" },
+  { id: 11, width: 1284, height: 1225, alt: "Tollywood Star Game Night" },
+  { id: 15, width: 597, height: 1280, alt: "Celebrity Board Game Session" },
   { id: 18, width: 1080, height: 714, alt: "Celebrity Game Night Gathering" },
+  { id: 9, width: 941, height: 1672, alt: "Tollywood Star Game Night" },
+  { id: 16, width: 1077, height: 449, alt: "Actors & Film Personalities Gathering" },
+  { id: 10, width: 1195, height: 1316, alt: "Tollywood Star Game Night" },
   { id: 19, width: 1080, height: 522, alt: "Tollywood Star Game Night" },
+  { id: 13, width: 960, height: 1280, alt: "Tollywood Star Game Night" },
   { id: 20, width: 899, height: 1599, alt: "South Cinema Directors Night" },
 ];
 
@@ -404,7 +402,7 @@ export default function CelebrityMasonry() {
             className="flex flex-wrap justify-center gap-4 mt-8"
           >
             {[
-              { text: "⭐ 15+ Celebrity Visits" },
+              { text: "⭐ Numerous Celebrity Visits" },
               { text: "🎬 Film Personalities" },
               { text: "🎲 Shared Game Nights" },
             ].map((stat, idx) => (
@@ -438,7 +436,7 @@ export default function CelebrityMasonry() {
               className="break-inside-avoid relative rounded-2xl overflow-hidden border border-white/15 shadow-lg hover:shadow-2xl hover:shadow-[#FF9800]/15 hover:border-[#FF9800]/50 transition-all duration-300 group cursor-pointer bg-white/5 mb-6"
             >
               <Image
-                src={`/assets/c${image.id}.jpeg`}
+                src={`/assets/c${image.id}.png`}
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
@@ -517,7 +515,7 @@ export default function CelebrityMasonry() {
             >
               <div className="relative w-auto h-auto max-h-[75vh] flex items-center justify-center overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-black/40">
                 <Image
-                  src={`/assets/c${celebrityImages[selectedImageIndex].id}.jpeg`}
+                  src={`/assets/c${celebrityImages[selectedImageIndex].id}.png`}
                   alt={celebrityImages[selectedImageIndex].alt}
                   width={celebrityImages[selectedImageIndex].width}
                   height={celebrityImages[selectedImageIndex].height}

@@ -4,6 +4,20 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import ParticleRain from "./ParticleRain";
+import {
+  Utensils,
+  UtensilsCrossed,
+  Coffee,
+  Pizza,
+  CupSoda,
+  Soup,
+  Cookie,
+  Flame,
+  Sparkles,
+  Cake,
+  Apple,
+  Wine,
+} from "lucide-react";
 
 interface MenuItem {
   name: string;
@@ -11,6 +25,21 @@ interface MenuItem {
   desc: string;
   isVeg: boolean;
 }
+
+const floatingFoodItems = [
+  { icon: Utensils, top: "8%", left: "4%", size: "w-8 h-8 md:w-10 md:h-10", duration: 9, delay: 0, color: "text-[#F57C00]/20" },
+  { icon: Coffee, top: "18%", right: "6%", size: "w-10 h-10 md:w-12 md:h-12", duration: 11, delay: 1, color: "text-[#1565C0]/20" },
+  { icon: Pizza, top: "42%", left: "3%", size: "w-9 h-9 md:w-11 md:h-11", duration: 10, delay: 2, color: "text-[#F57C00]/25" },
+  { icon: CupSoda, top: "68%", left: "7%", size: "w-10 h-10 md:w-12 md:h-12", duration: 12, delay: 0.5, color: "text-[#1565C0]/20" },
+  { icon: Soup, top: "78%", right: "5%", size: "w-9 h-9 md:w-11 md:h-11", duration: 11.5, delay: 1.5, color: "text-[#F57C00]/20" },
+  { icon: Cookie, top: "12%", left: "40%", size: "w-7 h-7 md:w-8 md:h-8", duration: 8, delay: 3, color: "text-[#1565C0]/15" },
+  { icon: Flame, top: "55%", right: "10%", size: "w-8 h-8 md:w-10 md:h-10", duration: 9.5, delay: 2.5, color: "text-[#FF9800]/30" },
+  { icon: Sparkles, top: "32%", right: "4%", size: "w-7 h-7 md:w-8 md:h-8", duration: 7, delay: 0, color: "text-[#F57C00]/30" },
+  { icon: Cake, top: "84%", left: "45%", size: "w-8 h-8 md:w-10 md:h-10", duration: 10, delay: 1.2, color: "text-[#1565C0]/20" },
+  { icon: UtensilsCrossed, top: "6%", right: "22%", size: "w-9 h-9 md:w-11 md:h-11", duration: 12, delay: 0.8, color: "text-[#F57C00]/20" },
+  { icon: Apple, top: "30%", left: "12%", size: "w-7 h-7 md:w-8 md:h-8", duration: 8.5, delay: 1.8, color: "text-[#2E7D32]/20" },
+  { icon: Wine, top: "88%", left: "22%", size: "w-8 h-8 md:w-10 md:h-10", duration: 10.5, delay: 2.2, color: "text-[#1565C0]/20" },
+];
 
 export default function FoodMenu() {
   const [activeCategory, setActiveCategory] = useState("Starters");
@@ -630,6 +659,38 @@ export default function FoodMenu() {
       {/* Visual background decor */}
       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#E3F2FD]/40 rounded-full blur-3xl pointer-events-none" />
 
+      {/* Floating Animated Food Elements Background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
+        {floatingFoodItems.map((item, idx) => {
+          const IconComponent = item.icon;
+          return (
+            <motion.div
+              key={idx}
+              className={`absolute ${item.color} filter drop-shadow-sm`}
+              style={{
+                top: item.top,
+                left: item.left,
+                right: item.right,
+              }}
+              animate={{
+                y: [0, -22, 0, 22, 0],
+                x: [0, 14, 0, -14, 0],
+                rotate: [0, 12, -12, 0],
+                scale: [1, 1.1, 0.94, 1],
+              }}
+              transition={{
+                duration: item.duration,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: item.delay,
+              }}
+            >
+              <IconComponent className={item.size} />
+            </motion.div>
+          );
+        })}
+      </div>
+
       {/* Particle Sprinkler */}
       <ParticleRain count={12} color="rgba(21, 101, 192, 0.12)" />
 
@@ -670,6 +731,19 @@ export default function FoodMenu() {
 
           {/* Left: Large Image with Parallax Switch */}
           <div className="lg:col-span-5 relative h-[240px] sm:h-[320px] md:h-[500px] w-full">
+            {/* Soft Culinary Ambient Glow behind active dish */}
+            <motion.div
+              animate={{
+                scale: [1, 1.08, 1],
+                opacity: [0.35, 0.55, 0.35],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute inset-4 rounded-full bg-gradient-to-tr from-[#1565C0]/20 via-[#F57C00]/20 to-amber-200/30 blur-3xl pointer-events-none"
+            />
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeCategory}

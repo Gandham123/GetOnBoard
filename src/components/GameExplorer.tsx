@@ -4,6 +4,11 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, LayoutGroup, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 
+interface IndicatorMetric {
+  range: string;
+  value: number;
+}
+
 interface CategoryOverview {
   id: string;
   category: string;
@@ -13,10 +18,10 @@ interface CategoryOverview {
   perfectFor: string[];
   whatYoullExperience: string[];
   indicators: {
-    sessionLength: number;
-    learningCurve: number;
-    interactionLevel: number;
-    energyLevel: number;
+    sessionLength: IndicatorMetric;
+    learningCurve: IndicatorMetric;
+    interactionLevel: IndicatorMetric;
+    energyLevel: IndicatorMetric;
   };
 }
 
@@ -67,6 +72,14 @@ const categoryAccents: Record<string, {
     text: "group-hover:text-[#546E7A]",
     hoverBorder: "hover:border-[#546E7A]/50",
     btnActive: "bg-[#546E7A] text-white border-[#546E7A] shadow-[0_0_15px_rgba(84,110,122,0.4)]",
+  },
+  "Corporate": {
+    color: "#00ACC1", // Teal / Cyan
+    badge: "bg-[#00ACC1]/10 text-[#00ACC1] border-[#00ACC1]/20",
+    glow: "shadow-[0_0_30px_rgba(0,172,193,0.25)]",
+    text: "group-hover:text-[#00ACC1]",
+    hoverBorder: "hover:border-[#00ACC1]/50",
+    btnActive: "bg-[#00ACC1] text-white border-[#00ACC1] shadow-[0_0_15px_rgba(0,172,193,0.4)]",
   },
   "All": {
     color: "#1565C0", // Blue
@@ -127,6 +140,7 @@ export default function GameExplorer() {
     "Family",
     "Card",
     "Adventure",
+    "Corporate",
   ];
 
   const categoryOverviews: CategoryOverview[] = [
@@ -135,14 +149,14 @@ export default function GameExplorer() {
       category: "Strategy",
       badge: "Strategy Games",
       heading: "Think Before Every Move",
-      desc: "Immerse yourself in games of planning, logistics, and tactics. Every choice counts as you manage limited resources, build engines, out-maneuver opponents, and execute long-term decisions to secure victory.",
-      perfectFor: ["Competitive Players", "Friends", "Team Building"],
+      desc: "Immerse yourself in games of planning, logistics, and tactics. Every choice counts as you manage limited resources, build engines, out-maneuver opponents, and execute long-term decisions to secure victory. Ranging from light level to heavy strategy games",
+      perfectFor: ["Competitive Players", "Logical Thinking", "Cognitive Skills"],
       whatYoullExperience: ["Strategy", "Resource Management", "Puzzle Solving"],
       indicators: {
-        sessionLength: 75,
-        learningCurve: 85,
-        interactionLevel: 60,
-        energyLevel: 50,
+        sessionLength: { range: "70 - 80%", value: 75 },
+        learningCurve: { range: "80 - 90%", value: 85 },
+        interactionLevel: { range: "55 - 65%", value: 60 },
+        energyLevel: { range: "45 - 55%", value: 50 },
       },
     },
     {
@@ -152,12 +166,12 @@ export default function GameExplorer() {
       heading: "Laugh Together",
       desc: "Break the ice with fast-paced, high-interaction games of communication, social deduction, guessing, and active laughter. Perfect for keeping the energy high, sharing inside jokes, and creating unforgettable memories.",
       perfectFor: ["Large Groups", "Friends", "Beginners", "Team Building"],
-      whatYoullExperience: ["Communication", "Bluffing", "Quick Thinking"],
+      whatYoullExperience: ["Communication", "Team Battle", "Bluffing", "Quick Thinking"],
       indicators: {
-        sessionLength: 25,
-        learningCurve: 20,
-        interactionLevel: 95,
-        energyLevel: 90,
+        sessionLength: { range: "20 - 30%", value: 25 },
+        learningCurve: { range: "15 - 25%", value: 20 },
+        interactionLevel: { range: "90 - 100%", value: 95 },
+        energyLevel: { range: "85 - 95%", value: 90 },
       },
     },
     {
@@ -169,10 +183,10 @@ export default function GameExplorer() {
       perfectFor: ["Families", "Kids", "Beginners", "Couples"],
       whatYoullExperience: ["Teamwork", "Puzzle Solving", "Quick Thinking"],
       indicators: {
-        sessionLength: 40,
-        learningCurve: 30,
-        interactionLevel: 75,
-        energyLevel: 65,
+        sessionLength: { range: "35 - 45%", value: 40 },
+        learningCurve: { range: "25 - 35%", value: 30 },
+        interactionLevel: { range: "70 - 80%", value: 75 },
+        energyLevel: { range: "60 - 70%", value: 65 },
       },
     },
     {
@@ -184,25 +198,40 @@ export default function GameExplorer() {
       perfectFor: ["Couples", "Friends", "Competitive Players"],
       whatYoullExperience: ["Bluffing", "Resource Management", "Quick Thinking"],
       indicators: {
-        sessionLength: 30,
-        learningCurve: 40,
-        interactionLevel: 70,
-        energyLevel: 60,
+        sessionLength: { range: "25 - 35%", value: 30 },
+        learningCurve: { range: "35 - 45%", value: 40 },
+        interactionLevel: { range: "65 - 75%", value: 70 },
+        energyLevel: { range: "55 - 65%", value: 60 },
       },
     },
     {
       id: "adventure",
       category: "Adventure",
-      badge: "Adventure Games",
+      badge: "Mystery Games",
       heading: "Live the Story",
       desc: "Embark on cooperative quests, campaign-driven exploration, and immersive roleplay. Work together with your teammates to solve mysteries, complete dangerous missions, and uncover stories where your choices shape the outcome.",
       perfectFor: ["Competitive Players", "Friends", "Couples", "Team Building"],
       whatYoullExperience: ["Storytelling", "Teamwork", "Puzzle Solving"],
       indicators: {
-        sessionLength: 80,
-        learningCurve: 70,
-        interactionLevel: 85,
-        energyLevel: 70,
+        sessionLength: { range: "75 - 85%", value: 80 },
+        learningCurve: { range: "65 - 75%", value: 70 },
+        interactionLevel: { range: "80 - 90%", value: 85 },
+        energyLevel: { range: "65 - 75%", value: 70 },
+      },
+    },
+    {
+      id: "corporate",
+      category: "Corporate",
+      badge: "Corporate Events",
+      heading: "Unite & Elevate Teams",
+      desc: "Taking excerpts from both corporate and gaming worlds, many games are specially designated and designed to match corporate employees gaming sessions and outings. Fostering strategic alignment, leadership synergy, healthy competition, and authentic workplace camaraderie.",
+      perfectFor: ["Corporate Teams", "Office Outings", "Team Building", "Leadership Offsites"],
+      whatYoullExperience: ["Team Alignment", "Strategic Collaboration", "Ice Breaking", "Problem Solving"],
+      indicators: {
+        sessionLength: { range: "60 - 90%", value: 75 },
+        learningCurve: { range: "20 - 40%", value: 30 },
+        interactionLevel: { range: "85 - 95%", value: 90 },
+        energyLevel: { range: "75 - 85%", value: 80 },
       },
     },
   ];
@@ -892,7 +921,7 @@ export default function GameExplorer() {
                     : "bg-white/5 text-white border-white/20 hover:border-white/40 hover:bg-white/10"
                 }`}
               >
-                {cat} {cat !== "All" && "Games"}
+                {cat === "Corporate" ? "Corporate Events" : `${cat}${cat !== "All" ? " Games" : ""}`}
               </button>
             );
           })}
@@ -924,7 +953,7 @@ export default function GameExplorer() {
                     <div>
                       {/* Badge / Category Header */}
                       <div className="flex items-center justify-between mb-5">
-                        <span className="text-[10px] uppercase font-bold tracking-wider px-3.5 py-1.5 rounded-full border bg-[#FF9800]/10 text-[#FF9800] border-[#FF9800]/20">
+                        <span className={`text-[13px] uppercase font-bold tracking-wider px-3.5 py-1.5 rounded-full border ${accent.badge}`}>
                           {overview.badge}
                         </span>
                         <span className="text-[10px] uppercase tracking-wider font-semibold text-white/40">
@@ -979,101 +1008,117 @@ export default function GameExplorer() {
                       <div className="border-t border-white/10 pt-5 mb-6">
                         <p className="text-[10px] uppercase tracking-widest text-[#FF9800] font-bold mb-4">Experience Indicator</p>
                         
-                        <div className="grid grid-cols-4 gap-2">
+                        <div className="grid grid-cols-4 gap-1.5 sm:gap-3">
                           {/* 1. Session Length */}
                           <div className="flex flex-col items-center">
-                            <div className="relative w-12 h-12 flex items-center justify-center">
-                              <svg className="w-full h-full transform -rotate-90">
-                                <circle cx="24" cy="24" r="18" className="stroke-white/5 fill-none" strokeWidth="2.5" />
+                            <div className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center">
+                              <svg viewBox="0 0 64 64" className="w-full h-full transform -rotate-90">
+                                <circle cx="32" cy="32" r="26" className="stroke-white/10 fill-none" strokeWidth="2.5" />
                                 <circle
-                                  cx="24"
-                                  cy="24"
-                                  r="18"
+                                  cx="32"
+                                  cy="32"
+                                  r="26"
                                   className="stroke-[#FF9800] fill-none transition-all duration-1000"
                                   strokeWidth="2.5"
-                                  strokeDasharray={`${2 * Math.PI * 18}`}
-                                  strokeDashoffset={`${2 * Math.PI * 18 * (1 - overview.indicators.sessionLength / 100)}`}
+                                  strokeDasharray={`${2 * Math.PI * 26}`}
+                                  strokeDashoffset={`${2 * Math.PI * 26 * (1 - overview.indicators.sessionLength.value / 100)}`}
                                   strokeLinecap="round"
                                 />
                               </svg>
-                              <span className="absolute text-[9px] font-bold text-white">{overview.indicators.sessionLength}%</span>
+                              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <span className="text-[9.5px] sm:text-[10.5px] font-bold text-white text-center leading-none tracking-tight">
+                                  {overview.indicators.sessionLength.range}
+                                </span>
+                              </div>
                             </div>
-                            <span className="text-[8px] uppercase tracking-wider text-white/50 font-bold mt-2 text-center leading-tight">Length</span>
+                            <span className="text-[9px] uppercase tracking-wider text-white/60 font-bold mt-2 text-center leading-tight">Length</span>
                           </div>
 
                           {/* 2. Learning Curve */}
                           <div className="flex flex-col items-center">
-                            <div className="relative w-12 h-12 flex items-center justify-center">
-                              <svg className="w-full h-full transform -rotate-90">
-                                <circle cx="24" cy="24" r="18" className="stroke-white/5 fill-none" strokeWidth="2.5" />
+                            <div className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center">
+                              <svg viewBox="0 0 64 64" className="w-full h-full transform -rotate-90">
+                                <circle cx="32" cy="32" r="26" className="stroke-white/10 fill-none" strokeWidth="2.5" />
                                 <circle
-                                  cx="24"
-                                  cy="24"
-                                  r="18"
+                                  cx="32"
+                                  cy="32"
+                                  r="26"
                                   className="stroke-[#1E88E5] fill-none transition-all duration-1000"
                                   strokeWidth="2.5"
-                                  strokeDasharray={`${2 * Math.PI * 18}`}
-                                  strokeDashoffset={`${2 * Math.PI * 18 * (1 - overview.indicators.learningCurve / 100)}`}
+                                  strokeDasharray={`${2 * Math.PI * 26}`}
+                                  strokeDashoffset={`${2 * Math.PI * 26 * (1 - overview.indicators.learningCurve.value / 100)}`}
                                   strokeLinecap="round"
                                 />
                               </svg>
-                              <span className="absolute text-[9px] font-bold text-white">{overview.indicators.learningCurve}%</span>
+                              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <span className="text-[9.5px] sm:text-[10.5px] font-bold text-white text-center leading-none tracking-tight">
+                                  {overview.indicators.learningCurve.range}
+                                </span>
+                              </div>
                             </div>
-                            <span className="text-[8px] uppercase tracking-wider text-white/50 font-bold mt-2 text-center leading-tight">Learning</span>
+                            <span className="text-[9px] uppercase tracking-wider text-white/60 font-bold mt-2 text-center leading-tight">Logic</span>
                           </div>
 
                           {/* 3. Interaction Level */}
                           <div className="flex flex-col items-center">
-                            <div className="relative w-12 h-12 flex items-center justify-center">
-                              <svg className="w-full h-full transform -rotate-90">
-                                <circle cx="24" cy="24" r="18" className="stroke-white/5 fill-none" strokeWidth="2.5" />
+                            <div className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center">
+                              <svg viewBox="0 0 64 64" className="w-full h-full transform -rotate-90">
+                                <circle cx="32" cy="32" r="26" className="stroke-white/10 fill-none" strokeWidth="2.5" />
                                 <circle
-                                  cx="24"
-                                  cy="24"
-                                  r="18"
+                                  cx="32"
+                                  cy="32"
+                                  r="26"
                                   className="stroke-[#F57C00] fill-none transition-all duration-1000"
                                   strokeWidth="2.5"
-                                  strokeDasharray={`${2 * Math.PI * 18}`}
-                                  strokeDashoffset={`${2 * Math.PI * 18 * (1 - overview.indicators.interactionLevel / 100)}`}
+                                  strokeDasharray={`${2 * Math.PI * 26}`}
+                                  strokeDashoffset={`${2 * Math.PI * 26 * (1 - overview.indicators.interactionLevel.value / 100)}`}
                                   strokeLinecap="round"
                                 />
                               </svg>
-                              <span className="absolute text-[9px] font-bold text-white">{overview.indicators.interactionLevel}%</span>
+                              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <span className="text-[9.5px] sm:text-[10.5px] font-bold text-white text-center leading-none tracking-tight">
+                                  {overview.indicators.interactionLevel.range}
+                                </span>
+                              </div>
                             </div>
-                            <span className="text-[8px] uppercase tracking-wider text-white/50 font-bold mt-2 text-center leading-tight">Interact</span>
+                            <span className="text-[9px] uppercase tracking-wider text-white/60 font-bold mt-2 text-center leading-tight">Interact</span>
                           </div>
 
                           {/* 4. Energy Level */}
                           <div className="flex flex-col items-center">
-                            <div className="relative w-12 h-12 flex items-center justify-center">
-                              <svg className="w-full h-full transform -rotate-90">
-                                <circle cx="24" cy="24" r="18" className="stroke-white/5 fill-none" strokeWidth="2.5" />
+                            <div className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] flex items-center justify-center">
+                              <svg viewBox="0 0 64 64" className="w-full h-full transform -rotate-90">
+                                <circle cx="32" cy="32" r="26" className="stroke-white/10 fill-none" strokeWidth="2.5" />
                                 <circle
-                                  cx="24"
-                                  cy="24"
-                                  r="18"
+                                  cx="32"
+                                  cy="32"
+                                  r="26"
                                   className="stroke-[#546E7A] fill-none transition-all duration-1000"
                                   strokeWidth="2.5"
-                                  strokeDasharray={`${2 * Math.PI * 18}`}
-                                  strokeDashoffset={`${2 * Math.PI * 18 * (1 - overview.indicators.energyLevel / 100)}`}
+                                  strokeDasharray={`${2 * Math.PI * 26}`}
+                                  strokeDashoffset={`${2 * Math.PI * 26 * (1 - overview.indicators.energyLevel.value / 100)}`}
                                   strokeLinecap="round"
                                 />
                               </svg>
-                              <span className="absolute text-[9px] font-bold text-white">{overview.indicators.energyLevel}%</span>
+                              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <span className="text-[9.5px] sm:text-[10.5px] font-bold text-white text-center leading-none tracking-tight">
+                                  {overview.indicators.energyLevel.range}
+                                </span>
+                              </div>
                             </div>
-                            <span className="text-[8px] uppercase tracking-wider text-white/50 font-bold mt-2 text-center leading-tight">Energy</span>
+                            <span className="text-[9px] uppercase tracking-wider text-white/60 font-bold mt-2 text-center leading-tight">Energy</span>
                           </div>
 
                         </div>
                       </div>
 
                       {/* CTA Button */}
-                      <a
+                      {/* <a
                         href="#location"
                         className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-white hover:text-[#FF9800] transition-colors duration-300 mt-2 border border-white/10 hover:border-[#FF9800]/50 rounded-full px-5 py-2.5 bg-white/5 hover:bg-[#FF9800]/5 group/btn"
                       >
                         Explore This Category <ArrowRight size={14} className="group-hover/btn:translate-x-1.5 transition-transform duration-300 text-[#FF9800]" />
-                      </a>
+                      </a> */}
                     </div>
                   </motion.div>
                 );

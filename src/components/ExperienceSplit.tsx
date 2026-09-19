@@ -9,13 +9,13 @@ export default function ExperienceSplit() {
   const features = [
     {
       icon: <UserCheck className="w-5 h-5 text-[#1565C0]" />,
-      title: "Game Masters",
-      desc: "Our friendly experts explain any game's setup and rules, getting you playing in under 5 minutes.",
+      title: "Game Gurus",
+      desc: "Our friendly game gurus explain any game's setup and rules, getting you playing in under few minutes.",
     },
     {
       icon: <Compass className="w-5 h-5 text-[#1565C0]" />,
       title: "Beginner Friendly",
-      desc: "No prior tabletop experience needed. We match games to your group's size and play style.",
+      desc: "No prior tabletop experience needed. We match games to your group's size,gaming experience and play style.",
     },
     {
       icon: <Heart className="w-5 h-5 text-[#1565C0]" />,
@@ -58,9 +58,9 @@ export default function ExperienceSplit() {
   };
 
   return (
-    <section id="experience" className="py-16 bg-gradient-to-b from-white via-[#F9FBFF] to-[#F9FBFF] relative overflow-hidden">
-      {/* Particle Sprinkler */}
-      <ParticleRain count={12} color="rgba(21, 101, 192, 0.12)" />
+    <section id="experience" className="py-16 bg-[#FAF6F0] border-l-4 md:border-l-8 border-[#4A2E1B] relative overflow-hidden">
+      {/* Warm Ambient Particle Sprinkler */}
+      <ParticleRain count={12} color="rgba(74, 46, 27, 0.12)" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
@@ -71,29 +71,29 @@ export default function ExperienceSplit() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, type: "spring" }}
-            className="lg:col-span-6 relative h-[450px] md:h-[600px] w-full rounded-2xl overflow-hidden border border-[#E3F2FD] shadow-2xl"
+            className="lg:col-span-6 relative h-[450px] md:h-[600px] w-full rounded-2xl overflow-hidden border-2 border-[#4A2E1B]/30 border-l-4 border-l-[#4A2E1B] shadow-2xl group"
           >
             <Image
               src="/assets/experience_gm2.png"
               alt="Get On Board Cafe Experience"
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             {/* Soft decorative shadow gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/10 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#4A2E1B]/30 via-transparent to-transparent pointer-events-none" />
           </motion.div>
 
           {/* Right Column: Content */}
           <div className="lg:col-span-6 space-y-8">
             <div className="space-y-4">
-              <span className="text-xs uppercase tracking-[0.25em] text-[#1565C0] font-bold block">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#4A2E1B] bg-[#4A2E1B]/10 px-3 py-1 rounded-full font-bold inline-block border border-[#4A2E1B]/20">
                 More Than A Cafe
               </span>
-              <h2 className="font-serif text-4xl  font-bold tracking-tight text-[#0D1B2A]">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight text-[#0D1B2A]">
                 This is not just a cafe. It&apos;s an experience.
               </h2>
-              <p className="text-[#546E7A] text-base md:text-sm leading-relaxed">
+              <p className="text-[#546E7A] text-base leading-relaxed">
                 Step into a premium, custom-curated social club where board gaming is treated as an art. Our focus is on high-end hospitality, connection, and creating memories.
               </p>
             </div>
@@ -104,22 +104,22 @@ export default function ExperienceSplit() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="space-y-4"
+              className="space-y-3"
             >
               {features.map((feature, idx) => (
                 <motion.div
                   key={idx}
                   variants={itemVariants}
-                  className="flex gap-4 items-start"
+                  className="flex gap-4 items-start p-3 rounded-xl transition-all duration-300 hover:bg-white/70 hover:shadow-md hover:border hover:border-[#4A2E1B]/20 border border-transparent -mx-3 group"
                 >
-                  <div className="bg-[#E3F2FD] border border-[#1565C0]/20 w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="bg-white border border-[#4A2E1B]/20 w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:border-[#4A2E1B] group-hover:scale-105 transition-all">
                     {feature.icon}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-[#0D1B2A]">
+                    <h4 className="font-semibold text-lg text-[#0D1B2A] group-hover:text-[#4A2E1B] transition-colors">
                       {feature.title}
                     </h4>
-                    <p className="text-sm text-[#546E7A] leading-relaxed ">
+                    <p className="text-sm text-[#546E7A] leading-relaxed">
                       {feature.desc}
                     </p>
                   </div>

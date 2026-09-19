@@ -24,8 +24,8 @@ const videoReviews: VideoReview[] = [
     id: 2,
     src: "/assets/v2.mp4",
     title: "Best Food & Gaming Spot",
-    celebrity: "Suhas",
-    role: "Tollywood Actor"
+    celebrity: "Tilak Varma",
+    role: "Indian Cricketer"
   },
   {
     id: 3,
@@ -59,8 +59,8 @@ const videoReviews: VideoReview[] = [
     id: 7,
     src: "/assets/v7.mp4",
     title: "Gourmet Food Meets Board Games",
-    celebrity: "Tilak Varma",
-    role: "Indian Cricketer"
+    celebrity: "Suhas",
+    role: "Tollywood Actor"
   },
   {
     id: 8,

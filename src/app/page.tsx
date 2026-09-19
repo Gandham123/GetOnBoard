@@ -8,6 +8,7 @@ import GameExplorer from "@/components/GameExplorer";
 import FoodMenu from "@/components/FoodMenu";
 import CelebrityMasonry from "@/components/CelebrityMasonry";
 import Testimonials from "@/components/Testimonials";
+import MediaSection from "@/components/MediaSection";
 import CorporateSection from "@/components/CorporateSection";
 import CelebrityReviews from "@/components/CelebrityReviews";
 import PinterestGallery from "@/components/PinterestGallery";
@@ -44,6 +45,9 @@ export default function Home() {
         {/* Testimonials */}
         <Testimonials />
 
+        {/* Media — Celebrity Video Carousel */}
+        <MediaSection />
+
         {/* Corporate Space */}
         <CorporateSection />
 
@@ -51,7 +55,7 @@ export default function Home() {
         <CelebrityReviews />
 
         {/* Pinterest Gallery Grid */}
-        {/* <PinterestGallery /> */}
+        <PinterestGallery />
 
         {/* Location Map Section */}
         <LocationMap />
