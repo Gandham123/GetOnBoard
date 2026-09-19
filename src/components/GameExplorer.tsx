@@ -35,7 +35,7 @@ const categoryAccents: Record<string, {
 }> = {
   "Strategy": {
     color: "#1565C0", // Blue
-    badge: "bg-[#1565C0]/10 text-[#1565C0] border-[#1565C0]/20",
+    badge: "bg-[#FF9800]/10 text-[#FF9800] border-[#FF9800]/20",
     glow: "shadow-[0_0_30px_rgba(21,101,192,0.25)]",
     text: "group-hover:text-[#1565C0]",
     hoverBorder: "hover:border-[#1565C0]/50",
@@ -43,7 +43,7 @@ const categoryAccents: Record<string, {
   },
   "Party": {
     color: "#F57C00", // Orange
-    badge: "bg-[#F57C00]/10 text-[#F57C00] border-[#F57C00]/20",
+    badge: "bg-[#FF9800]/10 text-[#FF9800] border-[#FF9800]/20",
     glow: "shadow-[0_0_30px_rgba(245,124,0,0.25)]",
     text: "group-hover:text-[#F57C00]",
     hoverBorder: "hover:border-[#F57C00]/50",
@@ -59,7 +59,7 @@ const categoryAccents: Record<string, {
   },
   "Card": {
     color: "#1E88E5", // Blue 2
-    badge: "bg-[#1E88E5]/10 text-[#1E88E5] border-[#1E88E5]/20",
+    badge: "bg-[#FF9800]/10 text-[#FF9800] border-[#FF9800]/20",
     glow: "shadow-[0_0_30px_rgba(30,136,229,0.25)]",
     text: "group-hover:text-[#1E88E5]",
     hoverBorder: "hover:border-[#1E88E5]/50",
@@ -67,7 +67,7 @@ const categoryAccents: Record<string, {
   },
   "Adventure": {
     color: "#546E7A", // Gray
-    badge: "bg-[#546E7A]/10 text-[#546E7A] border-[#546E7A]/20",
+    badge: "bg-[#FF9800]/10 text-[#FF9800] border-[#FF9800]/20",
     glow: "shadow-[0_0_30px_rgba(84,110,122,0.25)]",
     text: "group-hover:text-[#546E7A]",
     hoverBorder: "hover:border-[#546E7A]/50",
@@ -75,7 +75,7 @@ const categoryAccents: Record<string, {
   },
   "Corporate": {
     color: "#00ACC1", // Teal / Cyan
-    badge: "bg-[#00ACC1]/10 text-[#00ACC1] border-[#00ACC1]/20",
+    badge: "bg-[#FF9800]/10 text-[#FF9800] border-[#FF9800]/20",
     glow: "shadow-[0_0_30px_rgba(0,172,193,0.25)]",
     text: "group-hover:text-[#00ACC1]",
     hoverBorder: "hover:border-[#00ACC1]/50",
@@ -83,7 +83,7 @@ const categoryAccents: Record<string, {
   },
   "All": {
     color: "#1565C0", // Blue
-    badge: "bg-[#1565C0]/10 text-[#1565C0] border-[#1565C0]/20",
+    badge: "bg-[#FF9800]/10 text-[#FF9800] border-[#FF9800]/20",
     glow: "shadow-[0_0_30px_rgba(21,101,192,0.25)]",
     text: "group-hover:text-[#1565C0]",
     hoverBorder: "hover:border-[#1565C0]/50",
